@@ -1,0 +1,26 @@
+{
+  "name": "obsidian-syntax-palette",
+  "version": "0.5.2",
+  "private": true,
+  "scripts": {
+    "prepare-assets": "node tools/prepare-plugin-assets.cjs",
+    "prepare-themes": "node tools/prepare-theme-assets.cjs",
+    "check-themes": "node tools/prepare-theme-assets.cjs --check",
+    "build": "node tools/build-plugin.cjs",
+    "package": "npm run build && node tools/package-plugin.cjs",
+    "verify": "npm run check-themes && npm test",
+    "test": "node --test plugin-src/tests/*.test.cjs",
+    "verify-build": "node tools/verify-build.cjs",
+    "test:obsidian": "node tools/obsidian-v0.4.0-test.cjs",
+    "test:webkit": "node tools/webkit-highlight-test.cjs",
+    "test:webkit:ln": "node tools/webkit-line-number-test.cjs"
+  },
+  "dependencies": {
+    "vscode-oniguruma": "2.0.1",
+    "vscode-textmate": "9.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "markdown-it": "14.1.0"
+  }
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "scope": "source.python",
+    "path": "extensions/python/syntaxes/MagicPython.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "a8ec27ce79ecb1fda05783d47636efee45413565f62dd15a2ebc41d7f0d716a0"
+  },
+  {
+    "scope": "source.js",
+    "path": "extensions/javascript/syntaxes/JavaScript.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "fbb253d385c855075ef743c958ffa3ef63939c7e65ced110ba3d2575be7a5025"
+  },
+  {
+    "scope": "source.ts",
+    "path": "extensions/typescript-basics/syntaxes/TypeScript.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "5422ec4b90f842fd729a43e95a5d31e41382c94623fb3c93e127e4ef582998c9"
+  },
+  {
+    "scope": "source.tsx",
+    "path": "extensions/typescript-basics/syntaxes/TypeScriptReact.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "6873461fb8e634046ee0cfafb41aa8ccdf87ec2f8c201bf2cac0a941e058280a"
+  },
+  {
+    "scope": "documentation.injection.js.jsx",
+    "path": "extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "620b02d2cbfd4de4dfa27c61dcb715701d54b155246a1babb4b42f2c7e787531"
+  },
+  {
+    "scope": "source.json",
+    "path": "extensions/json/syntaxes/JSON.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "e0f398297881c13909fa5d30e7e5e7632defabb4e8d60dfd5ba94d0bf09e8898"
+  },
+  {
+    "scope": "source.json.comments",
+    "path": "extensions/json/syntaxes/JSONC.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "8d271fb168bef199f8568264b0c920e9af0c505006674bbcd6b7f8ee109cbda9"
+  },
+  {
+    "scope": "source.shell",
+    "path": "extensions/shellscript/syntaxes/shell-unix-bash.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "c1de56a5d97bc5682d224017cae65deeaccdc0dd7dc85af436fdbaddb9b36588"
+  },
+  {
+    "scope": "text.html.basic",
+    "path": "extensions/html/syntaxes/html.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "a042290a8410d18c90577111b755caa272b296a432a3b66cf6c6770abb74af7a"
+  },
+  {
+    "scope": "text.html.derivative",
+    "path": "extensions/html/syntaxes/html-derivative.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "5719f42419d8c1fe551fcd4b80ac4a1795cc1ddd76bf9069a9b46f78abee0638"
+  },
+  {
+    "scope": "source.css",
+    "path": "extensions/css/syntaxes/css.tmLanguage.json",
+    "version": "10.0.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/microsoft/vscode.git"
+    },
+    "sha256": "1fe1c50fe650f7fe07b381012d624080955170e376cf7ffc66170d783de7e436"
+  }
+]

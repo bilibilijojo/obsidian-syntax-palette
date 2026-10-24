@@ -1,0 +1,14 @@
+{
+  "light": {
+    "sha": "c4cca7664dd807352d99270e5a9610880760274b",
+    "html_url": "https://github.com/akamud/vscode-theme-onelight/blob/master/themes/OneLight.json",
+    "git_url": "https://api.github.com/repos/akamud/vscode-theme-onelight/git/blobs/c4cca7664dd807352d99270e5a9610880760274b",
+    "sha256": "6628e350875e76186f3ac007680544d54a3ea132e6b542442e7704fdfac45250"
+  },
+  "dark": {
+    "sha": "b8c574cc5e3d811afa0c281ec0f96ca8d343113d",
+    "html_url": "https://github.com/akamud/vscode-theme-onedark/blob/master/themes/OneDark.json",
+    "git_url": "https://api.github.com/repos/akamud/vscode-theme-onedark/git/blobs/b8c574cc5e3d811afa0c281ec0f96ca8d343113d",
+    "sha256": "9cba08f30e9f249ed5d00a33a582533cc611d9360e61973dcaddcad3f7ac8d7c"
+  }
+}

@@ -1,0 +1,44 @@
+# Dependencies and generated plugin packages
+node_modules/
+/plugin/
+/*.zip
+/*.zip.sha256
+
+# Local validation output can contain machine paths, screenshots, or note names.
+/evidence/
+
+# Local assistant/workbench notes; not project source.
+/.workbuddy/
+
+# Obsidian vault configuration and desktop metadata
+.obsidian/
+.obsidian-*/
+.DS_Store
+
+# Temporary files and test/build caches
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+.cache/
+.nyc_output/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+dist/
+build/
+tmp/
+temp/
+
+# Deprecated one-off live audits are tied to the original local workspace/Vault.
+# Keep them in the checkout, but never put those paths into the remote repository.
+/tools/live-audit.js
+/tools/live-inspect.js
+/tools/plugin-live-audit.js
+/tools/plugin-focused-audit.js
+/tools/plugin-restoration-audit.js
+/tools/summarize_live.py
+/tools/verify_results.py
+/tools/serve_fixture.py

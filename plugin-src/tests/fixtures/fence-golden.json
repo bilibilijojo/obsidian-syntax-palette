@@ -1,0 +1,5731 @@
+[
+  {
+    "name": "plain fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "tilde fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "python",
+          "text": "x = True",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "python",
+          "text": "x = True",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "python",
+          "text": "x = True",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence longer closing",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": null,
+          "text": "",
+          "start": 3,
+          "end": 4,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "closing fence too short stays open",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;\n``\nstill code",
+          "start": 0,
+          "end": 5,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            },
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;\n``\nstill code",
+          "start": 0,
+          "end": 5,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            },
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;\n``\nstill code",
+          "start": 0,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "info string with attributes",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "backtick info forbidden",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "tilde info may contain backticks",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented fence 1-3 spaces",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "4-space indent is code not fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "```js\nconst a = 1;\n```",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "unclosed fence to EOF",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;\nconst b = 2;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;\nconst b = 2;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;\nconst b = 2;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "empty fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "",
+          "start": 0,
+          "end": 2,
+          "positions": [
+            {
+              "line": 1,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 0,
+          "end": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence interrupts paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence cannot interrupt with 4 spaces",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "two fences back to back",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "a",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": "python",
+          "text": "b",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "a",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": "python",
+          "text": "b",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "a",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "python",
+          "text": "b",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence inside blockquote",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence inside blockquote lazy",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1,
+          "positions": [
+            {
+              "line": 1,
+              "column": 12
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1,
+          "positions": [
+            {
+              "line": 1,
+              "column": 12
+            }
+          ]
+        },
+        {
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "blockquote no space",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "nested blockquote fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence in list item",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence in list item no blank",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "ordered list fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "ordered list wide marker fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "nested list fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "list fence unclosed",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 4,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 4,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code after blank",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code line 1\ncode line 2",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code cannot interrupt paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "indented code in list",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code in list",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code with blank inside",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code 1\n\ncode 2",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code ends at fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "fence",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence then indented code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "fence",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "indented",
+          "start": 4,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "html block with fence inside",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "html comment with fence inside",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "script block with fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "not a fence",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "html block type 7 fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence after html",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence after html",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "fence after html",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "setext heading then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "thematic break then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "front matter with fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "front matter tilde end",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "front matter unclosed",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "obsidian comment hides fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "shown",
+          "start": 5,
+          "end": 8,
+          "positions": [
+            {
+              "line": 6,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "shown",
+          "start": 5,
+          "end": 8,
+          "positions": [
+            {
+              "line": 6,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "shown",
+          "start": 5,
+          "end": 8
+        }
+      ]
+    }
+  },
+  {
+    "name": "percent signs inside code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "value = \"%%\"",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "value = \"%%\"",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "value = \"%%\"",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "percent pair on one line",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "escaped percent",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "value = \"\\%%\"",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "value = \"\\%%\"",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "value = \"\\%%\"",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "table then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 4,
+          "end": 7,
+          "positions": [
+            {
+              "line": 5,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 4,
+          "end": 7,
+          "positions": [
+            {
+              "line": 5,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 4,
+          "end": 7
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference definition then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence with tabs in indent",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "```js\nconst a = 1;\n```",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence content with blank lines",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "line 1\n\nline 3",
+          "start": 0,
+          "end": 5,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            },
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "line 1\n\nline 3",
+          "start": 0,
+          "end": 5,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            },
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "line 1\n\nline 3",
+          "start": 0,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence content with trailing spaces",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "line 1   ",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "line 1   ",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "line 1   ",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "crlf line endings",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "bom then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "nested fences different chars",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "```js\ninner\n```",
+          "start": 0,
+          "end": 5,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            },
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "```js\ninner\n```",
+          "start": 0,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "tilde inside backtick fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "~~~\nstill outer",
+          "start": 0,
+          "end": 4,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "~~~\nstill outer",
+          "start": 0,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "backtick inside tilde fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "```\nstill outer",
+          "start": 0,
+          "end": 4,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            },
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "```\nstill outer",
+          "start": 0,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence info only spaces",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "unknown language fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": null,
+          "text": "++++++++++.",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "++++++++++.",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "empty document",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "only front matter",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "fence at eof no newline",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 2,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 2,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "blockquote fence then paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "list fence then next item",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "deeply nested list fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 4,
+          "end": 7,
+          "positions": [
+            {
+              "line": 5,
+              "column": 6
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 4,
+          "end": 7,
+          "positions": [
+            {
+              "line": 5,
+              "column": 6
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 4,
+          "end": 7
+        }
+      ]
+    }
+  },
+  {
+    "name": "blockquote indented fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "paragraph with dashes then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "multiple front matter dashes",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 7,
+          "end": 10,
+          "positions": [
+            {
+              "line": 8,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 7,
+          "end": 10,
+          "positions": [
+            {
+              "line": 8,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 7,
+          "end": 10
+        }
+      ]
+    }
+  },
+  {
+    "name": "realistic note",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "python",
+          "text": "def f(x):\n    return x + 1",
+          "start": 11,
+          "end": 15,
+          "positions": [
+            {
+              "line": 12,
+              "column": 0
+            },
+            {
+              "line": 13,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 18,
+          "end": 21,
+          "positions": [
+            {
+              "line": 19,
+              "column": 2
+            }
+          ]
+        },
+        {
+          "language": "bash",
+          "text": "echo hi",
+          "start": 24,
+          "end": 27,
+          "positions": [
+            {
+              "line": 25,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "python",
+          "text": "def f(x):\n    return x + 1",
+          "start": 11,
+          "end": 15,
+          "positions": [
+            {
+              "line": 12,
+              "column": 0
+            },
+            {
+              "line": 13,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 18,
+          "end": 21,
+          "positions": [
+            {
+              "line": 19,
+              "column": 2
+            }
+          ]
+        },
+        {
+          "language": "bash",
+          "text": "echo hi",
+          "start": 24,
+          "end": 27,
+          "positions": [
+            {
+              "line": 25,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "python",
+          "text": "def f(x):\n    return x + 1",
+          "start": 11,
+          "end": 15
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "const a = 1;",
+          "start": 18,
+          "end": 21
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "bash",
+          "text": "echo hi",
+          "start": 24,
+          "end": 27
+        }
+      ]
+    }
+  },
+  {
+    "name": "line-number matrix fixture",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "python",
+          "text": "alpha = 1\nbeta = 2\n\ndelta = 4\nepsilon = 5",
+          "start": 14,
+          "end": 21,
+          "positions": [
+            {
+              "line": 15,
+              "column": 0
+            },
+            {
+              "line": 16,
+              "column": 0
+            },
+            {
+              "line": 17,
+              "column": 0
+            },
+            {
+              "line": 18,
+              "column": 0
+            },
+            {
+              "line": 19,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "python",
+          "text": "alpha = 1\nbeta = 2\n\ndelta = 4\nepsilon = 5",
+          "start": 14,
+          "end": 21,
+          "positions": [
+            {
+              "line": 15,
+              "column": 0
+            },
+            {
+              "line": 16,
+              "column": 0
+            },
+            {
+              "line": 17,
+              "column": 0
+            },
+            {
+              "line": 18,
+              "column": 0
+            },
+            {
+              "line": 19,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": null,
+          "text": "unlabeled one\nunlabeled two\nunlabeled three",
+          "start": 24,
+          "end": 29,
+          "positions": [
+            {
+              "line": 25,
+              "column": 0
+            },
+            {
+              "line": 26,
+              "column": 0
+            },
+            {
+              "line": 27,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "python",
+          "text": "alpha = 1\nbeta = 2\n\ndelta = 4\nepsilon = 5",
+          "start": 14,
+          "end": 21
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "unlabeled one\nunlabeled two\nunlabeled three",
+          "start": 24,
+          "end": 29
+        }
+      ]
+    }
+  },
+  {
+    "name": "lazy fence interrupts blockquote paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "lazy paragraph inside blockquote",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence interrupts list item paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence after paragraph in list item",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "list inside blockquote with fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence after wide list marker",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "paren ordered list fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code after list paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "indented continuation",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "tab indent fence in list",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "blockquote indented code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "gt inside fence content is literal",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "> not a quote",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "> not a quote",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "> not a quote",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "list marker then fence with 4 space content",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "empty list item then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "nested blockquote list fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "setext dashes inside fence content",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "---",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "---",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "---",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "tilde fence closed by backticks",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "```",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "```",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "```",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "paragraph list fence interleaved",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "hr star between fences",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "a",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": "javascript",
+          "text": "b",
+          "start": 6,
+          "end": 9,
+          "positions": [
+            {
+              "line": 7,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "a",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": "javascript",
+          "text": "b",
+          "start": 6,
+          "end": 9,
+          "positions": [
+            {
+              "line": 7,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "a",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "b",
+          "start": 6,
+          "end": 9
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence in deeply nested blockquote",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 6
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 6
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "blank lines inside blockquote fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "\ncode",
+          "start": 0,
+          "end": 4,
+          "positions": [
+            {
+              "line": 1,
+              "column": 1
+            },
+            {
+              "line": 2,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "\ncode",
+          "start": 0,
+          "end": 4,
+          "positions": [
+            {
+              "line": 1,
+              "column": 1
+            },
+            {
+              "line": 2,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "\ncode",
+          "start": 0,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "list continuation blank then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "under-indented fence content in list",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1,
+          "positions": [
+            {
+              "line": 1,
+              "column": 4
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1,
+          "positions": [
+            {
+              "line": 1,
+              "column": 4
+            }
+          ]
+        },
+        {
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code trailing blanks",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "a",
+          "start": 0,
+          "end": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code blank between",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "a\n\nb",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "blockquote fence lazy then more quotes",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 2,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 2,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            }
+          ]
+        },
+        {
+          "language": null,
+          "text": "",
+          "start": 3,
+          "end": 4,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 2
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence in list unindented middle line",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 4,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 4,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        },
+        {
+          "language": null,
+          "text": "",
+          "start": 5,
+          "end": 6,
+          "positions": [
+            {
+              "line": 6,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 5,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "paragraph then indented code block",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code\n\nmore",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "fence in list after loose item text",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6,
+          "positions": [
+            {
+              "line": 4,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 3,
+          "end": 6
+        }
+      ]
+    }
+  },
+  {
+    "name": "blockquote fence closing too short",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code\n``",
+          "start": 0,
+          "end": 4,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            },
+            {
+              "line": 2,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code\n``",
+          "start": 0,
+          "end": 4,
+          "positions": [
+            {
+              "line": 1,
+              "column": 2
+            },
+            {
+              "line": 2,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code\n``",
+          "start": 0,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "tab after list marker content",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "space tab mixed indent fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "```js\ncode\n```",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "blank line closes blockquote fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        },
+        {
+          "language": null,
+          "text": "",
+          "start": 3,
+          "end": 4,
+          "positions": [
+            {
+              "line": 4,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": null,
+          "text": "",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "indented code ends at fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "fence",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "fence",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference interrupts paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "reference then fence no blank",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "heading interrupts paragraph then code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "table rows then indented code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 3,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "setext underline then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference gates ordered list interrupt",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 1,
+          "end": 2,
+          "positions": [
+            {
+              "line": 2,
+              "column": 8
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "",
+          "start": 1,
+          "end": 2,
+          "positions": [
+            {
+              "line": 2,
+              "column": 8
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "",
+          "start": 1,
+          "end": 2
+        },
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": " text\n> ```\n code\n```js\n<div>\n```js",
+          "start": 2,
+          "end": 9
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference multiline title then list",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 5,
+          "end": 8,
+          "positions": [
+            {
+              "line": 6,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 5,
+          "end": 8,
+          "positions": [
+            {
+              "line": 6,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 5,
+          "end": 8
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference title on next line",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference angle destination",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference paren destination",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference javascript rejected",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference unclosed title is not reference",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference empty label rejected",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4,
+          "positions": [
+            {
+              "line": 2,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 1,
+          "end": 4
+        }
+      ]
+    }
+  },
+  {
+    "name": "reference inside paragraph stays paragraph",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "setext dashes then indented code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "setext equals then tab code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "setext then list then fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "```js",
+          "start": 4,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "setext underline with trailing spaces",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 2,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "setext dash is hr when alone",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 1,
+          "end": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "trailing whitespace line after fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "trailing tab line after fence",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3,
+          "positions": [
+            {
+              "line": 1,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 0,
+          "end": 3
+        }
+      ]
+    }
+  },
+  {
+    "name": "trailing whitespace line after indented code",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "code_block",
+          "fenced": false,
+          "language": null,
+          "text": "code",
+          "start": 0,
+          "end": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "trailing whitespace only document",
+    "fencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": []
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": []
+    }
+  },
+  {
+    "name": "trailing whitespace line in list",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5,
+          "positions": [
+            {
+              "line": 3,
+              "column": 2
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "whitespace line then fence at eof",
+    "fencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 4,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "allFencedBlocks": {
+      "ok": true,
+      "value": [
+        {
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 4,
+          "positions": [
+            {
+              "line": 3,
+              "column": 0
+            }
+          ]
+        }
+      ]
+    },
+    "codeBlockTokens": {
+      "ok": true,
+      "value": [
+        {
+          "type": "fence",
+          "fenced": true,
+          "language": "javascript",
+          "text": "code",
+          "start": 2,
+          "end": 4
+        }
+      ]
+    }
+  }
+]

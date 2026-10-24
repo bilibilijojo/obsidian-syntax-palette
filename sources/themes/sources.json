@@ -1,0 +1,1031 @@
+{
+  "formatVersion": 1,
+  "defaults": {
+    "light": "atom-one-light",
+    "dark": "atom-one-dark"
+  },
+  "families": [
+    {
+      "id": "atom-one",
+      "name": "Atom One",
+      "presets": {
+        "light": "atom-one-light",
+        "dark": "atom-one-dark"
+      }
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "presets": {
+        "light": "github-light-default",
+        "dark": "github-dark-default"
+      }
+    },
+    {
+      "id": "ayu",
+      "name": "Ayu",
+      "presets": {
+        "light": "ayu-light",
+        "dark": "ayu-dark"
+      }
+    },
+    {
+      "id": "vscode",
+      "name": "VS Code Official",
+      "presets": {
+        "light": "vscode-light-modern",
+        "dark": "vscode-dark-modern"
+      }
+    },
+    {
+      "id": "catppuccin",
+      "name": "Catppuccin",
+      "presets": {
+        "light": "catppuccin-latte",
+        "dark": "catppuccin-mocha"
+      }
+    },
+    {
+      "id": "dracula",
+      "name": "Dracula",
+      "presets": {
+        "dark": "dracula-official"
+      }
+    },
+    {
+      "id": "tokyo-night",
+      "name": "Tokyo Night",
+      "presets": {
+        "light": "tokyo-night-light",
+        "dark": "tokyo-night-night"
+      }
+    },
+    {
+      "id": "one-dark-pro",
+      "name": "One Dark Pro",
+      "presets": {
+        "dark": "one-dark-pro"
+      }
+    },
+    {
+      "id": "night-owl",
+      "name": "Night Owl",
+      "presets": {
+        "light": "night-owl-light",
+        "dark": "night-owl-night"
+      }
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "presets": {
+        "dark": "nord"
+      }
+    },
+    {
+      "id": "solarized",
+      "name": "Solarized",
+      "presets": {
+        "light": "solarized-light",
+        "dark": "solarized-dark"
+      }
+    },
+    {
+      "id": "kanagawa",
+      "name": "Kanagawa",
+      "presets": {
+        "light": "kanagawa-lotus",
+        "dark": "kanagawa-wave"
+      }
+    },
+    {
+      "id": "material",
+      "name": "Material Theme",
+      "presets": {
+        "light": "material-lighter",
+        "dark": "material-default"
+      }
+    },
+    {
+      "id": "monokai",
+      "name": "Monokai",
+      "presets": {
+        "dark": "monokai"
+      }
+    },
+    {
+      "id": "min",
+      "name": "Min Theme",
+      "presets": {
+        "light": "min-light",
+        "dark": "min-dark"
+      }
+    }
+  ],
+  "themes": [
+    {
+      "id": "atom-one-light",
+      "family": "atom-one",
+      "name": "Atom One Light",
+      "appearance": "light",
+      "sourceFile": "sources/OneLight.json",
+      "source": {
+        "kind": "github-blob",
+        "project": "akamud/vscode-theme-onelight",
+        "version": "2.3.0",
+        "url": "https://github.com/akamud/vscode-theme-onelight/blob/master/themes/OneLight.json",
+        "gitBlobSha": "c4cca7664dd807352d99270e5a9610880760274b",
+        "localExtension": "akamud.vscode-theme-onelight-2.3.0"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/akamud-vscode-theme-onelight-MIT.txt",
+        "copyright": "Copyright (c) 2015 Mahmoud Ali"
+      }
+    },
+    {
+      "id": "atom-one-dark",
+      "family": "atom-one",
+      "name": "Atom One Dark",
+      "appearance": "dark",
+      "sourceFile": "sources/OneDark.json",
+      "source": {
+        "kind": "github-blob",
+        "project": "akamud/vscode-theme-onedark",
+        "version": "2.3.0",
+        "url": "https://github.com/akamud/vscode-theme-onedark/blob/master/themes/OneDark.json",
+        "gitBlobSha": "b8c574cc5e3d811afa0c281ec0f96ca8d343113d",
+        "localExtension": "akamud.vscode-theme-onedark-2.3.0"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/akamud-vscode-theme-onedark-MIT.txt",
+        "copyright": "Copyright (c) 2015 Mahmoud Ali"
+      }
+    },
+    {
+      "id": "github-light-default",
+      "family": "github",
+      "name": "GitHub Light Default",
+      "appearance": "light",
+      "sourceFile": "sources/themes/github/light-default.json",
+      "source": {
+        "kind": "vsix",
+        "project": "GitHub.github-vscode-theme",
+        "version": "6.3.5",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/github-vscode-theme/6.3.5/vspackage",
+        "pathInVsix": "extension/themes/light-default.json",
+        "upstream": "https://github.com/primer/github-vscode-theme",
+        "upstreamTag": "v6.3.5",
+        "upstreamCommit": "ad3f17519f2f7d7060afffac2b557c69c4534610"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/github-vscode-theme-MIT.txt",
+        "copyright": "Copyright (c) 2020 Primer"
+      }
+    },
+    {
+      "id": "github-dark-default",
+      "family": "github",
+      "name": "GitHub Dark Default",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/github/dark-default.json",
+      "source": {
+        "kind": "vsix",
+        "project": "GitHub.github-vscode-theme",
+        "version": "6.3.5",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/github-vscode-theme/6.3.5/vspackage",
+        "pathInVsix": "extension/themes/dark-default.json",
+        "upstream": "https://github.com/primer/github-vscode-theme",
+        "upstreamTag": "v6.3.5",
+        "upstreamCommit": "ad3f17519f2f7d7060afffac2b557c69c4534610"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/github-vscode-theme-MIT.txt",
+        "copyright": "Copyright (c) 2020 Primer"
+      }
+    },
+    {
+      "id": "github-dark-dimmed",
+      "family": "github",
+      "name": "GitHub Dark Dimmed",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/github/dark-dimmed.json",
+      "source": {
+        "kind": "vsix",
+        "project": "GitHub.github-vscode-theme",
+        "version": "6.3.5",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/github-vscode-theme/6.3.5/vspackage",
+        "pathInVsix": "extension/themes/dark-dimmed.json",
+        "upstream": "https://github.com/primer/github-vscode-theme",
+        "upstreamTag": "v6.3.5",
+        "upstreamCommit": "ad3f17519f2f7d7060afffac2b557c69c4534610"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/github-vscode-theme-MIT.txt",
+        "copyright": "Copyright (c) 2020 Primer"
+      }
+    },
+    {
+      "id": "ayu-light",
+      "family": "ayu",
+      "name": "Ayu Light",
+      "appearance": "light",
+      "sourceFile": "sources/themes/ayu/ayu-light.json",
+      "source": {
+        "kind": "vsix",
+        "project": "teabyii.ayu",
+        "version": "1.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=teabyii.ayu",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/teabyii/vsextensions/ayu/1.5.0/vspackage",
+        "pathInVsix": "extension/ayu-light.json",
+        "upstream": "https://github.com/ayu-theme/vscode-ayu"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/ayu-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2016 Ike Kurghinyan"
+      }
+    },
+    {
+      "id": "ayu-dark",
+      "family": "ayu",
+      "name": "Ayu Dark",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/ayu/ayu-dark.json",
+      "source": {
+        "kind": "vsix",
+        "project": "teabyii.ayu",
+        "version": "1.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=teabyii.ayu",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/teabyii/vsextensions/ayu/1.5.0/vspackage",
+        "pathInVsix": "extension/ayu-dark.json",
+        "upstream": "https://github.com/ayu-theme/vscode-ayu"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/ayu-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2016 Ike Kurghinyan"
+      }
+    },
+    {
+      "id": "ayu-mirage",
+      "family": "ayu",
+      "name": "Ayu Mirage",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/ayu/ayu-mirage.json",
+      "source": {
+        "kind": "vsix",
+        "project": "teabyii.ayu",
+        "version": "1.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=teabyii.ayu",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/teabyii/vsextensions/ayu/1.5.0/vspackage",
+        "pathInVsix": "extension/ayu-mirage.json",
+        "upstream": "https://github.com/ayu-theme/vscode-ayu"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/ayu-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2016 Ike Kurghinyan"
+      }
+    },
+    {
+      "id": "vscode-light-plus",
+      "family": "vscode",
+      "name": "VS Code Light+",
+      "appearance": "light",
+      "sourceFile": "sources/themes/vscode/light_plus.json",
+      "source": {
+        "kind": "vscode-builtin",
+        "project": "microsoft/vscode theme-defaults",
+        "vscodeVersion": "1.142.0",
+        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
+        "path": "extensions/theme-defaults/themes/light_plus.json",
+        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/light_plus.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/vscode-MIT.txt",
+        "copyright": "Copyright (c) 2015 - present Microsoft Corporation"
+      }
+    },
+    {
+      "id": "vscode-dark-plus",
+      "family": "vscode",
+      "name": "VS Code Dark+",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/vscode/dark_plus.json",
+      "source": {
+        "kind": "vscode-builtin",
+        "project": "microsoft/vscode theme-defaults",
+        "vscodeVersion": "1.142.0",
+        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
+        "path": "extensions/theme-defaults/themes/dark_plus.json",
+        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/dark_plus.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/vscode-MIT.txt",
+        "copyright": "Copyright (c) 2015 - present Microsoft Corporation"
+      }
+    },
+    {
+      "id": "vscode-light-modern",
+      "family": "vscode",
+      "name": "VS Code Light Modern",
+      "appearance": "light",
+      "sourceFile": "sources/themes/vscode/light_modern.json",
+      "source": {
+        "kind": "vscode-builtin",
+        "project": "microsoft/vscode theme-defaults",
+        "vscodeVersion": "1.142.0",
+        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
+        "path": "extensions/theme-defaults/themes/light_modern.json",
+        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/light_modern.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/vscode-MIT.txt",
+        "copyright": "Copyright (c) 2015 - present Microsoft Corporation"
+      }
+    },
+    {
+      "id": "vscode-dark-modern",
+      "family": "vscode",
+      "name": "VS Code Dark Modern",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/vscode/dark_modern.json",
+      "source": {
+        "kind": "vscode-builtin",
+        "project": "microsoft/vscode theme-defaults",
+        "vscodeVersion": "1.142.0",
+        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
+        "path": "extensions/theme-defaults/themes/dark_modern.json",
+        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/dark_modern.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/vscode-MIT.txt",
+        "copyright": "Copyright (c) 2015 - present Microsoft Corporation"
+      }
+    },
+    {
+      "id": "catppuccin-latte",
+      "family": "catppuccin",
+      "name": "Catppuccin Latte",
+      "appearance": "light",
+      "sourceFile": "sources/themes/catppuccin/latte.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Catppuccin.catppuccin-vsc",
+        "version": "3.19.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Catppuccin/vsextensions/catppuccin-vsc/3.19.0/vspackage",
+        "pathInVsix": "extension/themes/latte.json",
+        "upstream": "https://github.com/catppuccin/vscode"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/catppuccin-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2021 Catppuccin"
+      }
+    },
+    {
+      "id": "catppuccin-frappe",
+      "family": "catppuccin",
+      "name": "Catppuccin Frappé",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/catppuccin/frappe.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Catppuccin.catppuccin-vsc",
+        "version": "3.19.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Catppuccin/vsextensions/catppuccin-vsc/3.19.0/vspackage",
+        "pathInVsix": "extension/themes/frappe.json",
+        "upstream": "https://github.com/catppuccin/vscode"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/catppuccin-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2021 Catppuccin"
+      }
+    },
+    {
+      "id": "catppuccin-macchiato",
+      "family": "catppuccin",
+      "name": "Catppuccin Macchiato",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/catppuccin/macchiato.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Catppuccin.catppuccin-vsc",
+        "version": "3.19.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Catppuccin/vsextensions/catppuccin-vsc/3.19.0/vspackage",
+        "pathInVsix": "extension/themes/macchiato.json",
+        "upstream": "https://github.com/catppuccin/vscode"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/catppuccin-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2021 Catppuccin"
+      }
+    },
+    {
+      "id": "catppuccin-mocha",
+      "family": "catppuccin",
+      "name": "Catppuccin Mocha",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/catppuccin/mocha.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Catppuccin.catppuccin-vsc",
+        "version": "3.19.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Catppuccin/vsextensions/catppuccin-vsc/3.19.0/vspackage",
+        "pathInVsix": "extension/themes/mocha.json",
+        "upstream": "https://github.com/catppuccin/vscode"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/catppuccin-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2021 Catppuccin"
+      }
+    },
+    {
+      "id": "dracula-official",
+      "family": "dracula",
+      "name": "Dracula Official",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/dracula/dracula.json",
+      "source": {
+        "kind": "vsix",
+        "project": "dracula-theme.theme-dracula",
+        "version": "2.25.1",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/dracula-theme/vsextensions/theme-dracula/2.25.1/vspackage",
+        "pathInVsix": "extension/theme/dracula.json",
+        "upstream": "https://github.com/dracula/visual-studio-code"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/dracula-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2016 Dracula Theme"
+      }
+    },
+    {
+      "id": "tokyo-night-light",
+      "family": "tokyo-night",
+      "name": "Tokyo Night Light",
+      "appearance": "light",
+      "sourceFile": "sources/themes/tokyo-night/light.json",
+      "source": {
+        "kind": "vsix",
+        "project": "enkia/tokyo-night-vscode-theme",
+        "extensionId": "enkia.tokyo-night",
+        "version": "1.1.2",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/enkia/vsextensions/tokyo-night/1.1.2/vspackage",
+        "vsixSha256": "a16d1b90b2a29a9723cf14dbff28d285a823c954d4144835f7ca0f6d8e49da13",
+        "upstream": "https://github.com/tokyo-night/tokyo-night-vscode-theme",
+        "pathInVsix": "extension/themes/tokyo-night-light-color-theme.json",
+        "appearanceNote": "The official extension lists this file under uiTheme \"vs\" and it has a light editor background. Its JSON \"type\" field says \"dark\"; classification follows the official variant and its actual editor background."
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/tokyo-night-MIT.txt",
+        "copyright": "Copyright (c) 2018-present Enkia"
+      }
+    },
+    {
+      "id": "tokyo-night-night",
+      "family": "tokyo-night",
+      "name": "Tokyo Night",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/tokyo-night/night.json",
+      "source": {
+        "kind": "vsix",
+        "project": "enkia/tokyo-night-vscode-theme",
+        "extensionId": "enkia.tokyo-night",
+        "version": "1.1.2",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/enkia/vsextensions/tokyo-night/1.1.2/vspackage",
+        "vsixSha256": "a16d1b90b2a29a9723cf14dbff28d285a823c954d4144835f7ca0f6d8e49da13",
+        "upstream": "https://github.com/tokyo-night/tokyo-night-vscode-theme",
+        "pathInVsix": "extension/themes/tokyo-night-color-theme.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/tokyo-night-MIT.txt",
+        "copyright": "Copyright (c) 2018-present Enkia"
+      }
+    },
+    {
+      "id": "tokyo-night-storm",
+      "family": "tokyo-night",
+      "name": "Tokyo Night Storm",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/tokyo-night/storm.json",
+      "source": {
+        "kind": "vsix",
+        "project": "enkia/tokyo-night-vscode-theme",
+        "extensionId": "enkia.tokyo-night",
+        "version": "1.1.2",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/enkia/vsextensions/tokyo-night/1.1.2/vspackage",
+        "vsixSha256": "a16d1b90b2a29a9723cf14dbff28d285a823c954d4144835f7ca0f6d8e49da13",
+        "upstream": "https://github.com/tokyo-night/tokyo-night-vscode-theme",
+        "pathInVsix": "extension/themes/tokyo-night-storm-color-theme.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/tokyo-night-MIT.txt",
+        "copyright": "Copyright (c) 2018-present Enkia"
+      }
+    },
+    {
+      "id": "one-dark-pro",
+      "family": "one-dark-pro",
+      "name": "One Dark Pro",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/one-dark-pro/pro.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Binaryify/OneDark-Pro",
+        "extensionId": "zhuangtongfa.Material-theme",
+        "version": "3.20.3",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/zhuangtongfa/vsextensions/Material-theme/3.20.3/vspackage",
+        "vsixSha256": "745ef74d6573162487f96dd9478a2879ca67838020e881ad9c4a07f1452bba0b",
+        "upstream": "https://github.com/Binaryify/OneDark-Pro",
+        "marketplaceNameNote": "The Marketplace extension ID still uses the historical name zhuangtongfa.Material-theme; its display name is One Dark Pro.",
+        "pathInVsix": "extension/themes/OneDark-Pro.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/one-dark-pro-MIT.txt",
+        "copyright": "Copyright (c) 2013-2022 Binaryify"
+      }
+    },
+    {
+      "id": "one-dark-pro-darker",
+      "family": "one-dark-pro",
+      "name": "One Dark Pro Darker",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/one-dark-pro/darker.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Binaryify/OneDark-Pro",
+        "extensionId": "zhuangtongfa.Material-theme",
+        "version": "3.20.3",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/zhuangtongfa/vsextensions/Material-theme/3.20.3/vspackage",
+        "vsixSha256": "745ef74d6573162487f96dd9478a2879ca67838020e881ad9c4a07f1452bba0b",
+        "upstream": "https://github.com/Binaryify/OneDark-Pro",
+        "marketplaceNameNote": "The Marketplace extension ID still uses the historical name zhuangtongfa.Material-theme; its display name is One Dark Pro.",
+        "pathInVsix": "extension/themes/OneDark-Pro-darker.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/one-dark-pro-MIT.txt",
+        "copyright": "Copyright (c) 2013-2022 Binaryify"
+      }
+    },
+    {
+      "id": "one-dark-pro-flat",
+      "family": "one-dark-pro",
+      "name": "One Dark Pro Flat",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/one-dark-pro/flat.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Binaryify/OneDark-Pro",
+        "extensionId": "zhuangtongfa.Material-theme",
+        "version": "3.20.3",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/zhuangtongfa/vsextensions/Material-theme/3.20.3/vspackage",
+        "vsixSha256": "745ef74d6573162487f96dd9478a2879ca67838020e881ad9c4a07f1452bba0b",
+        "upstream": "https://github.com/Binaryify/OneDark-Pro",
+        "marketplaceNameNote": "The Marketplace extension ID still uses the historical name zhuangtongfa.Material-theme; its display name is One Dark Pro.",
+        "pathInVsix": "extension/themes/OneDark-Pro-flat.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/one-dark-pro-MIT.txt",
+        "copyright": "Copyright (c) 2013-2022 Binaryify"
+      }
+    },
+    {
+      "id": "night-owl-light",
+      "family": "night-owl",
+      "name": "Light Owl",
+      "appearance": "light",
+      "sourceFile": "sources/themes/night-owl/light-owl.json",
+      "source": {
+        "kind": "vsix",
+        "project": "sdras/night-owl-vscode-theme",
+        "extensionId": "sdras.night-owl",
+        "version": "2.1.1",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=sdras.night-owl",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/sdras/vsextensions/night-owl/2.1.1/vspackage",
+        "vsixSha256": "993be7530ff4d7ca7fd652538def6b6752495eae0d89a23477852746d86766d8",
+        "upstream": "https://github.com/sdras/night-owl-vscode-theme",
+        "pathInVsix": "extension/themes/Night Owl-Light-color-theme.json",
+        "sourceThemeLabel": "Night Owl Light",
+        "namingNote": "The official extension label is \"Night Owl Light\"; the project README also calls this daytime variant Light Owl. The plugin uses the shorter Light Owl label."
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/night-owl-MIT.txt",
+        "copyright": "Copyright (c) 2018 Sarah Drasner"
+      }
+    },
+    {
+      "id": "night-owl-night",
+      "family": "night-owl",
+      "name": "Night Owl",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/night-owl/night-owl.json",
+      "source": {
+        "kind": "vsix",
+        "project": "sdras/night-owl-vscode-theme",
+        "extensionId": "sdras.night-owl",
+        "version": "2.1.1",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=sdras.night-owl",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/sdras/vsextensions/night-owl/2.1.1/vspackage",
+        "vsixSha256": "993be7530ff4d7ca7fd652538def6b6752495eae0d89a23477852746d86766d8",
+        "upstream": "https://github.com/sdras/night-owl-vscode-theme",
+        "pathInVsix": "extension/themes/Night Owl-color-theme.json",
+        "sourceThemeLabel": "Night Owl"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/night-owl-MIT.txt",
+        "copyright": "Copyright (c) 2018 Sarah Drasner"
+      }
+    },
+    {
+      "id": "nord",
+      "family": "nord",
+      "name": "Nord",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/nord/nord.json",
+      "source": {
+        "kind": "vsix",
+        "project": "nordtheme/visual-studio-code",
+        "extensionId": "arcticicestudio.nord-visual-studio-code",
+        "version": "0.19.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=arcticicestudio.nord-visual-studio-code",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/arcticicestudio/vsextensions/nord-visual-studio-code/0.19.0/vspackage",
+        "vsixSha256": "6b06ea16fe98b98234b7333f41b1d14d4978076bcd51dcb9d85e273e6bfe7515",
+        "upstream": "https://github.com/nordtheme/visual-studio-code",
+        "upstreamTag": "v0.19.0",
+        "pathInVsix": "extension/themes/nord-color-theme.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/nord-MIT.txt",
+        "copyright": "Copyright (C) 2017-present Arctic Ice Studio and Sven Greb"
+      }
+    },
+    {
+      "id": "solarized-light",
+      "family": "solarized",
+      "name": "Solarized Light",
+      "appearance": "light",
+      "sourceFile": "sources/themes/solarized/light.json",
+      "source": {
+        "kind": "vsix",
+        "project": "ryanolsonx/vscode-solarized-theme",
+        "extensionId": "ryanolsonx.solarized",
+        "version": "3.0.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=ryanolsonx.solarized",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/solarized/3.0.0/vspackage",
+        "vsixSha256": "fe671a1f79acf32a9fcd395a7a31fcc624fbc22d7d3fb3dd51e592ffa47e1338",
+        "upstream": "https://github.com/ryanolsonx/vscode-solarized-theme",
+        "port": true,
+        "portOf": "Solarized by Ethan Schoonover (https://ethanschoonover.com/solarized/)",
+        "portNote": "This is the established MIT-licensed Solarized VS Code port by Ryan Olson. It is not published by the original Solarized author and is labeled here as a port, not as an official Solarized VS Code release.",
+        "pathInVsix": "extension/themes/solarized-light-color-theme.json",
+        "sourceThemeLabel": "Solarized Light+",
+        "appearanceNote": "The official extension declares uiTheme \"vs\" and the file has a light editor background. Its JSON \"type\" field says \"dark\"; classification follows the official light variant and its actual editor background."
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/solarized-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2018 Ryan Olson"
+      }
+    },
+    {
+      "id": "solarized-dark",
+      "family": "solarized",
+      "name": "Solarized Dark",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/solarized/dark.json",
+      "source": {
+        "kind": "vsix",
+        "project": "ryanolsonx/vscode-solarized-theme",
+        "extensionId": "ryanolsonx.solarized",
+        "version": "3.0.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=ryanolsonx.solarized",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/solarized/3.0.0/vspackage",
+        "vsixSha256": "fe671a1f79acf32a9fcd395a7a31fcc624fbc22d7d3fb3dd51e592ffa47e1338",
+        "upstream": "https://github.com/ryanolsonx/vscode-solarized-theme",
+        "port": true,
+        "portOf": "Solarized by Ethan Schoonover (https://ethanschoonover.com/solarized/)",
+        "portNote": "This is the established MIT-licensed Solarized VS Code port by Ryan Olson. It is not published by the original Solarized author and is labeled here as a port, not as an official Solarized VS Code release.",
+        "pathInVsix": "extension/themes/solarized-dark-color-theme.json",
+        "sourceThemeLabel": "Solarized Dark+"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/solarized-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2018 Ryan Olson"
+      }
+    },
+    {
+      "id": "kanagawa-lotus",
+      "family": "kanagawa",
+      "name": "Kanagawa Lotus",
+      "appearance": "light",
+      "sourceFile": "sources/themes/kanagawa/lotus.json",
+      "source": {
+        "kind": "vsix",
+        "project": "paccodes/kanagawa-vscode-theme",
+        "extensionId": "metaphore.kanagawa-vscode-color-theme",
+        "version": "1.2.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=metaphore.kanagawa-vscode-color-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/metaphore/vsextensions/kanagawa-vscode-color-theme/1.2.0/vspackage",
+        "vsixSha256": "e5cc9523a9807be8c6fa461005190a3732110d8a18e0ba56ef5c9a9a53441d13",
+        "upstream": "https://github.com/paccodes/kanagawa-vscode-theme",
+        "port": true,
+        "portOf": "Kanagawa.nvim by rebelot (https://github.com/rebelot/kanagawa.nvim)",
+        "portNote": "The MIT-licensed Kanagawa Flavors VS Code port includes all three official Kanagawa flavors (Wave, Dragon, Lotus) and credits rebelot as the original theme author. It is clearly labeled as a VS Code port, not an upstream rebelot release.",
+        "pathInVsix": "extension/themes/kanagawa-lotus-color-theme.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/kanagawa-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2025 Pierre-Alain Castella"
+      }
+    },
+    {
+      "id": "kanagawa-wave",
+      "family": "kanagawa",
+      "name": "Kanagawa Wave",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/kanagawa/wave.json",
+      "source": {
+        "kind": "vsix",
+        "project": "paccodes/kanagawa-vscode-theme",
+        "extensionId": "metaphore.kanagawa-vscode-color-theme",
+        "version": "1.2.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=metaphore.kanagawa-vscode-color-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/metaphore/vsextensions/kanagawa-vscode-color-theme/1.2.0/vspackage",
+        "vsixSha256": "e5cc9523a9807be8c6fa461005190a3732110d8a18e0ba56ef5c9a9a53441d13",
+        "upstream": "https://github.com/paccodes/kanagawa-vscode-theme",
+        "port": true,
+        "portOf": "Kanagawa.nvim by rebelot (https://github.com/rebelot/kanagawa.nvim)",
+        "portNote": "The MIT-licensed Kanagawa Flavors VS Code port includes all three official Kanagawa flavors (Wave, Dragon, Lotus) and credits rebelot as the original theme author. It is clearly labeled as a VS Code port, not an upstream rebelot release.",
+        "pathInVsix": "extension/themes/kanagawa-wave-color-theme.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/kanagawa-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2025 Pierre-Alain Castella"
+      }
+    },
+    {
+      "id": "kanagawa-dragon",
+      "family": "kanagawa",
+      "name": "Kanagawa Dragon",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/kanagawa/dragon.json",
+      "source": {
+        "kind": "vsix",
+        "project": "paccodes/kanagawa-vscode-theme",
+        "extensionId": "metaphore.kanagawa-vscode-color-theme",
+        "version": "1.2.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=metaphore.kanagawa-vscode-color-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/metaphore/vsextensions/kanagawa-vscode-color-theme/1.2.0/vspackage",
+        "vsixSha256": "e5cc9523a9807be8c6fa461005190a3732110d8a18e0ba56ef5c9a9a53441d13",
+        "upstream": "https://github.com/paccodes/kanagawa-vscode-theme",
+        "port": true,
+        "portOf": "Kanagawa.nvim by rebelot (https://github.com/rebelot/kanagawa.nvim)",
+        "portNote": "The MIT-licensed Kanagawa Flavors VS Code port includes all three official Kanagawa flavors (Wave, Dragon, Lotus) and credits rebelot as the original theme author. It is clearly labeled as a VS Code port, not an upstream rebelot release.",
+        "pathInVsix": "extension/themes/kanagawa-dragon-color-theme.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/kanagawa-vscode-MIT.txt",
+        "copyright": "Copyright (c) 2025 Pierre-Alain Castella"
+      }
+    },
+    {
+      "id": "material-default",
+      "family": "material",
+      "name": "Material Theme",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/material/default.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Material Theme (Mattia Astorino / Equinusocio)",
+        "extensionId": "Equinusocio.vsc-material-theme",
+        "version": "34.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/34.5.0/vspackage",
+        "vsixSha256": "91bb3a0d8935355c0a8e74eadc01dc1b2027e715177f0c81b0b2005c2187d8a0",
+        "upstream": "https://github.com/material-theme/vsc-material-theme",
+        "preservedSource": "https://github.com/antfu/vsc-material-theme",
+        "discontinued": true,
+        "licenseNote": "Official Marketplace release 34.5.0 is frozen for this plugin because it is the latest release verified to still ship the Apache-2.0 license text. Later 34.7.x releases changed to restrictive Material Theme/Vira terms and are not used. The upstream project was later rewritten; this snapshot is preserved from the official release asset.",
+        "pathInVsix": "extension/build/themes/Material-Theme-Default.json"
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/material-theme-Apache-2.0.txt",
+        "copyright": "Material Theme contributors (Mattia Astorino / Equinusocio); Apache-2.0 release 34.5.0"
+      }
+    },
+    {
+      "id": "material-darker",
+      "family": "material",
+      "name": "Material Theme Darker",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/material/darker.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Material Theme (Mattia Astorino / Equinusocio)",
+        "extensionId": "Equinusocio.vsc-material-theme",
+        "version": "34.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/34.5.0/vspackage",
+        "vsixSha256": "91bb3a0d8935355c0a8e74eadc01dc1b2027e715177f0c81b0b2005c2187d8a0",
+        "upstream": "https://github.com/material-theme/vsc-material-theme",
+        "preservedSource": "https://github.com/antfu/vsc-material-theme",
+        "discontinued": true,
+        "licenseNote": "Official Marketplace release 34.5.0 is frozen for this plugin because it is the latest release verified to still ship the Apache-2.0 license text. Later 34.7.x releases changed to restrictive Material Theme/Vira terms and are not used. The upstream project was later rewritten; this snapshot is preserved from the official release asset.",
+        "pathInVsix": "extension/build/themes/Material-Theme-Darker.json"
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/material-theme-Apache-2.0.txt",
+        "copyright": "Material Theme contributors (Mattia Astorino / Equinusocio); Apache-2.0 release 34.5.0"
+      }
+    },
+    {
+      "id": "material-palenight",
+      "family": "material",
+      "name": "Material Theme Palenight",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/material/palenight.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Material Theme (Mattia Astorino / Equinusocio)",
+        "extensionId": "Equinusocio.vsc-material-theme",
+        "version": "34.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/34.5.0/vspackage",
+        "vsixSha256": "91bb3a0d8935355c0a8e74eadc01dc1b2027e715177f0c81b0b2005c2187d8a0",
+        "upstream": "https://github.com/material-theme/vsc-material-theme",
+        "preservedSource": "https://github.com/antfu/vsc-material-theme",
+        "discontinued": true,
+        "licenseNote": "Official Marketplace release 34.5.0 is frozen for this plugin because it is the latest release verified to still ship the Apache-2.0 license text. Later 34.7.x releases changed to restrictive Material Theme/Vira terms and are not used. The upstream project was later rewritten; this snapshot is preserved from the official release asset.",
+        "pathInVsix": "extension/build/themes/Material-Theme-Palenight.json"
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/material-theme-Apache-2.0.txt",
+        "copyright": "Material Theme contributors (Mattia Astorino / Equinusocio); Apache-2.0 release 34.5.0"
+      }
+    },
+    {
+      "id": "material-ocean",
+      "family": "material",
+      "name": "Material Theme Ocean",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/material/ocean.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Material Theme (Mattia Astorino / Equinusocio)",
+        "extensionId": "Equinusocio.vsc-material-theme",
+        "version": "34.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/34.5.0/vspackage",
+        "vsixSha256": "91bb3a0d8935355c0a8e74eadc01dc1b2027e715177f0c81b0b2005c2187d8a0",
+        "upstream": "https://github.com/material-theme/vsc-material-theme",
+        "preservedSource": "https://github.com/antfu/vsc-material-theme",
+        "discontinued": true,
+        "licenseNote": "Official Marketplace release 34.5.0 is frozen for this plugin because it is the latest release verified to still ship the Apache-2.0 license text. Later 34.7.x releases changed to restrictive Material Theme/Vira terms and are not used. The upstream project was later rewritten; this snapshot is preserved from the official release asset.",
+        "pathInVsix": "extension/build/themes/Material-Theme-Ocean.json"
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/material-theme-Apache-2.0.txt",
+        "copyright": "Material Theme contributors (Mattia Astorino / Equinusocio); Apache-2.0 release 34.5.0"
+      }
+    },
+    {
+      "id": "material-lighter",
+      "family": "material",
+      "name": "Material Theme Lighter",
+      "appearance": "light",
+      "sourceFile": "sources/themes/material/lighter.json",
+      "source": {
+        "kind": "vsix",
+        "project": "Material Theme (Mattia Astorino / Equinusocio)",
+        "extensionId": "Equinusocio.vsc-material-theme",
+        "version": "34.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/34.5.0/vspackage",
+        "vsixSha256": "91bb3a0d8935355c0a8e74eadc01dc1b2027e715177f0c81b0b2005c2187d8a0",
+        "upstream": "https://github.com/material-theme/vsc-material-theme",
+        "preservedSource": "https://github.com/antfu/vsc-material-theme",
+        "discontinued": true,
+        "licenseNote": "Official Marketplace release 34.5.0 is frozen for this plugin because it is the latest release verified to still ship the Apache-2.0 license text. Later 34.7.x releases changed to restrictive Material Theme/Vira terms and are not used. The upstream project was later rewritten; this snapshot is preserved from the official release asset.",
+        "pathInVsix": "extension/build/themes/Material-Theme-Lighter.json"
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/material-theme-Apache-2.0.txt",
+        "copyright": "Material Theme contributors (Mattia Astorino / Equinusocio); Apache-2.0 release 34.5.0"
+      }
+    },
+    {
+      "id": "monokai",
+      "family": "monokai",
+      "name": "Monokai",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/vscode/monokai.json",
+      "source": {
+        "kind": "vscode-builtin",
+        "project": "microsoft/vscode theme-monokai",
+        "vscodeVersion": "1.142.0",
+        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
+        "path": "extensions/theme-monokai/themes/monokai-color-theme.json",
+        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-monokai/themes/monokai-color-theme.json",
+        "sourceThemeLabel": "Monokai",
+        "note": "Classic Monokai shipped as a built-in VS Code theme."
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/vscode-MIT.txt",
+        "copyright": "Copyright (c) 2015 - present Microsoft Corporation"
+      }
+    },
+    {
+      "id": "min-light",
+      "family": "min",
+      "name": "Min Light",
+      "appearance": "light",
+      "sourceFile": "sources/themes/min/light.json",
+      "source": {
+        "kind": "vsix",
+        "project": "miguelsolorio/min-theme",
+        "extensionId": "miguelsolorio.min-theme",
+        "version": "1.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=miguelsolorio.min-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/miguelsolorio/vsextensions/min-theme/1.5.0/vspackage",
+        "vsixSha256": "0c5ffd3a55a68e69d935106cda1934a8458ddfc45c81a71d565f5eef937c64c6",
+        "upstream": "https://github.com/miguelsolorio/min-theme",
+        "pathInVsix": "extension/themes/min-light.json"
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/min-theme-MIT.txt",
+        "copyright": "Copyright (c) 2018-2021 Miguel Solorio"
+      }
+    },
+    {
+      "id": "min-dark",
+      "family": "min",
+      "name": "Min Dark",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/min/dark.json",
+      "source": {
+        "kind": "vsix",
+        "project": "miguelsolorio/min-theme",
+        "extensionId": "miguelsolorio.min-theme",
+        "version": "1.5.0",
+        "marketplaceUrl": "https://marketplace.visualstudio.com/items?itemName=miguelsolorio.min-theme",
+        "downloadUrl": "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/miguelsolorio/vsextensions/min-theme/1.5.0/vspackage",
+        "vsixSha256": "0c5ffd3a55a68e69d935106cda1934a8458ddfc45c81a71d565f5eef937c64c6",
+        "upstream": "https://github.com/miguelsolorio/min-theme",
+        "pathInVsix": "extension/themes/min-dark.json",
+        "editorForegroundNote": "Min Dark does not define colors[\"editor.foreground\"]. The generator uses the official first default tokenColors foreground, matching VS Code TextMate fallback behavior."
+      },
+      "license": {
+        "spdx": "MIT",
+        "file": "sources/licenses/min-theme-MIT.txt",
+        "copyright": "Copyright (c) 2018-2021 Miguel Solorio"
+      }
+    }
+  ]
+}

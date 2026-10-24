@@ -1,0 +1,32 @@
+{
+  "light": {
+    "normal": "#383A42",
+    "comment": "#A0A1A7",
+    "keyword": "#A626A4",
+    "number": "#986801",
+    "string": "#50A14F",
+    "function": "#4078F2",
+    "class": "#C18401",
+    "variable": "#E45649",
+    "attribute": "#986801",
+    "builtin": "#0184BC",
+    "operator": "#383A42",
+    "regex": "#0184BC",
+    "css-fallback": "#696C77"
+  },
+  "dark": {
+    "normal": "#ABB2BF",
+    "comment": "#5C6370",
+    "keyword": "#C678DD",
+    "number": "#D19A66",
+    "string": "#98C379",
+    "function": "#61AFEF",
+    "class": "#E5C07B",
+    "variable": "#E06C75",
+    "attribute": "#D19A66",
+    "builtin": "#56B6C2",
+    "operator": "#C678DD",
+    "regex": "#56B6C2",
+    "css-fallback": "#828997"
+  }
+}

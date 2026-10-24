@@ -1,0 +1,358 @@
+{
+  "formatVersion": 1,
+  "sample": "# hash comment\ndef greet(name):\n    return \"hello\" + 42\n",
+  "note": "Expected values for the real-Obsidian 0.3.0 acceptance suite. Token colours are the official theme foregrounds resolved by vscode-textmate from the checked-in theme snapshots; backgrounds are the official editor.background values. They are not read from the plugin runtime during tests.",
+  "themes": {
+    "atom-one-light": {
+      "appearance": "light",
+      "family": "atom-one",
+      "background": "#FAFAFA",
+      "comment": "#A0A1A7",
+      "keyword": "#A626A4",
+      "string": "#50A14F",
+      "number": "#986801"
+    },
+    "atom-one-dark": {
+      "appearance": "dark",
+      "family": "atom-one",
+      "background": "#282C34",
+      "comment": "#5C6370",
+      "keyword": "#C678DD",
+      "string": "#98C379",
+      "number": "#D19A66"
+    },
+    "github-light-default": {
+      "appearance": "light",
+      "family": "github",
+      "background": "#FFFFFF",
+      "comment": "#6E7781",
+      "keyword": "#CF222E",
+      "string": "#0A3069",
+      "number": "#0550AE"
+    },
+    "github-dark-default": {
+      "appearance": "dark",
+      "family": "github",
+      "background": "#0D1117",
+      "comment": "#8B949E",
+      "keyword": "#FF7B72",
+      "string": "#A5D6FF",
+      "number": "#79C0FF"
+    },
+    "github-dark-dimmed": {
+      "appearance": "dark",
+      "family": "github",
+      "background": "#22272E",
+      "comment": "#768390",
+      "keyword": "#F47067",
+      "string": "#96D0FF",
+      "number": "#6CB6FF"
+    },
+    "ayu-light": {
+      "appearance": "light",
+      "family": "ayu",
+      "background": "#FCFCFC",
+      "comment": "#ADAEB1",
+      "keyword": "#FA8532",
+      "string": "#86B300",
+      "number": "#A37ACC"
+    },
+    "ayu-dark": {
+      "appearance": "dark",
+      "family": "ayu",
+      "background": "#10141C",
+      "comment": "#5A6673",
+      "keyword": "#FF8F40",
+      "string": "#AAD94C",
+      "number": "#D2A6FF"
+    },
+    "ayu-mirage": {
+      "appearance": "dark",
+      "family": "ayu",
+      "background": "#242936",
+      "comment": "#6E7C8F",
+      "keyword": "#FFA659",
+      "string": "#D5FF80",
+      "number": "#DFBFFF"
+    },
+    "vscode-light-plus": {
+      "appearance": "light",
+      "family": "vscode",
+      "background": "#FFFFFF",
+      "comment": "#008000",
+      "keyword": "#0000FF",
+      "string": "#A31515",
+      "number": "#098658"
+    },
+    "vscode-dark-plus": {
+      "appearance": "dark",
+      "family": "vscode",
+      "background": "#1E1E1E",
+      "comment": "#6A9955",
+      "keyword": "#569CD6",
+      "string": "#CE9178",
+      "number": "#B5CEA8"
+    },
+    "vscode-light-modern": {
+      "appearance": "light",
+      "family": "vscode",
+      "background": "#FFFFFF",
+      "comment": "#008000",
+      "keyword": "#0000FF",
+      "string": "#A31515",
+      "number": "#098658"
+    },
+    "vscode-dark-modern": {
+      "appearance": "dark",
+      "family": "vscode",
+      "background": "#1F1F1F",
+      "comment": "#6A9955",
+      "keyword": "#569CD6",
+      "string": "#CE9178",
+      "number": "#B5CEA8"
+    },
+    "catppuccin-latte": {
+      "appearance": "light",
+      "family": "catppuccin",
+      "background": "#EFF1F5",
+      "comment": "#7C7F93",
+      "keyword": "#8839EF",
+      "string": "#40A02B",
+      "number": "#FE640B"
+    },
+    "catppuccin-frappe": {
+      "appearance": "dark",
+      "family": "catppuccin",
+      "background": "#303446",
+      "comment": "#949CBB",
+      "keyword": "#CA9EE6",
+      "string": "#A6D189",
+      "number": "#EF9F76"
+    },
+    "catppuccin-macchiato": {
+      "appearance": "dark",
+      "family": "catppuccin",
+      "background": "#24273A",
+      "comment": "#939AB7",
+      "keyword": "#C6A0F6",
+      "string": "#A6DA95",
+      "number": "#F5A97F"
+    },
+    "catppuccin-mocha": {
+      "appearance": "dark",
+      "family": "catppuccin",
+      "background": "#1E1E2E",
+      "comment": "#9399B2",
+      "keyword": "#CBA6F7",
+      "string": "#A6E3A1",
+      "number": "#FAB387"
+    },
+    "dracula-official": {
+      "appearance": "dark",
+      "family": "dracula",
+      "background": "#282A36",
+      "comment": "#6272A4",
+      "keyword": "#FF79C6",
+      "string": "#F1FA8C",
+      "number": "#BD93F9"
+    },
+    "tokyo-night-light": {
+      "appearance": "light",
+      "family": "tokyo-night",
+      "background": "#E6E7ED",
+      "comment": "#888B94",
+      "keyword": "#65359D",
+      "string": "#385F0D",
+      "number": "#965027"
+    },
+    "tokyo-night-night": {
+      "appearance": "dark",
+      "family": "tokyo-night",
+      "background": "#1A1B26",
+      "comment": "#51597D",
+      "keyword": "#BB9AF7",
+      "string": "#9ECE6A",
+      "number": "#FF9E64"
+    },
+    "tokyo-night-storm": {
+      "appearance": "dark",
+      "family": "tokyo-night",
+      "background": "#24283B",
+      "comment": "#5F6996",
+      "keyword": "#BB9AF7",
+      "string": "#9ECE6A",
+      "number": "#FF9E64"
+    },
+    "one-dark-pro": {
+      "appearance": "dark",
+      "family": "one-dark-pro",
+      "background": "#282C34",
+      "comment": "#7F848E",
+      "keyword": "#C678DD",
+      "string": "#98C379",
+      "number": "#D19A66"
+    },
+    "one-dark-pro-darker": {
+      "appearance": "dark",
+      "family": "one-dark-pro",
+      "background": "#23272E",
+      "comment": "#7F848E",
+      "keyword": "#C678DD",
+      "string": "#98C379",
+      "number": "#D19A66"
+    },
+    "one-dark-pro-flat": {
+      "appearance": "dark",
+      "family": "one-dark-pro",
+      "background": "#282C34",
+      "comment": "#7F848E",
+      "keyword": "#C678DD",
+      "string": "#98C379",
+      "number": "#D19A66"
+    },
+    "night-owl-light": {
+      "appearance": "light",
+      "family": "night-owl",
+      "background": "#FBFBFB",
+      "comment": "#989FB1",
+      "keyword": "#994CC3",
+      "string": "#C96765",
+      "number": "#AA0982"
+    },
+    "night-owl-night": {
+      "appearance": "dark",
+      "family": "night-owl",
+      "background": "#011627",
+      "comment": "#637777",
+      "keyword": "#C792EA",
+      "string": "#ECC48D",
+      "number": "#F78C6C"
+    },
+    "nord": {
+      "appearance": "dark",
+      "family": "nord",
+      "background": "#2E3440",
+      "comment": "#616E88",
+      "keyword": "#81A1C1",
+      "string": "#A3BE8C",
+      "number": "#B48EAD"
+    },
+    "solarized-light": {
+      "appearance": "light",
+      "family": "solarized",
+      "background": "#FDF6E3",
+      "comment": "#586E75",
+      "keyword": "#93A1A1",
+      "string": "#2AA198",
+      "number": "#D33682"
+    },
+    "solarized-dark": {
+      "appearance": "dark",
+      "family": "solarized",
+      "background": "#002B36",
+      "comment": "#586E75",
+      "keyword": "#859900",
+      "string": "#2AA198",
+      "number": "#2AA198"
+    },
+    "kanagawa-lotus": {
+      "appearance": "light",
+      "family": "kanagawa",
+      "background": "#F2ECBC",
+      "comment": "#716E61",
+      "keyword": "#624C83",
+      "string": "#6F894E",
+      "number": "#B35B79"
+    },
+    "kanagawa-wave": {
+      "appearance": "dark",
+      "family": "kanagawa",
+      "background": "#1F1F28",
+      "comment": "#727169",
+      "keyword": "#957FB8",
+      "string": "#98BB6C",
+      "number": "#D27E99"
+    },
+    "kanagawa-dragon": {
+      "appearance": "dark",
+      "family": "kanagawa",
+      "background": "#181616",
+      "comment": "#737C73",
+      "keyword": "#8992A7",
+      "string": "#8A9A7B",
+      "number": "#A292A3"
+    },
+    "material-default": {
+      "appearance": "dark",
+      "family": "material",
+      "background": "#263238",
+      "comment": "#546E7A",
+      "keyword": "#C792EA",
+      "string": "#C3E88D",
+      "number": "#F78C6C"
+    },
+    "material-darker": {
+      "appearance": "dark",
+      "family": "material",
+      "background": "#212121",
+      "comment": "#545454",
+      "keyword": "#C792EA",
+      "string": "#C3E88D",
+      "number": "#F78C6C"
+    },
+    "material-palenight": {
+      "appearance": "dark",
+      "family": "material",
+      "background": "#292D3E",
+      "comment": "#676E95",
+      "keyword": "#C792EA",
+      "string": "#C3E88D",
+      "number": "#F78C6C"
+    },
+    "material-ocean": {
+      "appearance": "dark",
+      "family": "material",
+      "background": "#0F111A",
+      "comment": "#464B5D",
+      "keyword": "#C792EA",
+      "string": "#C3E88D",
+      "number": "#F78C6C"
+    },
+    "material-lighter": {
+      "appearance": "light",
+      "family": "material",
+      "background": "#FAFAFA",
+      "comment": "#90A4AE",
+      "keyword": "#9C3EDA",
+      "string": "#91B859",
+      "number": "#F76D47"
+    },
+    "monokai": {
+      "appearance": "dark",
+      "family": "monokai",
+      "background": "#272822",
+      "comment": "#88846F",
+      "keyword": "#66D9EF",
+      "string": "#E6DB74",
+      "number": "#AE81FF"
+    },
+    "min-light": {
+      "appearance": "light",
+      "family": "min",
+      "background": "#FFFFFF",
+      "comment": "#C2C3C5",
+      "keyword": "#D32F2F",
+      "string": "#22863A",
+      "number": "#1976D2"
+    },
+    "min-dark": {
+      "appearance": "dark",
+      "family": "min",
+      "background": "#1F1F1F",
+      "comment": "#6B737C",
+      "keyword": "#F97583",
+      "string": "#FFAB70",
+      "number": "#F8F8F8"
+    }
+  }
+}

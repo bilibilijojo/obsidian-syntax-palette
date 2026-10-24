@@ -1,0 +1,113 @@
+/*
+ * The rules that color note text are generated at runtime by highlight-style.cjs
+ * and contain only `color` declarations inside literal `::highlight()` rules.
+ * This static stylesheet is limited to the plugin's own settings and modal UI.
+ */
+.aof-settings .aof-intro,
+.aof-theme-modal .aof-intro {
+  margin-block: 0 1em;
+  color: var(--text-muted);
+}
+
+.aof-settings .aof-note {
+  margin-top: 1.5em;
+  color: var(--text-faint);
+  font-size: var(--font-ui-small);
+}
+
+.aof-settings .aof-status,
+.aof-theme-modal .aof-status {
+  margin: 1em 0;
+  padding: 0.65em 0.85em;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-small);
+  line-height: 1.6;
+}
+
+.aof-settings .aof-status-line {
+  display: flex;
+  gap: 0.35em;
+}
+
+.aof-settings .aof-status-label {
+  color: var(--text-muted);
+}
+
+.aof-settings .aof-status-warning {
+  margin-top: 0.4em;
+  color: var(--text-error);
+}
+
+.aof-settings .aof-preview-section h3 {
+  margin-bottom: 0.5em;
+}
+
+.aof-settings .aof-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.75em;
+}
+
+.aof-settings .aof-preview-block {
+  min-width: 0;
+  padding: 0.6em 0.75em;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+}
+
+.aof-settings .aof-preview-label {
+  margin-bottom: 0.35em;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.aof-settings .aof-preview-code {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-small);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Only the settings preview gets padding so the optional themed background is
+ * visible around the sample. Note code blocks are untouched. */
+.aof-settings .aof-preview-code--themed {
+  padding: 0.5em 0.65em;
+  border-radius: var(--radius-s);
+}
+
+.aof-settings .aof-preview-unavailable {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+
+.aof-theme-modal .modal-content {
+  min-width: min(30rem, 80vw);
+}
+
+.aof-diagnostics-summary {
+  margin-bottom: 0.75em;
+  padding: 0.65em 0.85em;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-small);
+  line-height: 1.6;
+}
+
+.aof-diagnostics-output {
+  width: 100%;
+  min-height: 18em;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.aof-diagnostics-actions .setting-item {
+  border: 0;
+  padding-top: 0.75em;
+}
