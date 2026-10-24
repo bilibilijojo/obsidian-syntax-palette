@@ -1,30 +1,75 @@
+[English](README.md) · [简体中文](README.zh-CN.md)
+
 # Syntax Palette
 
-**Syntax Palette** 是一个 Obsidian 桌面插件，只为 Markdown 围栏代码提供语法配色。
+**Make code blocks look the way you like.**
 
-| 项目 | 信息 |
-| --- | --- |
-| 插件 ID | `syntax-palette` |
-| 当前开发版本 | `0.5.2` |
-| 最低 Obsidian 版本 | `1.14.0` |
-| 平台 | 仅桌面版（`isDesktopOnly: true`） |
+Choose a syntax color palette for Markdown code blocks without changing the rest of your Obsidian theme. Your notes, app colors, and other parts of Obsidian keep their usual look.
 
-插件内置 15 个主题系列、39 个配色变体。浅色与深色主题可独立选择；另有彩色括号、代码块背景、行号和编辑视图自动换行选项。关闭自动换行时，每个代码块独立横向滚动。
+## See it in Obsidian
 
-本项目在首次公开发布前，从内部开发身份 **Atom One Fenced Syntax**（`atom-one-fenced-syntax`）更名。Obsidian 按插件 ID 保存设置，因此旧开发 ID 下的设置不会自动迁移。
+<p align="center">
+  <img src="docs/images/light-appearance.png" alt="Real Obsidian screenshot showing Syntax Palette colors in a light appearance; Chinese interface." width="49%" />
+  <img src="docs/images/dark-appearance.png" alt="Real Obsidian screenshot showing Syntax Palette colors in a dark appearance; Chinese interface." width="49%" />
+</p>
+<p align="center"><em>Light and dark appearances with different code palettes.</em></p>
 
-## 项目文件
+<p align="center">
+  <img src="docs/images/plugin-settings.png" alt="Real screenshot of the plugin settings page in Obsidian." width="32%" />
+</p>
+<p align="center"><em>The settings page lets you choose palettes and optional code-block features.</em></p>
 
-- `manifest.json`：正式插件身份和 Obsidian 元数据。
-- `plugin-src/`：插件实现、主题与语法资源、Node 测试。
-- `sources/`：上游主题快照、来源记录和完整第三方许可证文本。
-- `tools/`：构建、打包、资源准备和验证脚本。
-- `PLUGIN-README.md`：安装、设置、限制和故障排查。
-- `AI-HANDOFF.md`：架构、验证边界和开发交接。
+These are genuine screenshots from an isolated Obsidian test vault, captured with the v0.5.2 development build before the plugin was renamed from **Atom One Fenced Syntax**. The settings screenshot still shows that earlier name; the code colors and controls shown are real.
 
-`plugin/` 下的可安装目录和 ZIP 包由构建生成，不提交到仓库。
+## What changes — and what stays the same
 
-## 开发
+Obsidian's theme controls the whole app. Syntax Palette gives Markdown fenced code blocks their own color choices, so you can keep your favorite Obsidian theme and choose code colors that suit you.
+
+The palette applies inside fenced code blocks. It does not recolor regular text or inline code, and it never edits your Markdown content. An optional setting can also change the fenced block's background.
+
+## Choose a palette
+
+Pick from **39 color variants across 15 theme families**, including GitHub, Atom One, Catppuccin, Tokyo Night, Ayu, Dracula, Nord, and more. Choose a light palette and a dark palette separately, so each follows the matching Obsidian appearance.
+
+You can also:
+
+- Turn code-block backgrounds on or off. They are off by default.
+- Show line numbers, with each code block starting at 1. They are off by default and are not copied into your notes.
+- Choose whether long lines wrap in the editor (off by default). With wrapping off, each code block scrolls horizontally on its own; the rest of the note stays put.
+- Keep Obsidian's normal wrapping for regular text. The code-wrapping option only affects fenced code in the editor.
+
+Syntax coloring is available for common languages including Python, JavaScript and TypeScript, JSON, Bash, HTML, and CSS. Unsupported or untagged code blocks keep Obsidian's own syntax colors.
+
+## How to use it
+
+Once Syntax Palette is installed:
+
+1. Open **Settings → Community plugins → Syntax Palette**.
+2. Choose a palette for **Light mode** and another for **Dark mode**. You can use a family preset first, then adjust either choice separately.
+3. Turn on code-block backgrounds or line numbers if you want them.
+4. Set editor code wrapping to match how you like to read long lines.
+
+Changes apply immediately and are saved for your next Obsidian session.
+
+## Availability and installation
+
+Syntax Palette is **not currently listed in Obsidian Community plugins**, and this repository does not yet provide a published installer for the current `syntax-palette` plugin ID. There is no supported end-user installation method yet. The old `atom-one-fenced-syntax` development ZIP is not an installer for this renamed plugin.
+
+The project still needs a verified delivery path for one runtime file before a Community Plugins submission. We will add accurate installation steps here when a release package is available.
+
+## Compatibility and known limits
+
+- Desktop Obsidian only. iOS, iPadOS, and Android are not supported.
+- macOS has been tested with Obsidian 1.14.5. Windows and Linux are target platforms but have not yet been tested on those systems.
+- Pop-out windows are not supported.
+- The 39 built-in palettes cannot be extended with custom theme files.
+- When editor wrapping is off, long code lines use horizontal scrolling inside each fenced block.
+
+## For developers
+
+The plugin source is in `plugin-src/`; bundled theme data, source details, and third-party license texts are in `sources/`. See [theme provenance](THEME-PROVENANCE.md) for theme credits and licensing, and [AI-HANDOFF.md](AI-HANDOFF.md) for the development and testing notes.
+
+To build from source:
 
 ```sh
 npm ci
@@ -34,14 +79,4 @@ npm run package
 npm run verify-build
 ```
 
-`npm run prepare-assets` 依赖本机 VS Code 扩展文件，不是跨机器初始化步骤。主题 JSON 资源与来源记录已包含在仓库中。
-
-## 验证状态
-
-现有 0.5.2 验收覆盖 macOS Obsidian 和 macOS WKWebView。Windows、Linux 尚未实机验证；iOS、iPadOS 和 Android 不支持。本次仓库准备只调整发布前身份和构建元数据，没有运行构建或测试命令。
-
-## 许可与后续发布
-
-主题和语法资源的第三方许可文本保留在 `sources/licenses/`，构建时会汇总到 `THIRD-PARTY-NOTICES.txt`。正式公开发布或提交社区商店前，还需确定项目自身的许可证和最终作者身份。
-
-社区商店安装流程对单独的 `onig.wasm` 运行时资源仍需确认一个受支持的交付方案；本地 ZIP 能运行不代表商店安装器也会下载该文件。
+Third-party theme and grammar licenses are included in `sources/licenses/`. A project-wide license and public contribution process have not yet been finalized.
