@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 // Line-number presentation CSS. Disabled means the generated style element is

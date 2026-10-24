@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 // CM owns the editable line nodes. Never wrap/reparent them. Each decorated

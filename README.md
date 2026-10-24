@@ -53,9 +53,11 @@ Changes apply immediately and are saved for your next Obsidian session.
 
 ## Availability and installation
 
-Syntax Palette is **not currently listed in Obsidian Community plugins**, and this repository does not yet provide a published installer for the current `syntax-palette` plugin ID. There is no supported end-user installation method yet. The old `atom-one-fenced-syntax` development ZIP is not an installer for this renamed plugin.
+Syntax Palette is preparing its first public release and is **not yet listed in Obsidian Community plugins**. No public release has been published yet.
 
-The project still needs a verified delivery path for one runtime file before a Community Plugins submission. We will add accurate installation steps here when a release package is available.
+Once the release is available, you can install it manually by downloading `main.js`, `manifest.json`, and `styles.css` from the [GitHub release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases). Put all three files in your vault's `.obsidian/plugins/syntax-palette/` folder, reload Obsidian, and enable Syntax Palette under **Settings → Community plugins**. These three files contain everything the plugin needs; no additional WASM file is required.
+
+For a local source build, use those same three files from `plugin/syntax-palette/`. See the [installation notes](docs/INSTALLATION.md).
 
 ## Compatibility and known limits
 
@@ -67,7 +69,7 @@ The project still needs a verified delivery path for one runtime file before a C
 
 ## For developers
 
-The plugin source is in `plugin-src/`; bundled theme data, source details, and third-party license texts are in `sources/`. See [theme provenance](THEME-PROVENANCE.md) for theme credits and licensing, and [AI-HANDOFF.md](AI-HANDOFF.md) for the development and testing notes.
+The plugin source is in `plugin-src/`; bundled theme data, source details, and third-party license texts are in `sources/`. The build embeds the Oniguruma WASM payload into `main.js`, so the Community Plugins file set does not need a separate runtime asset. Full third-party notices ship in both `main.js` and `THIRD-PARTY-NOTICES.txt`. See [theme provenance](docs/THEME-PROVENANCE.md) for theme credits and licensing, and [development guide](docs/DEVELOPMENT.md) for the development and testing notes.
 
 To build from source:
 
@@ -79,4 +81,10 @@ npm run package
 npm run verify-build
 ```
 
-Third-party theme and grammar licenses are included in `sources/licenses/`. A project-wide license and public contribution process have not yet been finalized.
+## License
+
+Public author: [Frank](https://github.com/bilibilijojo). This project credit does not establish copyright ownership of historical code or third-party resources.
+
+Syntax Palette's own project code is offered under the [Apache License 2.0](LICENSE). Bundled themes, grammar files, parser-derived code, and runtime components keep their original licenses; see [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) for the notices and full license texts. The theme snapshots and their exact versions are documented in [THEME-PROVENANCE.md](docs/THEME-PROVENANCE.md).
+
+Before contributing, please open an issue to discuss the change. See [LICENSE-AUDIT.md](docs/release/LICENSE-AUDIT.md) and [RELEASE-AUDIT.md](docs/release/RELEASE-AUDIT.md) for the current owner-review items.

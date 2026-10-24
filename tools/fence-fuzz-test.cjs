@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 // Randomized differential fuzzer for the fence scanner.

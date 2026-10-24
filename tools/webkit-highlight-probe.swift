@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 // Headless WKWebView colour sampler.
 //
 // WKWebView uses the same WebKit engine as Safari on iOS and iPadOS, which is

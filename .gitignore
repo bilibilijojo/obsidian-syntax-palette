@@ -1,6 +1,7 @@
 # Dependencies and generated plugin packages
 node_modules/
 /plugin/
+/release-assets/
 /*.zip
 /*.zip.sha256
 
@@ -22,18 +23,34 @@ node_modules/
 *.swp
 *.swo
 .cache/
+.eslintcache
+.parcel-cache/
+.turbo/
 .nyc_output/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.coverage
 coverage/
 dist/
 build/
+test-results/
+playwright-report/
 tmp/
 temp/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local credentials and environment settings.
+.env
+.env.*
+!.env.example
+!.env.template
 
 # Deprecated one-off live audits are tied to the original local workspace/Vault.
-# Keep them in the checkout, but never put those paths into the remote repository.
+# Original copies are archived outside the project; keep any local re-creations out of Git.
 /tools/live-audit.js
 /tools/live-inspect.js
 /tools/plugin-live-audit.js

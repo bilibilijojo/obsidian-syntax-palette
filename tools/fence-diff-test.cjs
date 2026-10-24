@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 // Differential test for the fence scanner in plugin-src/fences.cjs.

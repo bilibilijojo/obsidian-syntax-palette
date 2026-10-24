@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 // Supplemental macOS WebKit DOM fixture. This is neither mobile Obsidian nor
 // a substitute for the real Obsidian acceptance suite.

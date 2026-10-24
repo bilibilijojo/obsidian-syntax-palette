@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 const crypto = require('node:crypto');
@@ -10,7 +13,7 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 
 const sourceManifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
 const out = path.join(root, 'plugin', sourceManifest.id);
 const required = [
-  'main.js', 'manifest.json', 'styles.css', 'onig.wasm', 'README.md',
+  'main.js', 'manifest.json', 'styles.css', 'README.md', 'LICENSE',
   'THIRD-PARTY-NOTICES.txt', 'theme-provenance.json', 'grammar-provenance.json', 'SHA256SUMS.txt',
 ];
 const problems = [];
@@ -21,6 +24,8 @@ function sha256(value) {
   return crypto.createHash('sha256').update(value).digest('hex');
 }
 
+check(!fs.existsSync(path.join(out, 'onig.wasm')), 'standalone onig.wasm must not be required or packaged');
+
 for (const file of required) check(fs.existsSync(path.join(out, file)), `missing ${file}`);
 if (problems.length) {
   console.error(problems.join('\n'));
@@ -28,11 +33,18 @@ if (problems.length) {
 }
 
 const manifest = JSON.parse(fs.readFileSync(path.join(out, 'manifest.json'), 'utf8'));
+check(sourceManifest.id === 'syntax-palette', `unexpected plugin id ${sourceManifest.id}`);
+check(sourceManifest.name === 'Syntax Palette', `unexpected plugin name ${sourceManifest.name}`);
+check(packageJson.name === 'obsidian-syntax-palette', `unexpected package name ${packageJson.name}`);
 check(manifest.id === sourceManifest.id, 'plugin id does not match root manifest');
 check(manifest.version === packageJson.version, `manifest version ${manifest.version} != package ${packageJson.version}`);
 check(manifest.name === sourceManifest.name, 'display name does not match root manifest');
+check(JSON.stringify(manifest) === JSON.stringify(sourceManifest), 'built manifest must exactly match the root manifest');
+check(manifest.author === 'Frank' && manifest.authorUrl === 'https://github.com/bilibilijojo', 'built manifest must retain the confirmed public author and homepage');
 check(manifest.minAppVersion === sourceManifest.minAppVersion, 'unexpected minAppVersion');
+check(manifest.description.length <= 250 && manifest.description.endsWith('.'), 'manifest description must be <=250 characters and end in a period');
 check(manifest.isDesktopOnly === true, 'plugin must be marked desktop-only');
+check(!/\bview\??\.editor\??\.cm\b|\.editor\.cm\b/.test(fs.readFileSync(path.join(root, 'plugin-src/main.cjs'), 'utf8')), 'runtime source must not reach through MarkdownView.editor.cm');
 
 const main = fs.readFileSync(path.join(out, 'main.js'), 'utf8');
 const asset = JSON.parse(fs.readFileSync(path.join(root, 'plugin-src/assets/themes.json'), 'utf8'));
@@ -42,6 +54,8 @@ for (const id of Object.keys(asset.themes)) check(main.includes(id), `bundle mis
 check(/require\("@codemirror\/state"\)/.test(main), 'StateEffect dependency should stay external');
 check(/require\("@codemirror\/view"\)/.test(main), 'CodeMirror view dependency should stay external');
 check(/require\("obsidian"\)/.test(main), 'obsidian dependency should stay external');
+const wasmBase64 = fs.readFileSync(path.join(root, 'node_modules/vscode-oniguruma/release/onig.wasm')).toString('base64');
+check(main.includes(wasmBase64), 'bundle must contain the complete vscode-oniguruma WASM payload');
 check(main.includes('aof-fenced-block') && main.includes('aof-fenced-line'), 'fenced background classes missing from bundle');
 check(main.includes('syntax-palette-background'), 'background style element missing from bundle');
 
@@ -60,7 +74,7 @@ check(main.includes('attr(data-aof-n)'), 'editor line numbers must render throug
 check(main.includes('aof-ln-inline'), 'bundle must keep the inline variant for quoted/list fences');
 check(main.includes('--aof-ln-gap'), 'bundle must expose the reading gutter gap variable');
 check(!main.includes('getBasePath'), 'bundle must not rely on the legacy adapter filesystem path');
-check(main.includes('readBinary'), 'bundle must load runtime resources through the vault adapter');
+check(!main.includes('readBinary'), 'bundle must not read an external WASM file from the vault');
 check(!main.includes('isMobile'), 'bundle must not inspect or report a mobile platform');
 check(!main.includes('orientationchange'), 'bundle must not retain a mobile rotation listener');
 // WebKit only paints a custom highlight on the element that owns
@@ -90,18 +104,27 @@ check(!wrapCss.includes('.cm-scroller'), 'wrap CSS must not assign horizontal ov
 check(!/\.cm-content\{?[^}]*white-space/.test(main), 'bundle must not disable wrapping for the whole editor');
 
 const notices = fs.readFileSync(path.join(out, 'THIRD-PARTY-NOTICES.txt'), 'utf8');
+check(notices.includes(fs.readFileSync(path.join(root, 'LICENSE'), 'utf8').trim()), 'distribution notices must include the project Apache-2.0 license');
+const embeddedNotices = notices.split(/\r?\n/).map((line) => `// ${line}`).join('\n');
+check(main.includes(embeddedNotices), 'main.js must carry the project and third-party license texts for standard store installs');
 for (const text of [
   'Atom One Light', 'GitHub Light Default', 'Ayu Light', 'Catppuccin Latte',
   'Dracula Official', 'VS Code Light+', 'Tokyo Night Light', 'One Dark Pro',
   'Light Owl', 'Nord', 'Solarized Light', 'Kanagawa Wave', 'Material Theme',
   'Monokai', 'Min Dark', 'Copyright (c) 2015 Mahmoud Ali',
-  'Apache License', '34.5.0 (Apache-2.0)',
+  'Apache License', '| 34.5.0 | Apache-2.0 |',
 ]) {
   check(notices.includes(text), `notices missing ${text}`);
 }
+check(!/\bundefined\b/.test(notices), 'third-party notices contain an unresolved upstream version');
 for (const file of fs.readdirSync(path.join(root, 'sources/licenses'))) {
   const license = fs.readFileSync(path.join(root, 'sources/licenses', file), 'utf8').trim();
-  check(notices.includes(license), `notices missing full text of ${file}`);
+  check(notices.includes(license), `distribution notices missing full text of ${file}`);
+}
+check(notices.includes(fs.readFileSync(path.join(root, 'sources/grammar-licenses.txt'), 'utf8').trim()), 'distribution notices missing grammar license texts');
+for (const file of fs.readdirSync(path.join(root, 'sources/notices'))) {
+  const notice = fs.readFileSync(path.join(root, 'sources/notices', file), 'utf8').trim();
+  check(notices.includes(notice), `distribution notices missing upstream notice ${file}`);
 }
 
 const sums = fs.readFileSync(path.join(out, 'SHA256SUMS.txt'), 'utf8').trim().split('\n');
@@ -128,6 +151,7 @@ check(!/pre\s*>\s*code/.test(styles), 'static styles must not target note code')
 const zipPath = path.join(root, `${manifest.id}-${manifest.version}.zip`);
 if (fs.existsSync(zipPath)) {
   const listing = execFileSync('unzip', ['-l', zipPath], { encoding: 'utf8' });
+  check(!listing.includes('onig.wasm'), 'zip must not ship a separate runtime WASM file');
   for (const file of required) check(listing.includes(file), `zip missing ${file}`);
   check(fs.existsSync(zipPath + '.sha256'), 'zip checksum missing');
   if (fs.existsSync(zipPath + '.sha256')) {

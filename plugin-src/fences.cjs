@@ -1,3 +1,8 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Adapted from markdown-it block-rule behavior; upstream notice is retained in
+ * sources/licenses/markdown-it-MIT.txt and THIRD-PARTY-NOTICES.txt.
+ */
 'use strict';
 
 // Block scanner for fenced and indented code blocks.

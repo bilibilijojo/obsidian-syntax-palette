@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 // Normalized theme catalog. The JSON asset is generated from the official,

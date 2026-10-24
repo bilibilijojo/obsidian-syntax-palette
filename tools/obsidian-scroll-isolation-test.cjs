@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 // Requires the disposable /tmp/aof-v040-test Obsidian at CDP 9333.
 // Real Chromium input events plus text geometry/visible character checks.

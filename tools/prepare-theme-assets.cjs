@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 // Rebuild plugin-src/assets/themes.json and sources/theme-provenance.json from

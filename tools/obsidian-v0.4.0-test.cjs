@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 // Real Obsidian desktop acceptance harness, originally introduced in v0.4.0
@@ -496,6 +499,8 @@ async function pagePrepare(args) {
   const plugin = app.plugins.plugins[pluginId];
   return {
     pluginVersion: app.plugins.manifests[pluginId]?.version,
+    pluginAuthor: app.plugins.manifests[pluginId]?.author,
+    pluginAuthorUrl: app.plugins.manifests[pluginId]?.authorUrl,
     appVersion: (() => {
       try {
         return app.appVersion || window.electron?.app?.getVersion?.() || null;
@@ -509,6 +514,8 @@ async function pagePrepare(args) {
       return match ? match[1] : null;
     })(),
     pluginReady: Boolean(plugin?.engineReady),
+    wasmSource: plugin?.wasmSource || null,
+    wasmBytes: plugin?.wasmBytes || 0,
     themeCount: Object.keys(plugin?.engine?.catalog?.THEMES || {}).length,
     familyCount: plugin?.engine?.catalog?.FAMILIES?.length,
     settings: plugin?.settings,
@@ -1574,6 +1581,8 @@ async function phasePrepare(context) {
   return {
     ...data,
     pass: data.pluginVersion === EXPECTED_VERSION && data.pluginReady &&
+      data.pluginAuthor === 'Frank' && data.pluginAuthorUrl === 'https://github.com/bilibilijojo' &&
+      data.wasmSource === 'embedded:main.js' && data.wasmBytes > 0 &&
       data.themeCount === 39 && data.familyCount === 15 &&
       data.file === NOTE && data.cssTheme === 'Minimal',
   };
@@ -1956,7 +1965,7 @@ async function phaseSettingsUI(context) {
     initial.toggleValues[2] === false &&
     initialStatus.includes('代码行号：关闭') &&
     initialStatus.includes('渲染方式：CSSCustomHighlight') &&
-    initialStatus.includes('引擎资源：vault内读取') &&
+    initialStatus.includes('引擎资源：内置') &&
     initial.previewBlocks === 2 && initial.previewSpans > 0 &&
     initial.preview[0].label.includes('主题背景 #FFFFFF') &&
     initial.preview[1].label.includes('主题背景 #24283B') &&
@@ -3992,7 +4001,7 @@ async function phaseLineNumberPersistence(context) {
   if (prepared.pluginVersion !== EXPECTED_VERSION) failures.push('wrong plugin version after restart');
   if (!after.settings || after.settings.lineNumbers !== true) failures.push('lineNumbers did not survive a restart');
   if (!after.engineReady) failures.push('engine not ready after restart');
-  if (!String(after.wasmSource || '').startsWith('adapter')) failures.push(`wasm loaded from ${after.wasmSource}`);
+  if (after.wasmSource !== 'embedded:main.js') failures.push('wasm loaded from ' + after.wasmSource);
   if (!after.numberedPres) failures.push('numbers missing after restart');
   if (!after.firstGutter.startsWith('1')) failures.push('numbering does not restart at 1');
   if (!after.lineNumberCss) failures.push('CSS missing after restart');

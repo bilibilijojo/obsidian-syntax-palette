@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 const EDITOR_LINE_SELECTOR = '.markdown-source-view.mod-cm6 .cm-line.aof-nowrap';

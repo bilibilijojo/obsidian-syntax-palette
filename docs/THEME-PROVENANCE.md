@@ -1,4 +1,4 @@
-# 主题来源与许可证（v0.3.0）
+# Theme provenance and licenses / 主题来源与许可证
 
 本插件内置 **15 个主题系列、39 个配色变体**。仓库中的 `sources/` 保存官方主题快照（部分原始文件为 JSONC，保留注释和尾逗号），`sources/themes/sources.json` 保存精确来源，`sources/theme-provenance.json` 保存每个源文件、许可证、归一化主题的 SHA-256，以及官方 `editor.foreground` / `editor.background` 的提取结果。
 

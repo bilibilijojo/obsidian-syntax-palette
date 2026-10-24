@@ -53,9 +53,11 @@ Obsidian 主题负责整个应用的外观。Syntax Palette 让 Markdown 围栏�
 
 ## 当前安装状态
 
-Syntax Palette **尚未上架 Obsidian 社区插件商店**，这个仓库也还没有发布适用于当前插件 ID `syntax-palette` 的安装包。目前还没有面向普通用户的安装方式。旧的 `atom-one-fenced-syntax` 开发版 ZIP 不是这个更名后插件的安装包。
+Syntax Palette 正在准备首次公开发布，**尚未上架 Obsidian 社区插件商店**，目前也尚未发布公开 Release。
 
-提交社区商店审核前，还需要确认一个运行时文件的安装交付方式。正式安装包发布后，我们会在这里补充准确的安装步骤。
+Release 发布后，可以从 [GitHub Release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) 下载 `main.js`、`manifest.json`、`styles.css`，将这三个文件放入 Vault 的 `.obsidian/plugins/syntax-palette/` 文件夹，重新加载 Obsidian，然后在 **设置 → 第三方插件** 中启用 Syntax Palette。这三个文件包含完整运行所需资源，无需另外补充 WASM 文件。
+
+本地从源码构建时，使用 `plugin/syntax-palette/` 中的同名三个文件即可。详见[安装说明](docs/INSTALLATION.md)。
 
 ## 兼容性与已知限制
 
@@ -67,7 +69,7 @@ Syntax Palette **尚未上架 Obsidian 社区插件商店**，这个仓库也还
 
 ## 开发者信息
 
-插件源码位于 `plugin-src/`；内置主题数据、来源记录和第三方许可证位于 `sources/`。主题署名和许可证见[主题来源说明](THEME-PROVENANCE.md)，开发与测试记录见 [AI-HANDOFF.md](AI-HANDOFF.md)。
+插件源码位于 `plugin-src/`；内置主题数据、来源记录和第三方许可证位于 `sources/`。构建时会把 Oniguruma WASM 内嵌到 `main.js`，社区插件安装文件中不需要另带运行时资源。完整第三方许可通知会随 `main.js` 和 `THIRD-PARTY-NOTICES.txt` 一同分发。主题署名和许可证见[主题来源说明](docs/THEME-PROVENANCE.md)，开发与测试记录见 [开发指南](docs/DEVELOPMENT.md)。
 
 从源码构建：
 
@@ -79,4 +81,10 @@ npm run package
 npm run verify-build
 ```
 
-主题和语法资源所需的第三方许可证文本都保存在 `sources/licenses/`。项目自身的许可证和面向公众的贡献流程尚未确定。
+## 许可证
+
+公开作者：[Frank](https://github.com/bilibilijojo)。此名称用于项目署名，不代表已确认历史代码或第三方资源的版权归属。
+
+Syntax Palette 自有项目代码采用 [Apache License 2.0](LICENSE)。内置主题、语法定义、源自第三方的解析代码和运行时组件继续遵循各自的原始许可证；相关声明和完整许可证文本见 [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)。主题快照及其准确版本记录在[主题来源说明](docs/THEME-PROVENANCE.md)中。
+
+贡献前请先通过 Issue 讨论拟议的修改。当前需要项目所有者复核的事项见 [LICENSE-AUDIT.md](docs/release/LICENSE-AUDIT.md) 和 [RELEASE-AUDIT.md](docs/release/RELEASE-AUDIT.md)。

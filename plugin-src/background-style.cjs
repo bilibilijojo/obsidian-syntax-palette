@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 const COLOR_RE = /^#[0-9a-f]{6}(?:[0-9a-f]{2})?$/i;

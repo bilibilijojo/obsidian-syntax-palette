@@ -1,3 +1,6 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
 'use strict';
 
 const { Plugin, PluginSettingTab, Setting, Modal, Notice, MarkdownRenderChild, editorInfoField } = require('obsidian');
@@ -21,6 +24,8 @@ const { buildLineNumberCss } = require('./line-number-style.cjs');
 const { buildWrapCss } = require('./wrap-style.cjs');
 const { EditorFenceScroll } = require('./editor-scroll.cjs');
 const { blockNumberRows, digitsFor, readingNumbering, READING_STYLE_PROPERTIES } = require('./line-numbers.cjs');
+// tools/build-plugin.cjs replaces this compile-time value with the locked WASM payload.
+const embeddedOnigWasmBase64 = __SYNTAX_PALETTE_ONIG_WASM_BASE64__;
 
 const PLUGIN_ID = 'syntax-palette';
 const refreshEffect = StateEffect.define();
@@ -53,9 +58,8 @@ function isWasmModule(bytes) {
   return Boolean(bytes && bytes.length >= 8 && WASM_MAGIC.every((value, index) => bytes[index] === value));
 }
 
-// Vault adapters are documented to return ArrayBuffer, but some WebView builds
-// hand back a typed array or a base64 string instead. Normalise first so the
-// failure message describes the real problem rather than "invalid wasm".
+// Normalize the embedded base64 payload (and test-provided byte arrays) before
+// handing it to vscode-oniguruma, so malformed bundles fail with a useful error.
 function toWasmBytes(buffer) {
   if (!buffer) return null;
   if (buffer instanceof ArrayBuffer) return new Uint8Array(buffer);
@@ -676,6 +680,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     // real change; it only removes the per-rescan redundant work.
     this.readingPreMemo = new WeakMap();
     this.editorRanges = new Map();
+    this.editorViews = new Set();
     // The highlight/fallback CSS only changes when the palette (or fallback
     // class) *set* changes, so the <style> rebuild is gated on this flag
     // instead of re-deriving the whole string on every scroll measure pass.
@@ -779,6 +784,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         this.builtLines = new Map();
         this.lineAttempts = new Map();
         this.view = view;
+        plugin.editorViews.add(view);
         this.loadDocument(view.state);
         this.fenceDecorations = this.buildFenceDecorations(view.state, this.allBlocks);
         this.lastTree = syntaxTree(view.state);
@@ -1094,6 +1100,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         this.fenceScroll.destroy();
         plugin.clearRanges(plugin.editorRanges.get(this.view));
         plugin.editorRanges.delete(this.view);
+        plugin.editorViews.delete(this.view);
         plugin.rebuildStyle();
       }
     }, {
@@ -1268,47 +1275,20 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     for (const leaf of this.app.workspace.getLeavesOfType('markdown')) leaf.view.previewMode?.rerender(true);
   }
 
-  // Read bundled resources through Obsidian's public vault adapter so the
-  // plugin does not depend on platform-specific filesystem paths.
+  // The community installer only downloads main.js, manifest.json, and
+  // optional styles.css. Keep Oniguruma inside main.js so runtime never
+  // depends on a separately installed WASM file.
   async loadWasmBytes() {
-    const adapter = this.app?.vault?.adapter;
-    if (!adapter || typeof adapter.readBinary !== 'function') {
-      throw new Error('Vault adapter cannot read binary resources');
+    const bytes = toWasmBytes(embeddedOnigWasmBase64);
+    if (!bytes || !bytes.byteLength) {
+      throw new Error('The build does not contain the embedded Oniguruma runtime');
     }
-    const configDir = this.app.vault.configDir || '.obsidian';
-    const candidates = [];
-    const push = (value) => {
-      if (!value) return;
-      const normalized = String(value).replace(/\\/g, '/').replace(/^\.?\//, '').replace(/\/+$/, '');
-      if (normalized && !candidates.includes(normalized)) candidates.push(normalized);
-    };
-    // Prefer Obsidian's resolved plugin directory, then try the documented
-    // config-folder locations for installations that do not expose it.
-    push(this.manifest.dir);
-    push(`${configDir}/plugins/${this.manifest.id}`);
-    push(`plugins/${this.manifest.id}`);
-
-    const errors = [];
-    for (const directory of candidates) {
-      const relativePath = `${directory}/onig.wasm`;
-      for (let attempt = 0; attempt < 2; attempt++) {
-        try {
-          const buffer = await adapter.readBinary(relativePath);
-          const bytes = toWasmBytes(buffer);
-          if (!bytes || !bytes.byteLength) throw new Error('empty resource');
-          if (!isWasmModule(bytes)) {
-            throw new Error(`not a WebAssembly module (${bytes.byteLength} bytes, magic ${bytes[0]}/${bytes[1]}/${bytes[2]}/${bytes[3]})`);
-          }
-          this.wasmSource = `adapter:${relativePath}`;
-          this.wasmBytes = bytes.byteLength;
-          return bytes;
-        } catch (error) {
-          errors.push(`${relativePath} (${error?.message || error})`);
-          await new Promise((resolve) => setTimeout(resolve, attempt ? 200 : 120));
-        }
-      }
+    if (!isWasmModule(bytes)) {
+      throw new Error('Embedded Oniguruma runtime is not a WebAssembly module (' + bytes.byteLength + ' bytes)');
     }
-    throw new Error(`Unable to read onig.wasm through the vault adapter: ${errors.join('; ')}`);
+    this.wasmSource = 'embedded:main.js';
+    this.wasmBytes = bytes.byteLength;
+    return bytes;
   }
 
   openSettings() {
@@ -1514,10 +1494,10 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     }
     // Even when the syntax engine is unavailable, the optional background and
     // its fenced-line decorations must react immediately to setting changes.
-    const views = new Set(this.editorRanges.keys());
-    for (const leaf of this.app.workspace.getLeavesOfType('markdown')) {
-      if (leaf.view?.editor?.cm) views.add(leaf.view.editor.cm);
-    }
+    // Keep the CodeMirror views from our registered extension. Reaching into
+    // The host's private CodeMirror reference is not needed to refresh the
+    // views owned by this registered plugin extension.
+    const views = new Set([...this.editorViews, ...this.editorRanges.keys()]);
     for (const view of views) {
       try {
         view.dispatch({ effects: refreshEffect.of(true) });
