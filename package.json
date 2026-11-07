@@ -1,7 +1,7 @@
 {
   "name": "obsidian-syntax-palette",
-  "version": "0.5.2",
-  "description": "Syntax color palettes for Markdown fenced code blocks in Obsidian Desktop.",
+  "version": "0.5.9",
+  "description": "Syntax color palettes for Markdown fenced code blocks in Obsidian.",
   "private": true,
   "repository": {
     "type": "git",

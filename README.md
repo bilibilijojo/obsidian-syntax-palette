@@ -53,19 +53,20 @@ Changes apply immediately and are saved for your next Obsidian session.
 
 ## Availability and installation
 
-Syntax Palette is preparing its first public release and is **not yet listed in Obsidian Community plugins**. No public release has been published yet.
+Check the [GitHub releases](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) and Obsidian Community plugins for the current publication status. This source build's experimental mobile support has not yet been validated on mobile devices.
 
-Once the release is available, you can install it manually by downloading `main.js`, `manifest.json`, and `styles.css` from the [GitHub release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases). Put all three files in your vault's `.obsidian/plugins/syntax-palette/` folder, reload Obsidian, and enable Syntax Palette under **Settings → Community plugins**. These three files contain everything the plugin needs; no additional WASM file is required.
+To install a published release manually, download `main.js`, `manifest.json`, and `styles.css` from the [GitHub release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases). Put all three files in your vault's `.obsidian/plugins/syntax-palette/` folder, reload Obsidian, and enable Syntax Palette under **Settings → Community plugins**. These three files contain everything the plugin needs; no additional WASM file is required.
 
 For a local source build, use those same three files from `plugin/syntax-palette/`. See the [installation notes](docs/INSTALLATION.md).
 
 ## Compatibility and known limits
 
-- Desktop Obsidian only. iOS, iPadOS, and Android are not supported.
+- Mobile installation is enabled for iOS, iPadOS, and Android as an experimental target. Real-device testing is still needed, especially for touch scrolling, selection, keyboard input, and rotation.
 - macOS has been tested with Obsidian 1.14.5. Windows and Linux are target platforms but have not yet been tested on those systems.
 - Pop-out windows are not supported.
 - The 39 built-in palettes cannot be extended with custom theme files.
 - When editor wrapping is off, long code lines use horizontal scrolling inside each fenced block.
+- On a narrow screen, enabling editor code wrapping can make long lines easier to edit.
 
 ## For developers
 

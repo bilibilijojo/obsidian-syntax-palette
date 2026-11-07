@@ -43,7 +43,7 @@ check(JSON.stringify(manifest) === JSON.stringify(sourceManifest), 'built manife
 check(manifest.author === 'Frank' && manifest.authorUrl === 'https://github.com/bilibilijojo', 'built manifest must retain the confirmed public author and homepage');
 check(manifest.minAppVersion === sourceManifest.minAppVersion, 'unexpected minAppVersion');
 check(manifest.description.length <= 250 && manifest.description.endsWith('.'), 'manifest description must be <=250 characters and end in a period');
-check(manifest.isDesktopOnly === true, 'plugin must be marked desktop-only');
+check(manifest.isDesktopOnly === false, 'plugin must allow mobile installation');
 check(!/\bview\??\.editor\??\.cm\b|\.editor\.cm\b/.test(fs.readFileSync(path.join(root, 'plugin-src/main.cjs'), 'utf8')), 'runtime source must not reach through MarkdownView.editor.cm');
 
 const main = fs.readFileSync(path.join(out, 'main.js'), 'utf8');
@@ -75,8 +75,6 @@ check(main.includes('aof-ln-inline'), 'bundle must keep the inline variant for q
 check(main.includes('--aof-ln-gap'), 'bundle must expose the reading gutter gap variable');
 check(!main.includes('getBasePath'), 'bundle must not rely on the legacy adapter filesystem path');
 check(!main.includes('readBinary'), 'bundle must not read an external WASM file from the vault');
-check(!main.includes('isMobile'), 'bundle must not inspect or report a mobile platform');
-check(!main.includes('orientationchange'), 'bundle must not retain a mobile rotation listener');
 // WebKit only paints a custom highlight on the element that owns
 // the text node, so the descendant form is required for nested token spans.
 // It must also exclude the line-number widget: WebKit paints the whole text of

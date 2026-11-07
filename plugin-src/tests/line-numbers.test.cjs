@@ -259,10 +259,11 @@ test('reading gutter is driven by CSS variables that cleanup can remove', () => 
   // Still cleaned up (0.4.2 wrote it inline) but deliberately not consumed.
   assert.ok(READING_STYLE_PROPERTIES.includes('--aof-ln-numw'));
   assert.ok(!css.includes('var(--aof-ln-numw'), 'the measured pixel column must not drive layout');
-  const gutter = /pre\.aof-ln-on > code \{[\s\S]*?padding-left:\s*(calc\([\s\S]*?\));/.exec(css);
+  const gutter = /pre\.aof-ln-on > code \{[\s\S]*?margin-left:\s*(calc\([\s\S]*?\));/.exec(css);
   assert.ok(gutter, 'missing reading gutter rule');
   assert.match(gutter[1], /--aof-ln-digits/);
   assert.match(gutter[1], /1ch/);
+  assert.match(css, /pre\.aof-ln-on > code \{[^}]*padding-left:\s*0;/s);
   assert.equal(new Set(READING_STYLE_PROPERTIES).size, READING_STYLE_PROPERTIES.length);
 });
 

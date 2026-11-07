@@ -53,19 +53,20 @@ Obsidian 主题负责整个应用的外观。Syntax Palette 让 Markdown 围栏�
 
 ## 当前安装状态
 
-Syntax Palette 正在准备首次公开发布，**尚未上架 Obsidian 社区插件商店**，目前也尚未发布公开 Release。
+当前公开发布及社区插件商店状态请以 [GitHub Release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) 和 Obsidian 社区插件商店为准。本源码版本的实验性移动端支持尚未经过移动设备验证。
 
-Release 发布后，可以从 [GitHub Release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) 下载 `main.js`、`manifest.json`、`styles.css`，将这三个文件放入 Vault 的 `.obsidian/plugins/syntax-palette/` 文件夹，重新加载 Obsidian，然后在 **设置 → 第三方插件** 中启用 Syntax Palette。这三个文件包含完整运行所需资源，无需另外补充 WASM 文件。
+如需手动安装已发布的 Release，可以从 [GitHub Release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) 下载 `main.js`、`manifest.json`、`styles.css`，将这三个文件放入 Vault 的 `.obsidian/plugins/syntax-palette/` 文件夹，重新加载 Obsidian，然后在 **设置 → 第三方插件** 中启用 Syntax Palette。这三个文件包含完整运行所需资源，无需另外补充 WASM 文件。
 
 本地从源码构建时，使用 `plugin/syntax-palette/` 中的同名三个文件即可。详见[安装说明](docs/INSTALLATION.md)。
 
 ## 兼容性与已知限制
 
-- 仅支持 Obsidian 桌面版；不支持 iOS、iPadOS 和 Android。
+- 已开放 iOS、iPadOS 和 Android 安装，移动端适配目前为实验性版本；触摸滚动、文本选择、键盘输入和屏幕旋转等仍需真机验证。
 - 已在 macOS / Obsidian 1.14.5 上测试。Windows 和 Linux 是目标平台，但尚未在这些系统上实机测试。
 - 暂不支持 Obsidian 弹出窗口（pop-out）。
 - 目前仅提供内置的 39 种配色，不能导入自定义主题文件。
 - 编辑视图关闭自动换行时，长代码行需要在各自的代码块内横向滚动查看。
+- 屏幕较窄时，可以在设置中开启编辑视图代码块自动换行，方便编辑长行。
 
 ## 开发者信息
 

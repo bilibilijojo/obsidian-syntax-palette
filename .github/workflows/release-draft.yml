@@ -102,7 +102,7 @@ jobs:
           gh release create "$RELEASE_VERSION" \
             --verify-tag \
             --draft \
-            --title "Syntax Palette ${RELEASE_VERSION} — Initial public release" \
+            --title "Syntax Palette ${RELEASE_VERSION}" \
             --notes-file "$notes" \
             "plugin/syntax-palette/main.js" \
             "plugin/syntax-palette/manifest.json" \

@@ -96,6 +96,17 @@ func evaluate(_ javascript: String) -> Any? {
 // Give layout fonts and any promise-driven setup a chance to settle.
 pump(1.5) { false }
 
+// Async geometry fixtures may still be awaiting animation frames after the
+// initial warm-up. Opt in to a bounded readiness check instead of assuming
+// every machine finishes those frames within 1.5 seconds.
+if arguments.contains("--wait-ready") {
+    let deadline = Date().addingTimeInterval(10)
+    while Date() < deadline {
+        if evaluate("Array.isArray(window.__probes)") as? Bool == true { break }
+        pump(0.05) { false }
+    }
+}
+
 let userAgent = evaluate("navigator.userAgent") as? String ?? "?"
 let metaRaw = evaluate("JSON.stringify(window.__meta || null)") as? String
 
@@ -106,6 +117,7 @@ guard
     let probes = try? JSONSerialization.jsonObject(with: rawData) as? [[String: Any]]
 else {
     print("{\"error\":\"page did not publish window.__probes\"}")
+    print(evaluate("JSON.stringify({stage:window.__stage,meta:window.__meta,ready:document.readyState})") ?? "no diagnostic")
     exit(3)
 }
 

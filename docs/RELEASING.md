@@ -1,11 +1,13 @@
-# First release and Community Plugins submission
+# Release and Community Plugins submission
 
-Status: local release preparation; not published or submitted.
+Status: local preparation. Check the current remote release and Community
+Plugins listing before taking publication steps.
 
-Use **0.5.2** for the first public release. It preserves the verified candidate
-version; the official guide permits `x.y.z` and does not require starting at
-`1.0.0`. The manifest, package, lockfile, tag, and release must agree. The tag must
-be exactly `0.5.2`, without a `v` prefix. Never replace an existing tag or release.
+The current source version is **0.5.9**. The manifest, package, lockfile, tag,
+and release must agree, with no `v` prefix on the tag. Never replace an existing
+tag or release. Mobile support is experimental and has not received real-device
+acceptance; verify it on the intended target platforms before describing it as
+fully supported.
 
 ## Owner review before publication
 
@@ -25,8 +27,7 @@ npm run package
 npm run verify-build
 ```
 
-The title is **Syntax Palette 0.5.2 — Initial public release**. The prepared
-release description is [0.5.2.md](releases/0.5.2.md). Standard release attachments:
+The current candidate notes are [0.5.9.md](releases/0.5.9.md). Standard release attachments:
 
 - `plugin/syntax-palette/main.js`
 - `plugin/syntax-palette/manifest.json`

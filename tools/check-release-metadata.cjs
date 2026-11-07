@@ -25,7 +25,7 @@ expect(packageJson.author?.name === manifest.author && packageJson.author?.url =
 expect(manifest.version === packageJson.version, 'manifest and package versions must match');
 expect(/^\d+\.\d+\.\d+$/.test(manifest.version), 'release version must use x.y.z format');
 expect(typeof manifest.minAppVersion === 'string' && /^\d+\.\d+\.\d+$/.test(manifest.minAppVersion), 'minAppVersion must use x.y.z format');
-expect(manifest.isDesktopOnly === true, 'manifest must mark the plugin desktop-only');
+expect(manifest.isDesktopOnly === false, 'manifest must allow mobile installation');
 expect(typeof manifest.description === 'string' && manifest.description.length <= 250 && manifest.description.endsWith('.'), 'manifest description must be <=250 characters and end with a period');
 expect(packageJson.private === true, 'package.json must remain private to prevent accidental npm publication');
 expect(packageJson.license === 'Apache-2.0' && lockfile.packages?.['']?.license === packageJson.license, 'project package license and lockfile must match Apache-2.0; third-party licenses remain separate');

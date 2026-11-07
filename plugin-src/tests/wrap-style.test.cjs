@@ -25,5 +25,12 @@ test('closing fence exposes a scrollbar without changing every code row height',
   const css=buildWrapCss({wrap:false});
   assert.match(css,/scrollbar-width: none/);
   assert.match(css,/\[data-aof-scroll-end\].*scrollbar-width: thin/);
-  assert.doesNotMatch(css,/touch-action|user-select|transform|contenteditable/);
+  assert.match(css,/\.aof-touch-scroll .*overflow: clip; touch-action: pan-y pinch-zoom/);
+  assert.match(css,/\.aof-scroll-content.*position: relative; left: var\(--aof-scroll-offset/);
+  assert.doesNotMatch(css,/user-select|transform|contenteditable/);
+});
+test('native mobile scrolling belongs to the block wrapper, with non-scrolling rows', () => {
+  const css = buildWrapCss({wrap:false});
+  assert.match(css, /\.aof-native-scroll \{ overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain/);
+  assert.match(css, /\.aof-native-blocks \.cm-line\.aof-nowrap \{ overflow: visible; box-sizing: border-box; min-width:/);
 });

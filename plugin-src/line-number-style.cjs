@@ -192,11 +192,10 @@ function readingRules() {
   white-space: pre;
   overflow-x: auto;
   overflow-y: hidden;
-  /* The gutter is reserved on the scroll container itself and depends only on
-     the number of digits, which is written to the element as soon as the block
-     is numbered. A re-measure can therefore never change this width: the text
-     keeps its column through scrolls, resizes and theme switches. */
-  padding-left: calc(var(--aof-ln-inset, 4px) + var(--aof-ln-digits, 2) * 1ch + var(--aof-ln-gap, 10px));
+  /* Reserve the gutter outside the scrollport: padding inside a scrollport
+     scrolls away and lets code paint underneath the fixed numbers. */
+  margin-left: calc(var(--aof-ln-inset, 4px) + var(--aof-ln-digits, 2) * 1ch + var(--aof-ln-gap, 10px));
+  padding-left: 0;
 }`,
     `${READING_PREFIX}::before {
   content: attr(data-aof-ln);

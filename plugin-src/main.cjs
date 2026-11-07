@@ -4,7 +4,7 @@
 'use strict';
 
 const { Plugin, PluginSettingTab, Setting, Modal, Notice, MarkdownRenderChild, editorInfoField } = require('obsidian');
-const { ViewPlugin, Decoration, WidgetType } = require('@codemirror/view');
+const { ViewPlugin, Decoration, WidgetType, EditorView, BlockWrapper } = require('@codemirror/view');
 const { StateEffect, RangeSetBuilder } = require('@codemirror/state');
 const { syntaxTree, tokenClassNodeProp } = require('@codemirror/language');
 const { SyntaxEngine, canonical } = require('./engine.cjs');
@@ -22,7 +22,7 @@ const { buildHighlightCss, buildFallbackCss, highlightName, highlightClass } = r
 const { buildBackgroundCss } = require('./background-style.cjs');
 const { buildLineNumberCss } = require('./line-number-style.cjs');
 const { buildWrapCss } = require('./wrap-style.cjs');
-const { EditorFenceScroll } = require('./editor-scroll.cjs');
+const { EditorFenceScroll, usesSharedTouchScroll } = require('./editor-scroll.cjs');
 const { blockNumberRows, digitsFor, readingNumbering, READING_STYLE_PROPERTIES } = require('./line-numbers.cjs');
 // tools/build-plugin.cjs replaces this compile-time value with the locked WASM payload.
 const embeddedOnigWasmBase64 = __SYNTAX_PALETTE_ONIG_WASM_BASE64__;
@@ -784,11 +784,15 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         this.builtLines = new Map();
         this.lineAttempts = new Map();
         this.view = view;
+        this.touchScroll = usesSharedTouchScroll(view);
+        this.nativeBlockScroll = this.touchScroll && Boolean(EditorView.blockWrappers && BlockWrapper?.create && BlockWrapper?.set);
+        this.sharedTouchScroll = this.touchScroll && !this.nativeBlockScroll;
         plugin.editorViews.add(view);
         this.loadDocument(view.state);
         this.fenceDecorations = this.buildFenceDecorations(view.state, this.allBlocks);
+        this.blockWrappers = this.buildBlockWrappers(view.state, this.allBlocks);
         this.lastTree = syntaxTree(view.state);
-        this.fenceScroll = new EditorFenceScroll(view, () => plugin.active && plugin.settings?.wrapCodeBlocks !== true);
+        this.fenceScroll = new EditorFenceScroll(view, () => plugin.active && plugin.settings?.wrapCodeBlocks !== true, this.touchScroll, this.nativeBlockScroll);
         this.schedule();
       }
 
@@ -800,12 +804,14 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         if (docChanged) {
           this.loadDocument(update.state);
           this.fenceDecorations = this.buildFenceDecorations(update.state, this.allBlocks);
+          this.blockWrappers = this.buildBlockWrappers(update.state, this.allBlocks);
           // Line numbers shift with every edit, so per-line bookkeeping from
           // before the change cannot be trusted.
           this.builtLines.clear();
           this.lineAttempts.clear();
         } else if (refresh) {
           this.fenceDecorations = this.buildFenceDecorations(update.state, this.allBlocks);
+          this.blockWrappers = this.buildBlockWrappers(update.state, this.allBlocks);
         }
         // A refresh (settings toggle, theme change) rebuilds the highlight
         // palettes, so every cached range points at a stale palette and the
@@ -901,6 +907,19 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         }
       }
 
+      buildBlockWrappers(state, blocks) {
+        if (!this.nativeBlockScroll || !plugin.active || plugin.settings?.wrapCodeBlocks === true) return Decoration.none;
+        const ranges = [];
+        for (const block of blocks) {
+          const first = state.doc.line(Math.max(1, block.start + 1));
+          const last = state.doc.line(Math.min(state.doc.lines, block.end));
+          ranges.push(BlockWrapper.create({ tagName: 'div', attributes: {
+            class: 'aof-native-scroll', 'data-aof-block': String(first.from), 'data-ignore-swipe': 'true',
+          } }).range(first.from, last.to));
+        }
+        return BlockWrapper.set(ranges, true);
+      }
+
       buildFenceDecorations(state, blocks) {
         const background = Boolean(plugin.settings?.codeBlockBackground);
         const numbers = Boolean(plugin.settings?.lineNumbers);
@@ -909,7 +928,9 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         // data.json) normalizes to false, i.e. no wrap, matching the default.
         const nowrap = plugin.settings ? plugin.settings.wrapCodeBlocks !== true : true;
         if (!plugin.active || (!background && !numbers && !nowrap)) return Decoration.none;
-        const builder = new RangeSetBuilder();
+        const decorations = [];
+        const add = (from, to, decoration) => decorations.push(decoration.range(from, to));
+        const sharedTouch = nowrap && this.sharedTouchScroll;
         for (const block of blocks) {
           const first = Math.max(1, block.start + 1);
           const last = Math.min(state.doc.lines, block.end);
@@ -919,9 +940,17 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
             const line = state.doc.line(lineNumber);
             if (nowrap) {
               const key = String(state.doc.line(first).from);
-              const attributes = { 'data-aof-scroll': key, style: `--aof-scroll-extent: var(--aof-block-width-${key}, 0px)` };
+              const attributes = { 'data-aof-scroll': key, style: `--aof-scroll-extent: var(--aof-block-width-${key}, 0px); --aof-scroll-offset: var(--aof-block-offset-${key}, 0px)` };
+              // Obsidian's mobile swipe recognizer runs on ancestors and does
+              // not check defaultPrevented. Its opt-out prevents clipped code
+              // rows from also dragging the workspace; native vertical pan is
+              // still allowed by touch-action.
+              if (sharedTouch || this.nativeBlockScroll) attributes['data-ignore-swipe'] = 'true';
               if (lineNumber === last) attributes['data-aof-scroll-end'] = '';
-              builder.add(line.from, line.from, Decoration.line({ attributes }));
+              add(line.from, line.from, Decoration.line({ attributes }));
+              if (sharedTouch && line.to > line.from) {
+                add(line.from, line.to, Decoration.mark({ class: 'aof-scroll-content' }));
+              }
             }
             // rows only contains code content lines, so fence markers stay
             // unnumbered and numbering restarts at 1 for every block. The
@@ -938,27 +967,27 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
                 // same line, so there is no gutter to reserve: padding the line
                 // would drag the marker out of alignment. The number stays
                 // inline after the marker, exactly where the code starts.
-                if (background || nowrap) builder.add(line.from, line.from, fenceLineDecoration(background, nowrap));
+                if (background || nowrap) add(line.from, line.from, fenceLineDecoration(background, nowrap));
                 const at = Math.min(line.to, line.from + row.column);
-                builder.add(at, at, lineNumberWidget(row.number, row.widthClass, true));
+                add(at, at, lineNumberWidget(row.number, row.widthClass, true));
               } else {
                 // Top-level fence: a real gutter. The number is CSS
                 // `::before` content on the line itself and the line reserves
                 // the column, so scrolling never moves the code, soft-wrapped
                 // rows start under the text (not under the number), and there
                 // is no widget to mount while scrolling.
-                builder.add(line.from, line.from, gutterLineDecoration(row.number, row.widthClass, background, nowrap));
+                add(line.from, line.from, gutterLineDecoration(row.number, row.widthClass, background, nowrap));
               }
               cursor++;
             } else if (background || nowrap) {
               // Fence marker lines carry the background for visual continuity
               // and the no-wrap class. EditorFenceScroll synchronizes these
               // native row scrollports without moving the Markdown editor.
-              builder.add(line.from, line.from, fenceLineDecoration(background, nowrap));
+              add(line.from, line.from, fenceLineDecoration(background, nowrap));
             }
           }
         }
-        return builder.finish();
+        return Decoration.set(decorations, true);
       }
 
       schedule() {
@@ -1105,6 +1134,9 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
       }
     }, {
       decorations: (value) => value.fenceDecorations,
+      provide: extension => EditorView.blockWrappers
+        ? EditorView.blockWrappers.of(view => view.plugin(extension)?.blockWrappers || Decoration.none)
+        : [],
     });
     this.registerEditorExtension(extension);
 
@@ -1133,7 +1165,13 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
             this.decorations = Decoration.none;
             return;
           }
-          if (update.docChanged || this.document !== update.state.doc || update.viewportChanged) {
+          // Settings changes dispatch a refresh effect without changing the
+          // document or viewport. The old marks contain the previous theme's
+          // colour classes, so they must be rebuilt on that transaction too.
+          const refresh = update.transactions.some((transaction) => (
+            transaction.effects.some((effect) => effect.is(refreshEffect))
+          ));
+          if (update.docChanged || this.document !== update.state.doc || update.viewportChanged || refresh) {
             this.decorations = this.build(update.state, update.view);
           }
         }

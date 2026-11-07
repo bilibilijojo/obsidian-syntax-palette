@@ -2284,13 +2284,13 @@ async function pageReadingNumbers(args) {
       // The reading gutter width is CSS-only now: inset + digits*1ch + gap,
       // with the digit count written by the plugin. Nothing horizontal is
       // measured at runtime, so the check recomputes that same expression from
-      // the live font metrics and compares it with the padding the browser
+      // the live font metrics and compares it with the margin the browser
       // actually resolved. Text position is not used: a horizontally scrolled
       // code block would move it without changing the gutter.
       const digits = Number(pre.style.getPropertyValue('--aof-ln-digits')) || 0;
       const chWidth = measureCharacter(code);
-      const codePaddingLeft = code ? parseFloat(getComputedStyle(code).paddingLeft) : NaN;
-      const expectedPadding = 4 + digits * chWidth + 10;
+      const codeGutterMargin = code ? parseFloat(getComputedStyle(code).marginLeft) : NaN;
+      const expectedMargin = 4 + digits * chWidth + 10;
       const rects = numbersOn ? lineRects(pre) : [];
       const deltas = [];
       const gaps = [];
@@ -2302,8 +2302,8 @@ async function pageReadingNumbers(args) {
         const center = rect.top + rect.height / 2;
         deltas.push(Number((center - (gutterTop + lineIndex * pitch + pitch / 2)).toFixed(2)));
       }
-      if (numbersOn && Number.isFinite(codePaddingLeft)) {
-        gaps.push(Number((codePaddingLeft - expectedPadding).toFixed(2)));
+      if (numbersOn && Number.isFinite(codeGutterMargin)) {
+        gaps.push(Number((codeGutterMargin - expectedMargin).toFixed(2)));
       }
       blocks.push({
         index,
@@ -2313,8 +2313,8 @@ async function pageReadingNumbers(args) {
         gutter,
         count,
         paddingLeft: preStyle.paddingLeft,
-        codePaddingLeft,
-        expectedPadding: Number(expectedPadding.toFixed(2)),
+        codeGutterMargin,
+        expectedMargin: Number(expectedMargin.toFixed(2)),
         codeDisplay: code ? getComputedStyle(code).display : null,
         codeWhiteSpace: code ? getComputedStyle(code).whiteSpace : null,
         gutterTop,
@@ -2404,11 +2404,11 @@ async function pageReadingNumbers(args) {
     if (block.maxDelta === null || block.maxDelta > 1.5) {
       failures.push(`pre ${block.index}: vertical misalignment ${block.maxDelta}`);
     }
-    // The code's padding-left must equal the gutter the stylesheet promises:
+    // The code's margin-left must equal the gutter the stylesheet promises:
     // inset (4px) + digits * 1ch + gap (10px). A drift means the number column
     // and the text column disagree, which is what "the text jumps" looked like.
     if (block.minGap === null || Math.abs(block.minGap) > 0.5) {
-      failures.push(`pre ${block.index}: gutter padding differs from digits*1ch (${block.minGap}px)`);
+      failures.push(`pre ${block.index}: gutter margin differs from digits*1ch (${block.minGap}px)`);
     }
     if (block.measuredLines + block.blankLines !== token.count) {
       failures.push(`pre ${block.index}: ${block.measuredLines}+${block.blankLines} lines != ${token.count}`);
@@ -4778,6 +4778,7 @@ const PHASES = {
   lineNumbersPersistence: phaseLineNumberPersistence,
   wrapCombinations: phaseWrapCombinations,
   scrollCost: phaseScrollCost,
+  scrollPerformance: (context) => require('./obsidian-scroll-performance-test.cjs').runScrollPerformance(context.main, EVIDENCE),
   scrollIsolation: (context) => require('./obsidian-scroll-isolation-test.cjs').runScrollIsolation(context.main, EVIDENCE),
 };
 
