@@ -3,7 +3,7 @@
 Status: local preparation. Check the current remote release and Community
 Plugins listing before taking publication steps.
 
-The current source version is **0.5.9**. The manifest, package, lockfile, tag,
+The current source version is **0.5.11**. The manifest, package, lockfile, tag,
 and release must agree, with no `v` prefix on the tag. Never replace an existing
 tag or release. Mobile support is experimental and has not received real-device
 acceptance; verify it on the intended target platforms before describing it as
@@ -27,7 +27,7 @@ npm run package
 npm run verify-build
 ```
 
-The current candidate notes are [0.5.9.md](releases/0.5.9.md). Standard release attachments:
+The current release notes are [0.5.11.md](releases/0.5.11.md). Standard release attachments:
 
 - `plugin/syntax-palette/main.js`
 - `plugin/syntax-palette/manifest.json`

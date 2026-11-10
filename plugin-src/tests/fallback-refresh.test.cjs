@@ -19,7 +19,7 @@ test('compatibility editor decorations follow theme changes without an edit or v
   const refreshEffect = {};
   let color = 'old';
   const plugin = {
-    active: true, engineReady: true, highlightSupported: false,
+    active: true, engineReady: true, highlightSupported: true, editorUsesMarks: true,
     engine: { highlight: () => [[{ from: 0, to: 3, light: color, dark: color }]] },
     fallbackClasses: new Map(), scheduleFallbackStyle() {},
   };

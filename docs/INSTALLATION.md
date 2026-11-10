@@ -1,6 +1,6 @@
 # Syntax Palette installation
 
-Syntax Palette 0.5.9 is an Obsidian plugin by Frank:
+Syntax Palette 0.5.11 is an Obsidian plugin by Frank:
 https://github.com/bilibilijojo
 
 Check GitHub releases and the Obsidian Community Plugins directory for the

@@ -30,6 +30,10 @@ function highlightClass(light, dark) {
   return CLASS_PREFIX + tokenSuffix(light, dark);
 }
 
+function useEditorMarks(highlightSupported, platform) {
+  return !highlightSupported || Boolean(platform?.isIosApp);
+}
+
 function codeHosts(mode) {
   return [
     `.theme-${mode} .markdown-rendered pre > code`,
@@ -88,8 +92,13 @@ function buildFallbackCss(classes) {
     .map(([className, palette]) => ({ className, light: assertColor(palette.light, className), dark: assertColor(palette.dark, className) }))
     .sort((a, b) => a.className.localeCompare(b.className))
     .map(({ className, light, dark }) => [
-      `${fallbackSelectorsFor('light', className).join(',\n')} { color: ${light}; }`,
-      `${fallbackSelectorsFor('dark', className).join(',\n')} { color: ${dark}; }`,
+      ...['light', 'dark'].map((mode) => {
+        const selectors = fallbackSelectorsFor(mode, className);
+        // Native syntax marks may be nested inside a CodeMirror decoration.
+        // An inherited colour alone cannot override their own token colour.
+        const descendants = selectors.map((selector) => `${selector} *`);
+        return `${[...selectors, ...descendants].join(',\n')} { color: ${mode === 'light' ? light : dark} !important; }`;
+      }),
     ].join('\n'))
     .join('\n');
 }
@@ -100,6 +109,7 @@ module.exports = {
   NUMBER_CLASS,
   highlightName,
   highlightClass,
+  useEditorMarks,
   buildHighlightCss,
   buildFallbackCss,
   selectorsFor,

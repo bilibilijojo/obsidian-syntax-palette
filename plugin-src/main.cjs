@@ -3,7 +3,7 @@
  */
 'use strict';
 
-const { Plugin, PluginSettingTab, Setting, Modal, Notice, MarkdownRenderChild, editorInfoField } = require('obsidian');
+const { Plugin, PluginSettingTab, Setting, Modal, Notice, MarkdownRenderChild, editorInfoField, Platform } = require('obsidian');
 const { ViewPlugin, Decoration, WidgetType, EditorView, BlockWrapper } = require('@codemirror/view');
 const { StateEffect, RangeSetBuilder } = require('@codemirror/state');
 const { syntaxTree, tokenClassNodeProp } = require('@codemirror/language');
@@ -18,7 +18,7 @@ const {
   familyOptions,
 } = require('./settings.cjs');
 const themeCatalog = require('./themes.cjs');
-const { buildHighlightCss, buildFallbackCss, highlightName, highlightClass } = require('./highlight-style.cjs');
+const { buildHighlightCss, buildFallbackCss, highlightName, highlightClass, useEditorMarks } = require('./highlight-style.cjs');
 const { buildBackgroundCss } = require('./background-style.cjs');
 const { buildLineNumberCss } = require('./line-number-style.cjs');
 const { buildWrapCss } = require('./wrap-style.cjs');
@@ -719,6 +719,10 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
       this.highlightMode = 'fallback';
     }
 
+    // iOS WebKit may paint partial custom highlights over entire native token
+    // nodes. Use CodeMirror decorations there even when the API is present.
+    this.editorUsesMarks = useEditorMarks(this.highlightSupported, Platform);
+
     try {
       this.settings = normalizeSettings(await this.loadData());
     } catch (error) {
@@ -853,7 +857,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
       // line. Coverage is the criterion, not "did the viewport change": a slow
       // scroll inside one tall block must still colour every newly shown line.
       needsRangeRebuild(state) {
-        if (!plugin.active || !plugin.engineReady) return false;
+        if (plugin.editorUsesMarks || !plugin.active || !plugin.engineReady) return false;
         if (syntaxTree(state) !== this.lastTree) return true;
         const wanted = this.visibleCodeLines(state);
         const entries = plugin.editorRanges.get(this.view) || [];
@@ -1008,7 +1012,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         const info = state.field(editorInfoField, false);
         const entries = plugin.editorRanges.get(view) || [];
         const empty = { drop: entries.slice(), add: [], rebuild: [], wanted: [], raw: new Map() };
-        if (!plugin.engineReady || !info?.file || info.file.extension !== 'md' || !plugin.active || !window.Highlight || !window.CSS?.highlights || view.dom.ownerDocument !== document) return empty;
+        if (plugin.editorUsesMarks || !plugin.engineReady || !info?.file || info.file.extension !== 'md' || !plugin.active || !window.Highlight || !window.CSS?.highlights || view.dom.ownerDocument !== document) return empty;
         if (this.document !== state.doc) this.loadDocument(state);
         const tree = syntaxTree(state);
         if (tree !== this.lastTree) {
@@ -1143,7 +1147,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     // Compatibility renderer for runtimes without the CSS Custom Highlight
     // API. CodeMirror mark decorations are view-only: the document text,
     // selection, undo history and clipboard payload stay untouched.
-    if (!this.highlightSupported) {
+    if (this.editorUsesMarks) {
       const markCache = new Map();
       const tokenMark = (className) => {
         let mark = markCache.get(className);
@@ -1157,11 +1161,12 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         constructor(view) {
           this.document = null;
           this.blocks = [];
+          this.lastTree = syntaxTree(view.state);
           this.decorations = this.build(view.state, view);
         }
 
         update(update) {
-          if (!plugin.active || !plugin.engineReady || plugin.highlightSupported) {
+          if (!plugin.active || !plugin.engineReady || !plugin.editorUsesMarks) {
             this.decorations = Decoration.none;
             return;
           }
@@ -1171,7 +1176,9 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
           const refresh = update.transactions.some((transaction) => (
             transaction.effects.some((effect) => effect.is(refreshEffect))
           ));
-          if (update.docChanged || this.document !== update.state.doc || update.viewportChanged || refresh) {
+          const tree = syntaxTree(update.state);
+          if (update.docChanged || this.document !== update.state.doc || update.viewportChanged || refresh || tree !== this.lastTree) {
+            this.lastTree = tree;
             this.decorations = this.build(update.state, update.view);
           }
         }
@@ -1246,7 +1253,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     this.registerMarkdownPostProcessor((el, ctx) => {
       if (!this.engineReady) return;
       for (const code of el.querySelectorAll('pre > code[class*="language-"]')) {
-        if (code.parentElement.classList.contains('frontmatter') || this.readingOriginals.has(code)) continue;
+        if (code.parentElement.classList.contains('frontmatter') || this.readingLanguages.has(code)) continue;
         const language = [...code.classList].find((name) => name.startsWith('language-'))?.slice(9);
         if (!canonical(language)) continue;
         const section = ctx.getSectionInfo(code);
@@ -1960,8 +1967,9 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
   colorReading(code, language, el, ctx) {
     this.readingLanguages.set(code, language);
     this.applyReading(code, language);
+    this.rebuildStyle();
     // Native Prism may finish asynchronously after the postprocessor. Rebuild
-    // only these ranges if it changes this fenced code's text nodes.
+    // this block if it changes the fenced code's text nodes.
     const observer = new MutationObserver(() => {
       if (!this.active) return;
       const currentLanguage = this.readingLanguages.get(code) || language;
@@ -1993,8 +2001,9 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
       // previous registration.
       this.clearRanges(this.readingOriginals.get(code));
       this.readingOriginals.delete(code);
-      if (this.highlightSupported) this.applyReadingRanges(code, language);
-      else this.applyReadingDom(code, language);
+      // WebKit can paint a whole native token for a partial custom highlight.
+      // Reading view uses precise wrappers even when the editor supports ranges.
+      this.applyReadingDom(code, language);
     } finally {
       if (observer && this.active) {
         observer.observe(code, { subtree: true, childList: true, characterData: true });
@@ -2044,10 +2053,8 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     this.readingOriginals.set(code, added.filter(Boolean));
   }
 
-  // Compatibility path for runtimes without the CSS Custom Highlight API
-  // (older WebKit builds and other WebViews). Each token is wrapped in a
-  // span carrying a themed class. Text content is never altered, so copying
-  // and search still see the original code.
+  // Reading tokens use spans to retain exact boundaries across native Prism
+  // nodes, including on WebKit. Text content remains unchanged for copy/search.
   applyReadingDom(code, language) {
     const text = code.textContent;
     const rows = this.engine.highlight(language, text);
@@ -2193,9 +2200,10 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     // has nothing to rebuild. The old path re-derived and re-compared the
     // entire 10KB+ string on every pass (16-21 times per scroll gesture).
     if (!this.styleDirty) return;
-    const next = this.highlightSupported
-      ? buildHighlightCss(this.readingPalettes)
-      : buildFallbackCss(this.fallbackClasses);
+    const next = [
+      this.highlightSupported ? buildHighlightCss(this.readingPalettes) : '',
+      buildFallbackCss(this.fallbackClasses),
+    ].filter(Boolean).join('\n');
     this.styleDirty = false;
     // Rewriting a <style> node invalidates every rule in it and forces a full
     // style recalculation, which is a visible hitch while scrolling. Skip the
@@ -2219,7 +2227,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
     this.readingObservers?.delete(code);
     this.clearRanges(this.readingOriginals.get(code));
     this.readingOriginals.delete(code);
-    if (!this.highlightSupported) this.unwrapReading(code);
+    this.unwrapReading(code);
     this.readingLanguages?.delete(code);
     this.rebuildStyle();
   }
@@ -2237,7 +2245,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
       }
     }
     this.readingPalettes?.clear();
-    if (!this.highlightSupported) {
+    {
       // Safety net: unwrap any token span that outlived its reading child.
       for (const span of [...(this.domTokenSpans || [])]) {
         const parent = span.parentNode;

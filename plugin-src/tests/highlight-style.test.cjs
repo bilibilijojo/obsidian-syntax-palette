@@ -8,6 +8,7 @@ const assert = require('node:assert/strict');
 const {
   highlightName,
   highlightClass,
+  useEditorMarks,
   buildHighlightCss,
   buildFallbackCss,
   selectorsFor,
@@ -92,10 +93,10 @@ test('fallback CSS is scoped, class based and colour only', () => {
   assert.ok(css.includes('.theme-light .markdown-rendered pre > code .aof-token-aabbcc-112233'), css);
   assert.ok(css.includes('.theme-dark .markdown-rendered pre > code .aof-token-aabbcc-112233'), css);
   assert.ok(css.includes('.theme-light .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock'), css);
-  assert.match(css, /\.aof-token-aabbcc-112233 \{ color: #AABBCC; \}/);
-  assert.match(css, /\.aof-token-aabbcc-112233 \{ color: #112233; \}/);
+  assert.match(css, /\.aof-token-aabbcc-112233 \* \{ color: #AABBCC !important; \}/);
+  assert.match(css, /\.aof-token-aabbcc-112233 \* \{ color: #112233 !important; \}/);
   assert.doesNotMatch(css, /::highlight/);
-  assert.doesNotMatch(css, /!important/i);
+  assert.match(css, /!important/i);
   const declarations = [...css.matchAll(/([\w-]+)\s*:\s*([^;{}]+);/g)];
   assert(declarations.length > 0);
   for (const declaration of declarations) assert.equal(declaration[1], 'color');
@@ -103,7 +104,7 @@ test('fallback CSS is scoped, class based and colour only', () => {
   for (const match of css.matchAll(/([^{}]+)\{/g)) {
     for (const selector of match[1].split(',').map((value) => value.trim()).filter(Boolean)) {
       assert.match(selector, /^\.theme-(light|dark) /);
-      assert.match(selector, /\.aof-token-[0-9a-f-]+$/);
+      assert.match(selector, /\.aof-token-[0-9a-f-]+(?: \*)?$/);
       assert.match(selector, /pre > code|\.cm-line\.HyperMD-codeblock/);
     }
   }
@@ -117,4 +118,10 @@ test('fallback selectors never touch inline code or prose', () => {
     assert.match(selector, /pre > code|\.cm-line\.HyperMD-codeblock/);
     assert.ok(selector.endsWith('.aof-token-aabbcc-112233'), selector);
   }
+});
+
+test('iOS uses editor marks even when custom highlights are available', () => {
+  assert.equal(useEditorMarks(true, { isIosApp: true }), true);
+  assert.equal(useEditorMarks(true, { isIosApp: false }), false);
+  assert.equal(useEditorMarks(false, { isIosApp: false }), true);
 });
