@@ -9,7 +9,7 @@ npm run package
 npm run verify-build
 ```
 
-`npm run verify` checks all 39 theme variants, license notices, project metadata,
+`npm run verify` checks all 40 theme variants, license notices, project metadata,
 and the core automated tests. Packaging builds the plugin and creates a ZIP with
 fixed timestamps, plus a SHA-256 sidecar. No production resources are downloaded
 at build time.

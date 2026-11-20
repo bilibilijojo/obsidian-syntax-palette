@@ -164,10 +164,11 @@ const expectedThemeColors = {
   'ayu-light': {comment:'#ADAEB1',keyword:'#FA8532',string:'#86B300',number:'#A37ACC'},
   'ayu-dark': {comment:'#5A6673',keyword:'#FF8F40',string:'#AAD94C',number:'#D2A6FF'},
   'ayu-mirage': {comment:'#6E7C8F',keyword:'#FFA659',string:'#D5FF80',number:'#DFBFFF'},
-  'vscode-light-plus': {comment:'#008000',keyword:'#0000FF',string:'#A31515',number:'#098658'},
-  'vscode-dark-plus': {comment:'#6A9955',keyword:'#569CD6',string:'#CE9178',number:'#B5CEA8'},
-  'vscode-light-modern': {comment:'#008000',keyword:'#0000FF',string:'#A31515',number:'#098658'},
-  'vscode-dark-modern': {comment:'#6A9955',keyword:'#569CD6',string:'#CE9178',number:'#B5CEA8'},
+  'vscode-light-2026': {comment:'#6E7781',keyword:'#CF222E',string:'#0A3069',number:'#098658'},
+  'vscode-dark-2026': {comment:'#8B949E',keyword:'#FF7B72',string:'#A5D6FF',number:'#B5CEA8'},
+  'jetbrains-light': {comment:'#8C8C8C',keyword:'#0033B3',string:'#067D17',number:'#1750EB'},
+  'jetbrains-darcula': {comment:'#808080',keyword:'#CC7832',string:'#6A8759',number:'#6897BB'},
+  'jetbrains-dark': {comment:'#7A7E85',keyword:'#CF8E6D',string:'#6AAB73',number:'#2AACB8'},
   'catppuccin-latte': {comment:'#7C7F93',keyword:'#8839EF',string:'#40A02B',number:'#FE640B'},
   'catppuccin-frappe': {comment:'#949CBB',keyword:'#CA9EE6',string:'#A6D189',number:'#EF9F76'},
   'catppuccin-macchiato': {comment:'#939AB7',keyword:'#C6A0F6',string:'#A6DA95',number:'#F5A97F'},
@@ -203,8 +204,8 @@ function segmentAt(rows,text,needle,offset=0){
   const line=before.length-1,column=before[line].length;
   return rows[line].find(segment=>segment.from<=column&&segment.to>column);
 }
-test('All 39 theme variants load with their official foreground colors',async()=>{
-  assert.equal(themeCatalog.THEME_LIST.length,39);
+test('All 40 theme variants load with their expected foreground colors',async()=>{
+  assert.equal(themeCatalog.THEME_LIST.length,40);
   for(const theme of themeCatalog.THEME_LIST){
     const light=theme.appearance==='light'?theme.id:'atom-one-light';
     const dark=theme.appearance==='dark'?theme.id:'atom-one-dark';

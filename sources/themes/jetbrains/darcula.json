@@ -1,0 +1,205 @@
+{
+  "name": "Darcula",
+  "type": "dark",
+  "description": "Adapted from the JetBrains IntelliJ IDEA editor scheme by Syntax Palette. XML attributes were mapped to TextMate foreground rules. Apache-2.0. Copyright (C) JetBrains s.r.o.",
+  "colors": {
+    "editor.foreground": "#A9B7C6",
+    "editor.background": "#2B2B2B"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "foreground": "#808080"
+      }
+    },
+    {
+      "scope": [
+        "comment.block"
+      ],
+      "settings": {
+        "foreground": "#808080"
+      }
+    },
+    {
+      "scope": [
+        "comment.block.documentation",
+        "comment.line.documentation"
+      ],
+      "settings": {
+        "foreground": "#629755"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#CC7832"
+      }
+    },
+    {
+      "scope": [
+        "string",
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#6A8759"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#CC7832"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric"
+      ],
+      "settings": {
+        "foreground": "#6897BB"
+      }
+    },
+    {
+      "scope": [
+        "constant.language",
+        "constant.other",
+        "variable.other.constant"
+      ],
+      "settings": {
+        "foreground": "#9876AA"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.type",
+        "support.class",
+        "support.type"
+      ],
+      "settings": {
+        "foreground": "#769AA5"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function"
+      ],
+      "settings": {
+        "foreground": "#FFC66D"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function.decorator",
+        "storage.type.annotation"
+      ],
+      "settings": {
+        "foreground": "#BBB529"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.property",
+        "variable.other.object.property"
+      ],
+      "settings": {
+        "foreground": "#9876AA"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.separator.comma"
+      ],
+      "settings": {
+        "foreground": "#CC7832"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.terminator.statement"
+      ],
+      "settings": {
+        "foreground": "#CC7832"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name"
+      ],
+      "settings": {
+        "foreground": "#0000FF"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.entity"
+      ],
+      "settings": {
+        "foreground": "#0000FF"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag.html"
+      ],
+      "settings": {
+        "foreground": "#E8BF6A"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name.html"
+      ],
+      "settings": {
+        "foreground": "#BABABA"
+      }
+    },
+    {
+      "scope": [
+        "meta.tag.html string"
+      ],
+      "settings": {
+        "foreground": "#A5C261"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.entity.html"
+      ],
+      "settings": {
+        "foreground": "#6D9CBE"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag.xml"
+      ],
+      "settings": {
+        "foreground": "#E8BF6A"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name.xml"
+      ],
+      "settings": {
+        "foreground": "#BABABA"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.entity.xml"
+      ],
+      "settings": {
+        "foreground": "#6D9CBE"
+      }
+    }
+  ]
+}

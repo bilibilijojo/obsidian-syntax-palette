@@ -1,9 +1,9 @@
 {
   "id": "syntax-palette",
   "name": "Syntax Palette",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "minAppVersion": "1.14.5",
-  "description": "Syntax coloring for Markdown fenced code, with 15 theme families and optional backgrounds, line numbers, and editor wrapping.",
+  "description": "Syntax coloring for Markdown fenced code, with 16 theme families and optional backgrounds, line numbers, and editor wrapping.",
   "author": "Frank",
   "isDesktopOnly": false,
   "authorUrl": "https://github.com/bilibilijojo"

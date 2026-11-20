@@ -66,7 +66,7 @@ function sameSettings(a, b) {
 function themeOptions(appearance) {
   return listByAppearance(appearance).map((theme) => {
     const family = getFamily(theme.family);
-    // Prefixing each option with its family keeps the 39-theme native select
+    // Prefixing each option with its family keeps the native select
     // usable without adding a separate theme browser/search UI.
     return { value: theme.id, label: family ? `${family.name} · ${theme.name}` : theme.name };
   });

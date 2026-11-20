@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "sample": "# hash comment\ndef greet(name):\n    return \"hello\" + 42\n",
-  "note": "Expected values for the real-Obsidian 0.3.0 acceptance suite. Token colours are the official theme foregrounds resolved by vscode-textmate from the checked-in theme snapshots; backgrounds are the official editor.background values. They are not read from the plugin runtime during tests.",
+  "note": "Expected values for the real-Obsidian acceptance suite. Token colors are resolved from official VS Code/TextMate rules or JetBrains editor attributes mapped to TextMate scopes. Backgrounds are the official editor background values.",
   "themes": {
     "atom-one-light": {
       "appearance": "light",
@@ -75,41 +75,50 @@
       "string": "#D5FF80",
       "number": "#DFBFFF"
     },
-    "vscode-light-plus": {
+    "vscode-light-2026": {
       "appearance": "light",
       "family": "vscode",
       "background": "#FFFFFF",
-      "comment": "#008000",
-      "keyword": "#0000FF",
-      "string": "#A31515",
+      "comment": "#6E7781",
+      "keyword": "#CF222E",
+      "string": "#0A3069",
       "number": "#098658"
     },
-    "vscode-dark-plus": {
+    "vscode-dark-2026": {
       "appearance": "dark",
       "family": "vscode",
-      "background": "#1E1E1E",
-      "comment": "#6A9955",
-      "keyword": "#569CD6",
-      "string": "#CE9178",
+      "background": "#121314",
+      "comment": "#8B949E",
+      "keyword": "#FF7B72",
+      "string": "#A5D6FF",
       "number": "#B5CEA8"
     },
-    "vscode-light-modern": {
+    "jetbrains-light": {
       "appearance": "light",
-      "family": "vscode",
+      "family": "jetbrains",
       "background": "#FFFFFF",
-      "comment": "#008000",
-      "keyword": "#0000FF",
-      "string": "#A31515",
-      "number": "#098658"
+      "comment": "#8C8C8C",
+      "keyword": "#0033B3",
+      "string": "#067D17",
+      "number": "#1750EB"
     },
-    "vscode-dark-modern": {
+    "jetbrains-darcula": {
       "appearance": "dark",
-      "family": "vscode",
-      "background": "#1F1F1F",
-      "comment": "#6A9955",
-      "keyword": "#569CD6",
-      "string": "#CE9178",
-      "number": "#B5CEA8"
+      "family": "jetbrains",
+      "background": "#2B2B2B",
+      "comment": "#808080",
+      "keyword": "#CC7832",
+      "string": "#6A8759",
+      "number": "#6897BB"
+    },
+    "jetbrains-dark": {
+      "appearance": "dark",
+      "family": "jetbrains",
+      "background": "#1E1F22",
+      "comment": "#7A7E85",
+      "keyword": "#CF8E6D",
+      "string": "#6AAB73",
+      "number": "#2AACB8"
     },
     "catppuccin-latte": {
       "appearance": "light",

@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "generatedBy": "tools/prepare-theme-assets.cjs",
-  "note": "Theme JSON/JSONC snapshots are checked in under sources/. Only foreground token colors, editor.foreground (or its official fallback), and editor.background are normalized. Font styles, other UI colors and semantic token colors are intentionally not bundled.",
+  "note": "Official snapshots and JetBrains XML-to-TextMate conversions are checked in under sources/. Only foreground token colors, editor.foreground (or its official fallback), and editor.background are normalized. Font styles, other UI colors and semantic token colors are intentionally not bundled.",
   "defaults": {
     "light": "atom-one-light",
     "dark": "atom-one-dark"
@@ -33,10 +33,18 @@
     },
     {
       "id": "vscode",
-      "name": "VS Code Official",
+      "name": "VS Code 2026",
       "presets": {
-        "light": "vscode-light-modern",
-        "dark": "vscode-dark-modern"
+        "light": "vscode-light-2026",
+        "dark": "vscode-dark-2026"
+      }
+    },
+    {
+      "id": "jetbrains",
+      "name": "JetBrains",
+      "presets": {
+        "light": "jetbrains-light",
+        "dark": "jetbrains-dark"
       }
     },
     {
@@ -124,8 +132,8 @@
       }
     }
   ],
-  "themeCount": 39,
-  "familyCount": 15,
+  "themeCount": 40,
+  "familyCount": 16,
   "themes": [
     {
       "id": "atom-one-light",
@@ -428,99 +436,19 @@
       }
     },
     {
-      "id": "vscode-light-plus",
-      "name": "VS Code Light+",
+      "id": "vscode-light-2026",
+      "name": "Light 2026",
       "family": "vscode",
       "appearance": "light",
       "source": {
         "kind": "vscode-builtin",
         "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/light_plus.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/light_plus.json"
+        "vscodeVersion": "1.147.0",
+        "vscodeCommit": "8a14f0cc1b08d531eb83255ea3764ae22aa932b5",
+        "path": "extensions/theme-defaults/themes/2026-light.json",
+        "url": "https://github.com/microsoft/vscode/blob/8a14f0cc1b08d531eb83255ea3764ae22aa932b5/extensions/theme-defaults/themes/2026-light.json"
       },
-      "sourceFile": "sources/themes/vscode/light_plus.json",
-      "sourceFiles": [
-        {
-          "path": "sources/themes/vscode/light_vs.json",
-          "sha256": "fa7d01466a6a32a2b7be30529d12b1fec528959aa5e9938e1a9802550bf19a52"
-        },
-        {
-          "path": "sources/themes/vscode/light_plus.json",
-          "sha256": "bf64f3ec2a80788fad115086bd10fd4136dd1d760ec478f4107756f098d101ea"
-        }
-      ],
-      "sourceThemeName": "Light+",
-      "sourceType": null,
-      "editorForeground": "#000000",
-      "foregroundSource": "editor.foreground",
-      "editorBackground": "#FFFFFF",
-      "backgroundSource": "editor.background",
-      "foregroundRules": 60,
-      "skippedNonHexTokenColors": 0,
-      "normalizedSha256": "a6a41745d542c4ee12ccc6d83275d4afc10b25e5b93028fc3908455b320af113",
-      "license": {
-        "spdx": "MIT",
-        "file": "sources/licenses/vscode-MIT.txt",
-        "copyright": "Copyright (c) 2015 - present Microsoft Corporation",
-        "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
-      }
-    },
-    {
-      "id": "vscode-dark-plus",
-      "name": "VS Code Dark+",
-      "family": "vscode",
-      "appearance": "dark",
-      "source": {
-        "kind": "vscode-builtin",
-        "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/dark_plus.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/dark_plus.json"
-      },
-      "sourceFile": "sources/themes/vscode/dark_plus.json",
-      "sourceFiles": [
-        {
-          "path": "sources/themes/vscode/dark_vs.json",
-          "sha256": "38db2163183afd088cf621115087b60a23726856488eabc9fb893aff15b35470"
-        },
-        {
-          "path": "sources/themes/vscode/dark_plus.json",
-          "sha256": "88f5b662378cbe39473a4a8d916a1b4ec580f85858876eaec440288aee2852df"
-        }
-      ],
-      "sourceThemeName": "Dark+",
-      "sourceType": null,
-      "editorForeground": "#D4D4D4",
-      "foregroundSource": "editor.foreground",
-      "editorBackground": "#1E1E1E",
-      "backgroundSource": "editor.background",
-      "foregroundRules": 61,
-      "skippedNonHexTokenColors": 0,
-      "normalizedSha256": "5029c87b255ca3bc0296704186fe53b7759556baddad7a0d41e8632071edc505",
-      "license": {
-        "spdx": "MIT",
-        "file": "sources/licenses/vscode-MIT.txt",
-        "copyright": "Copyright (c) 2015 - present Microsoft Corporation",
-        "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
-      }
-    },
-    {
-      "id": "vscode-light-modern",
-      "name": "VS Code Light Modern",
-      "family": "vscode",
-      "appearance": "light",
-      "source": {
-        "kind": "vscode-builtin",
-        "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/light_modern.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/light_modern.json"
-      },
-      "sourceFile": "sources/themes/vscode/light_modern.json",
+      "sourceFile": "sources/themes/vscode/2026-light.json",
       "sourceFiles": [
         {
           "path": "sources/themes/vscode/light_vs.json",
@@ -533,17 +461,21 @@
         {
           "path": "sources/themes/vscode/light_modern.json",
           "sha256": "7dab7baec54f572441013a7896cc438b2e55fbdaf383fb2ee6e2c78d33316d3c"
+        },
+        {
+          "path": "sources/themes/vscode/2026-light.json",
+          "sha256": "28461a2b2016c731de1401c4d865612b7699debe131ac16a0daae97a6cbae81d"
         }
       ],
-      "sourceThemeName": "Light Modern",
-      "sourceType": null,
-      "editorForeground": "#3B3B3B",
+      "sourceThemeName": "2026 Light",
+      "sourceType": "light",
+      "editorForeground": "#202020",
       "foregroundSource": "editor.foreground",
       "editorBackground": "#FFFFFF",
       "backgroundSource": "editor.background",
-      "foregroundRules": 60,
+      "foregroundRules": 107,
       "skippedNonHexTokenColors": 0,
-      "normalizedSha256": "310cbe153471fc2dea78bbf983d6c56c79e9cff240d255e980a6770f4002463b",
+      "normalizedSha256": "4cd03713460ebf1adbdc4dc723812a44a784bb4f10e468d0d038177ec2ee12a2",
       "license": {
         "spdx": "MIT",
         "file": "sources/licenses/vscode-MIT.txt",
@@ -552,19 +484,19 @@
       }
     },
     {
-      "id": "vscode-dark-modern",
-      "name": "VS Code Dark Modern",
+      "id": "vscode-dark-2026",
+      "name": "Dark 2026",
       "family": "vscode",
       "appearance": "dark",
       "source": {
         "kind": "vscode-builtin",
         "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/dark_modern.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/dark_modern.json"
+        "vscodeVersion": "1.147.0",
+        "vscodeCommit": "8a14f0cc1b08d531eb83255ea3764ae22aa932b5",
+        "path": "extensions/theme-defaults/themes/2026-dark.json",
+        "url": "https://github.com/microsoft/vscode/blob/8a14f0cc1b08d531eb83255ea3764ae22aa932b5/extensions/theme-defaults/themes/2026-dark.json"
       },
-      "sourceFile": "sources/themes/vscode/dark_modern.json",
+      "sourceFile": "sources/themes/vscode/2026-dark.json",
       "sourceFiles": [
         {
           "path": "sources/themes/vscode/dark_vs.json",
@@ -577,22 +509,160 @@
         {
           "path": "sources/themes/vscode/dark_modern.json",
           "sha256": "24e2c79cd2c37769a83f1a89c5e97c8107fd0ec084cd7a021c2ab835d3809074"
+        },
+        {
+          "path": "sources/themes/vscode/2026-dark.json",
+          "sha256": "92e2b3b52166fccad9c58fd077be298f968f221e7d685b3ddbc10c2ae0c4b34b"
         }
       ],
-      "sourceThemeName": "Dark Modern",
-      "sourceType": null,
-      "editorForeground": "#CCCCCC",
+      "sourceThemeName": "2026 Dark",
+      "sourceType": "dark",
+      "editorForeground": "#BBBEBF",
       "foregroundSource": "editor.foreground",
-      "editorBackground": "#1F1F1F",
+      "editorBackground": "#121314",
       "backgroundSource": "editor.background",
-      "foregroundRules": 61,
+      "foregroundRules": 112,
       "skippedNonHexTokenColors": 0,
-      "normalizedSha256": "373d5f1ef055033dd53ac6088be990d0e19de961577323eeb9250071ed73cfe7",
+      "normalizedSha256": "fc365de652a3d48ba4a18bc84ec354b19717271c286f60a9d4b522cd1bae27b6",
       "license": {
         "spdx": "MIT",
         "file": "sources/licenses/vscode-MIT.txt",
         "copyright": "Copyright (c) 2015 - present Microsoft Corporation",
         "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9"
+      }
+    },
+    {
+      "id": "jetbrains-light",
+      "name": "Light",
+      "family": "jetbrains",
+      "appearance": "light",
+      "source": {
+        "kind": "intellij-editor-scheme",
+        "project": "JetBrains/intellij-community",
+        "version": "2026.1.5 (261.27258.48)",
+        "ref": "idea/261.27258.48",
+        "path": "platform/platform-resources/src/themes/expUI/expUI_lightScheme.xml",
+        "url": "https://github.com/JetBrains/intellij-community/blob/idea/261.27258.48/platform/platform-resources/src/themes/expUI/expUI_lightScheme.xml",
+        "adapter": "tools/convert-jetbrains-themes.py"
+      },
+      "sourceFile": "sources/themes/jetbrains/light.json",
+      "sourceFiles": [
+        {
+          "path": "sources/themes/jetbrains/DefaultColorSchemesManager.xml",
+          "sha256": "ab390eb3dd8bdaf30986aa03d4201971088223310ae4be52b6d3cd96142c48c0"
+        },
+        {
+          "path": "sources/themes/jetbrains/expUI_lightScheme.xml",
+          "sha256": "4a8d24f993e3001204979eaf714c97ad74d53074932249290890ef53d354adaa"
+        },
+        {
+          "path": "sources/themes/jetbrains/light.json",
+          "sha256": "853d45c06106b5ba3e002ef223f985bfe2998093d4019e07ec405c89439e0a51"
+        }
+      ],
+      "sourceThemeName": "Light",
+      "sourceType": "light",
+      "editorForeground": "#080808",
+      "foregroundSource": "editor.foreground",
+      "editorBackground": "#FFFFFF",
+      "backgroundSource": "editor.background",
+      "foregroundRules": 13,
+      "skippedNonHexTokenColors": 0,
+      "normalizedSha256": "2f384c71fd215af0e8a7fc754af64f5085e4c66a61c3aec289f55a059f9eb816",
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/jetbrains-Apache-2.0.txt",
+        "copyright": "Copyright (C) JetBrains s.r.o.",
+        "notice": "sources/notices/jetbrains-NOTICE.txt",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    },
+    {
+      "id": "jetbrains-darcula",
+      "name": "Darcula",
+      "family": "jetbrains",
+      "appearance": "dark",
+      "source": {
+        "kind": "intellij-editor-scheme",
+        "project": "JetBrains/intellij-community",
+        "version": "2026.1.5 (261.27258.48)",
+        "ref": "idea/261.27258.48",
+        "path": "platform/platform-resources/src/DefaultColorSchemesManager.xml",
+        "url": "https://github.com/JetBrains/intellij-community/blob/idea/261.27258.48/platform/platform-resources/src/DefaultColorSchemesManager.xml",
+        "adapter": "tools/convert-jetbrains-themes.py"
+      },
+      "sourceFile": "sources/themes/jetbrains/darcula.json",
+      "sourceFiles": [
+        {
+          "path": "sources/themes/jetbrains/DefaultColorSchemesManager.xml",
+          "sha256": "ab390eb3dd8bdaf30986aa03d4201971088223310ae4be52b6d3cd96142c48c0"
+        },
+        {
+          "path": "sources/themes/jetbrains/darcula.json",
+          "sha256": "eed2c0d5d5c12621d1f179ec1ecb17bc7bbf36208225d5ecd732f445de6a3d65"
+        }
+      ],
+      "sourceThemeName": "Darcula",
+      "sourceType": "dark",
+      "editorForeground": "#A9B7C6",
+      "foregroundSource": "editor.foreground",
+      "editorBackground": "#2B2B2B",
+      "backgroundSource": "editor.background",
+      "foregroundRules": 23,
+      "skippedNonHexTokenColors": 0,
+      "normalizedSha256": "8b9ce6e5d24c7145c31e4da377ede54d43131c4a86a78332fad77a3506120b13",
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/jetbrains-Apache-2.0.txt",
+        "copyright": "Copyright (C) JetBrains s.r.o.",
+        "notice": "sources/notices/jetbrains-NOTICE.txt",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    },
+    {
+      "id": "jetbrains-dark",
+      "name": "Dark",
+      "family": "jetbrains",
+      "appearance": "dark",
+      "source": {
+        "kind": "intellij-editor-scheme",
+        "project": "JetBrains/intellij-community",
+        "version": "2026.1.5 (261.27258.48)",
+        "ref": "idea/261.27258.48",
+        "path": "platform/platform-resources/src/themes/expUI/expUI_darkScheme.xml",
+        "url": "https://github.com/JetBrains/intellij-community/blob/idea/261.27258.48/platform/platform-resources/src/themes/expUI/expUI_darkScheme.xml",
+        "adapter": "tools/convert-jetbrains-themes.py"
+      },
+      "sourceFile": "sources/themes/jetbrains/dark.json",
+      "sourceFiles": [
+        {
+          "path": "sources/themes/jetbrains/DefaultColorSchemesManager.xml",
+          "sha256": "ab390eb3dd8bdaf30986aa03d4201971088223310ae4be52b6d3cd96142c48c0"
+        },
+        {
+          "path": "sources/themes/jetbrains/expUI_darkScheme.xml",
+          "sha256": "dd8c12c5138b7fbd06c9251da5003ddf02d3d6392770d9b8ca8d169670dc7070"
+        },
+        {
+          "path": "sources/themes/jetbrains/dark.json",
+          "sha256": "251c61476a85d5d65b378e2841afce5c65077379511eee310ca4f97a2f6b0162"
+        }
+      ],
+      "sourceThemeName": "Dark",
+      "sourceType": "dark",
+      "editorForeground": "#BCBEC4",
+      "foregroundSource": "editor.foreground",
+      "editorBackground": "#1E1F22",
+      "backgroundSource": "editor.background",
+      "foregroundRules": 26,
+      "skippedNonHexTokenColors": 0,
+      "normalizedSha256": "defa8aa4feca8495e6f38e36dfd2d9bfea5845102ee8fa11c66ed953418b8b84",
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/jetbrains-Apache-2.0.txt",
+        "copyright": "Copyright (C) JetBrains s.r.o.",
+        "notice": "sources/notices/jetbrains-NOTICE.txt",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
       }
     },
     {

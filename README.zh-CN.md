@@ -29,7 +29,7 @@ Obsidian 主题负责整个应用的外观。Syntax Palette 让 Markdown 围栏�
 
 ## 选择喜欢的配色
 
-插件内置 **15 个主题系列、39 种配色**，包括 GitHub、Atom One、Catppuccin、Tokyo Night、Ayu、Dracula、Nord 等。浅色和深色外观可以分别选择配色，并随 Obsidian 外观切换。
+插件内置 **16 个主题系列、40 种配色**，包括 GitHub、Atom One、Catppuccin、Tokyo Night、Ayu、VS Code 2026、JetBrains、Dracula、Nord 等。浅色和深色外观可以分别选择配色，并随 Obsidian 外观切换。
 
 你还可以：
 
@@ -64,7 +64,7 @@ Obsidian 主题负责整个应用的外观。Syntax Palette 让 Markdown 围栏�
 - 已开放 iOS、iPadOS 和 Android 安装，移动端适配目前为实验性版本；触摸滚动、文本选择、键盘输入和屏幕旋转等仍需真机验证。
 - 已在 macOS / Obsidian 1.14.5 上测试。Windows 和 Linux 是目标平台，但尚未在这些系统上实机测试。
 - 暂不支持 Obsidian 弹出窗口（pop-out）。
-- 目前仅提供内置的 39 种配色，不能导入自定义主题文件。
+- 目前仅提供内置的 40 种配色，不能导入自定义主题文件。
 - 编辑视图关闭自动换行时，长代码行需要在各自的代码块内横向滚动查看。
 - 屏幕较窄时，可以在设置中开启编辑视图代码块自动换行，方便编辑长行。
 

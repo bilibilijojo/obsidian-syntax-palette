@@ -1,0 +1,230 @@
+{
+  "name": "Dark",
+  "type": "dark",
+  "description": "Adapted from the JetBrains IntelliJ IDEA editor scheme by Syntax Palette. XML attributes were mapped to TextMate foreground rules. Apache-2.0. Copyright (C) JetBrains s.r.o.",
+  "colors": {
+    "editor.foreground": "#BCBEC4",
+    "editor.background": "#1E1F22"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "foreground": "#7A7E85"
+      }
+    },
+    {
+      "scope": [
+        "comment.block"
+      ],
+      "settings": {
+        "foreground": "#7A7E85"
+      }
+    },
+    {
+      "scope": [
+        "comment.block.documentation",
+        "comment.line.documentation"
+      ],
+      "settings": {
+        "foreground": "#5F826B"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#CF8E6D"
+      }
+    },
+    {
+      "scope": [
+        "keyword.operator"
+      ],
+      "settings": {
+        "foreground": "#BCBEC4"
+      }
+    },
+    {
+      "scope": [
+        "string",
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#6AAB73"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#CF8E6D"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric"
+      ],
+      "settings": {
+        "foreground": "#2AACB8"
+      }
+    },
+    {
+      "scope": [
+        "constant.language",
+        "constant.other",
+        "variable.other.constant"
+      ],
+      "settings": {
+        "foreground": "#C77DBB"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.type",
+        "support.class",
+        "support.type"
+      ],
+      "settings": {
+        "foreground": "#BCBEC4"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function"
+      ],
+      "settings": {
+        "foreground": "#56A8F5"
+      }
+    },
+    {
+      "scope": [
+        "support.function",
+        "variable.function"
+      ],
+      "settings": {
+        "foreground": "#BCBEC4"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function.decorator",
+        "storage.type.annotation"
+      ],
+      "settings": {
+        "foreground": "#B3AE60"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.property",
+        "variable.other.object.property"
+      ],
+      "settings": {
+        "foreground": "#C77DBB"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.separator.comma"
+      ],
+      "settings": {
+        "foreground": "#BCBEC4"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.terminator.statement"
+      ],
+      "settings": {
+        "foreground": "#BCBEC4"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag"
+      ],
+      "settings": {
+        "foreground": "#BCBEC4"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name"
+      ],
+      "settings": {
+        "foreground": "#0000FF"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.entity"
+      ],
+      "settings": {
+        "foreground": "#0000FF"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag.html"
+      ],
+      "settings": {
+        "foreground": "#D5B778"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name.html"
+      ],
+      "settings": {
+        "foreground": "#BABABA"
+      }
+    },
+    {
+      "scope": [
+        "meta.tag.html string"
+      ],
+      "settings": {
+        "foreground": "#6AAB73"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.entity.html"
+      ],
+      "settings": {
+        "foreground": "#56A8F5"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag.xml"
+      ],
+      "settings": {
+        "foreground": "#D5B778"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name.xml"
+      ],
+      "settings": {
+        "foreground": "#BCBEC4"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.entity.xml"
+      ],
+      "settings": {
+        "foreground": "#56A8F5"
+      }
+    }
+  ]
+}

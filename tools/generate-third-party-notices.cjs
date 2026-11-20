@@ -58,7 +58,7 @@ function buildNotices() {
   validateDependencyLicenses();
   const themeData = JSON.parse(read('sources/theme-provenance.json'));
   const grammarData = JSON.parse(read('sources/plugin-grammar-provenance.json'));
-  if (themeData.themeCount !== 39 || themeData.themes.length !== 39) throw new Error('Expected provenance for all 39 themes');
+  if (themeData.themeCount !== 40 || themeData.themes.length !== 40) throw new Error('Expected provenance for all 40 themes');
   if (!Array.isArray(grammarData) || grammarData.length !== 11) throw new Error('Expected provenance for all 11 bundled grammar scopes');
 
   const lines = [
@@ -90,7 +90,8 @@ function buildNotices() {
   lines.push(
     '',
     'The five Material Theme variants are frozen from version 34.5.0 under Apache-2.0. No later Material Theme/Vira release is included.',
-    'All other theme snapshots are MIT-licensed. Exact source URLs, per-file hashes, copyright lines, and variant mappings are recorded in `sources/theme-provenance.json` and `docs/THEME-PROVENANCE.md`.',
+    'JetBrains Light, Darcula and Dark are Apache-2.0. Syntax Palette adapts their editor foreground, background and syntax colors from JetBrains XML to TextMate rules. The original attribution is preserved below.',
+    'The remaining theme snapshots are MIT-licensed. Exact source URLs, per-file hashes, copyright lines, and variant mappings are recorded in `sources/theme-provenance.json` and `docs/THEME-PROVENANCE.md`.',
     '',
     'TextMate grammar assets',
     '-----------------------',

@@ -31,10 +31,18 @@
     },
     {
       "id": "vscode",
-      "name": "VS Code Official",
+      "name": "VS Code 2026",
       "presets": {
-        "light": "vscode-light-modern",
-        "dark": "vscode-dark-modern"
+        "light": "vscode-light-2026",
+        "dark": "vscode-dark-2026"
+      }
+    },
+    {
+      "id": "jetbrains",
+      "name": "JetBrains",
+      "presets": {
+        "light": "jetbrains-light",
+        "dark": "jetbrains-dark"
       }
     },
     {
@@ -296,18 +304,18 @@
       }
     },
     {
-      "id": "vscode-light-plus",
+      "id": "vscode-light-2026",
       "family": "vscode",
-      "name": "VS Code Light+",
+      "name": "Light 2026",
       "appearance": "light",
-      "sourceFile": "sources/themes/vscode/light_plus.json",
+      "sourceFile": "sources/themes/vscode/2026-light.json",
       "source": {
         "kind": "vscode-builtin",
         "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/light_plus.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/light_plus.json"
+        "vscodeVersion": "1.147.0",
+        "vscodeCommit": "8a14f0cc1b08d531eb83255ea3764ae22aa932b5",
+        "path": "extensions/theme-defaults/themes/2026-light.json",
+        "url": "https://github.com/microsoft/vscode/blob/8a14f0cc1b08d531eb83255ea3764ae22aa932b5/extensions/theme-defaults/themes/2026-light.json"
       },
       "license": {
         "spdx": "MIT",
@@ -316,18 +324,18 @@
       }
     },
     {
-      "id": "vscode-dark-plus",
+      "id": "vscode-dark-2026",
       "family": "vscode",
-      "name": "VS Code Dark+",
+      "name": "Dark 2026",
       "appearance": "dark",
-      "sourceFile": "sources/themes/vscode/dark_plus.json",
+      "sourceFile": "sources/themes/vscode/2026-dark.json",
       "source": {
         "kind": "vscode-builtin",
         "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/dark_plus.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/dark_plus.json"
+        "vscodeVersion": "1.147.0",
+        "vscodeCommit": "8a14f0cc1b08d531eb83255ea3764ae22aa932b5",
+        "path": "extensions/theme-defaults/themes/2026-dark.json",
+        "url": "https://github.com/microsoft/vscode/blob/8a14f0cc1b08d531eb83255ea3764ae22aa932b5/extensions/theme-defaults/themes/2026-dark.json"
       },
       "license": {
         "spdx": "MIT",
@@ -336,43 +344,80 @@
       }
     },
     {
-      "id": "vscode-light-modern",
-      "family": "vscode",
-      "name": "VS Code Light Modern",
+      "id": "jetbrains-light",
+      "family": "jetbrains",
+      "name": "Light",
       "appearance": "light",
-      "sourceFile": "sources/themes/vscode/light_modern.json",
+      "sourceFile": "sources/themes/jetbrains/light.json",
+      "sourceInputs": [
+        "sources/themes/jetbrains/DefaultColorSchemesManager.xml",
+        "sources/themes/jetbrains/expUI_lightScheme.xml"
+      ],
       "source": {
-        "kind": "vscode-builtin",
-        "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/light_modern.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/light_modern.json"
+        "kind": "intellij-editor-scheme",
+        "project": "JetBrains/intellij-community",
+        "version": "2026.1.5 (261.27258.48)",
+        "ref": "idea/261.27258.48",
+        "path": "platform/platform-resources/src/themes/expUI/expUI_lightScheme.xml",
+        "url": "https://github.com/JetBrains/intellij-community/blob/idea/261.27258.48/platform/platform-resources/src/themes/expUI/expUI_lightScheme.xml",
+        "adapter": "tools/convert-jetbrains-themes.py"
       },
       "license": {
-        "spdx": "MIT",
-        "file": "sources/licenses/vscode-MIT.txt",
-        "copyright": "Copyright (c) 2015 - present Microsoft Corporation"
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/jetbrains-Apache-2.0.txt",
+        "copyright": "Copyright (C) JetBrains s.r.o.",
+        "notice": "sources/notices/jetbrains-NOTICE.txt"
       }
     },
     {
-      "id": "vscode-dark-modern",
-      "family": "vscode",
-      "name": "VS Code Dark Modern",
+      "id": "jetbrains-darcula",
+      "family": "jetbrains",
+      "name": "Darcula",
       "appearance": "dark",
-      "sourceFile": "sources/themes/vscode/dark_modern.json",
+      "sourceFile": "sources/themes/jetbrains/darcula.json",
+      "sourceInputs": [
+        "sources/themes/jetbrains/DefaultColorSchemesManager.xml"
+      ],
       "source": {
-        "kind": "vscode-builtin",
-        "project": "microsoft/vscode theme-defaults",
-        "vscodeVersion": "1.142.0",
-        "vscodeCommit": "6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1",
-        "path": "extensions/theme-defaults/themes/dark_modern.json",
-        "url": "https://github.com/microsoft/vscode/blob/6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/extensions/theme-defaults/themes/dark_modern.json"
+        "kind": "intellij-editor-scheme",
+        "project": "JetBrains/intellij-community",
+        "version": "2026.1.5 (261.27258.48)",
+        "ref": "idea/261.27258.48",
+        "path": "platform/platform-resources/src/DefaultColorSchemesManager.xml",
+        "url": "https://github.com/JetBrains/intellij-community/blob/idea/261.27258.48/platform/platform-resources/src/DefaultColorSchemesManager.xml",
+        "adapter": "tools/convert-jetbrains-themes.py"
       },
       "license": {
-        "spdx": "MIT",
-        "file": "sources/licenses/vscode-MIT.txt",
-        "copyright": "Copyright (c) 2015 - present Microsoft Corporation"
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/jetbrains-Apache-2.0.txt",
+        "copyright": "Copyright (C) JetBrains s.r.o.",
+        "notice": "sources/notices/jetbrains-NOTICE.txt"
+      }
+    },
+    {
+      "id": "jetbrains-dark",
+      "family": "jetbrains",
+      "name": "Dark",
+      "appearance": "dark",
+      "sourceFile": "sources/themes/jetbrains/dark.json",
+      "sourceInputs": [
+        "sources/themes/jetbrains/DefaultColorSchemesManager.xml",
+        "sources/themes/jetbrains/expUI_darkScheme.xml"
+      ],
+      "source": {
+        "kind": "intellij-editor-scheme",
+        "project": "JetBrains/intellij-community",
+        "version": "2026.1.5 (261.27258.48)",
+        "ref": "idea/261.27258.48",
+        "path": "platform/platform-resources/src/themes/expUI/expUI_darkScheme.xml",
+        "url": "https://github.com/JetBrains/intellij-community/blob/idea/261.27258.48/platform/platform-resources/src/themes/expUI/expUI_darkScheme.xml",
+        "adapter": "tools/convert-jetbrains-themes.py"
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "file": "sources/licenses/jetbrains-Apache-2.0.txt",
+        "copyright": "Copyright (C) JetBrains s.r.o.",
+        "notice": "sources/notices/jetbrains-NOTICE.txt"
       }
     },
     {

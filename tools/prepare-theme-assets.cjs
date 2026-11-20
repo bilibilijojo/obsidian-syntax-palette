@@ -236,7 +236,8 @@ function main() {
     themes[entry.id] = theme;
     themeIds.add(entry.id);
 
-    const sourceFiles = [...new Set(resolved.chain)].map((absolute) => ({
+    const upstreamInputs = (entry.sourceInputs || []).map((file) => path.join(root, file));
+    const sourceFiles = [...new Set([...upstreamInputs, ...resolved.chain])].map((absolute) => ({
       path: path.relative(root, absolute).split(path.sep).join('/'),
       sha256: sha256(fs.readFileSync(absolute)),
     }));
@@ -293,16 +294,14 @@ function main() {
   const generatedProvenance = {
     formatVersion: 1,
     generatedBy: 'tools/prepare-theme-assets.cjs',
-    note: 'Theme JSON/JSONC snapshots are checked in under sources/. Only foreground token colors, editor.foreground (or its official fallback), and editor.background are normalized. Font styles, other UI colors and semantic token colors are intentionally not bundled.',
+    note: 'Official snapshots and JetBrains XML-to-TextMate conversions are checked in under sources/. Only foreground token colors, editor.foreground (or its official fallback), and editor.background are normalized. Font styles, other UI colors and semantic token colors are intentionally not bundled.',
     defaults: { light: defaults.light, dark: defaults.dark },
     families: catalog.families.map((family) => ({ id: family.id, name: family.name, presets: { ...family.presets } })),
     themeCount: provenanceThemes.length,
     familyCount: catalog.families.length,
     themes: provenanceThemes,
   };
-  // The asset is machine-read only (require()d into the bundle), so it is
-  // written minified: 39 themes of token colours cost ~724 KiB pretty-printed
-  // but only ~447 KiB compact, and that difference lands directly in main.js.
+  // Keep the machine-read asset compact because it is bundled into main.js.
   const themeText = JSON.stringify(generatedThemes) + '\n';
   const provenanceText = JSON.stringify(generatedProvenance, null, 2) + '\n';
 

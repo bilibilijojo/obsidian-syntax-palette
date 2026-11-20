@@ -48,8 +48,8 @@ check(!/\bview\??\.editor\??\.cm\b|\.editor\.cm\b/.test(fs.readFileSync(path.joi
 
 const main = fs.readFileSync(path.join(out, 'main.js'), 'utf8');
 const asset = JSON.parse(fs.readFileSync(path.join(root, 'plugin-src/assets/themes.json'), 'utf8'));
-check(Object.keys(asset.themes).length === 39, `expected 39 themes, found ${Object.keys(asset.themes).length}`);
-check(asset.families.length === 15, `expected 15 families, found ${asset.families.length}`);
+check(Object.keys(asset.themes).length === 40, `expected 40 themes, found ${Object.keys(asset.themes).length}`);
+check(asset.families.length === 16, `expected 16 families, found ${asset.families.length}`);
 for (const id of Object.keys(asset.themes)) check(main.includes(id), `bundle missing theme ${id}`);
 check(/require\("@codemirror\/state"\)/.test(main), 'StateEffect dependency should stay external');
 check(/require\("@codemirror\/view"\)/.test(main), 'CodeMirror view dependency should stay external');
@@ -107,7 +107,7 @@ const embeddedNotices = notices.split(/\r?\n/).map((line) => `// ${line}`).join(
 check(main.includes(embeddedNotices), 'main.js must carry the project and third-party license texts for standard store installs');
 for (const text of [
   'Atom One Light', 'GitHub Light Default', 'Ayu Light', 'Catppuccin Latte',
-  'Dracula Official', 'VS Code Light+', 'Tokyo Night Light', 'One Dark Pro',
+  'Dracula Official', 'Light 2026, Dark 2026', 'Light, Darcula, Dark', 'Tokyo Night Light', 'One Dark Pro',
   'Light Owl', 'Nord', 'Solarized Light', 'Kanagawa Wave', 'Material Theme',
   'Monokai', 'Min Dark', 'Copyright (c) 2015 Mahmoud Ali',
   'Apache License', '| 34.5.0 | Apache-2.0 |',

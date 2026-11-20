@@ -26,10 +26,11 @@ const expectedBackgrounds = {
   'ayu-light': '#FCFCFC',
   'ayu-dark': '#10141C',
   'ayu-mirage': '#242936',
-  'vscode-light-plus': '#FFFFFF',
-  'vscode-dark-plus': '#1E1E1E',
-  'vscode-light-modern': '#FFFFFF',
-  'vscode-dark-modern': '#1F1F1F',
+  'vscode-light-2026': '#FFFFFF',
+  'vscode-dark-2026': '#121314',
+  'jetbrains-light': '#FFFFFF',
+  'jetbrains-darcula': '#2B2B2B',
+  'jetbrains-dark': '#1E1F22',
   'catppuccin-latte': '#EFF1F5',
   'catppuccin-frappe': '#303446',
   'catppuccin-macchiato': '#24273A',
@@ -60,8 +61,8 @@ const expectedBackgrounds = {
 };
 
 const expectedLightIds = [
-  'atom-one-light', 'github-light-default', 'ayu-light', 'vscode-light-plus',
-  'vscode-light-modern', 'catppuccin-latte', 'tokyo-night-light', 'night-owl-light',
+  'atom-one-light', 'github-light-default', 'ayu-light', 'vscode-light-2026',
+  'jetbrains-light', 'catppuccin-latte', 'tokyo-night-light', 'night-owl-light',
   'solarized-light', 'kanagawa-lotus', 'material-lighter', 'min-light',
 ];
 
@@ -72,16 +73,16 @@ test('Generated theme assets are current', () => {
   });
 });
 
-test('Catalog contains 15 families and 39 verified variants', () => {
-  assert.equal(catalog.FAMILIES.length, 15);
+test('Catalog contains 16 families and 40 verified variants', () => {
+  assert.equal(catalog.FAMILIES.length, 16);
   assert.deepEqual(catalog.FAMILIES.map((family) => family.id), [
-    'atom-one', 'github', 'ayu', 'vscode', 'catppuccin', 'dracula',
+    'atom-one', 'github', 'ayu', 'vscode', 'jetbrains', 'catppuccin', 'dracula',
     'tokyo-night', 'one-dark-pro', 'night-owl', 'nord', 'solarized',
     'kanagawa', 'material', 'monokai', 'min',
   ]);
-  assert.equal(catalog.THEME_LIST.length, 39);
+  assert.equal(catalog.THEME_LIST.length, 40);
   assert.equal(catalog.listByAppearance('light').length, 12);
-  assert.equal(catalog.listByAppearance('dark').length, 27);
+  assert.equal(catalog.listByAppearance('dark').length, 28);
   assert.deepEqual(catalog.listByAppearance('light').map((theme) => theme.id), expectedLightIds);
   const ids = new Set();
   for (const theme of catalog.THEME_LIST) {
@@ -146,9 +147,9 @@ test('Only the explicitly requested One Dark Pro UI variants share plugin-visibl
 test('Theme provenance hashes every source file, license and normalized asset', () => {
   const provenance = JSON.parse(fs.readFileSync(path.join(root, 'sources/theme-provenance.json'), 'utf8'));
   const asset = JSON.parse(fs.readFileSync(path.join(root, 'plugin-src/assets/themes.json'), 'utf8'));
-  assert.equal(provenance.themeCount, 39);
-  assert.equal(provenance.familyCount, 15);
-  assert.equal(provenance.themes.length, 39);
+  assert.equal(provenance.themeCount, 40);
+  assert.equal(provenance.familyCount, 16);
+  assert.equal(provenance.themes.length, 40);
   const manifest = JSON.parse(fs.readFileSync(path.join(root, 'sources/themes/sources.json'), 'utf8'));
   const manifestIds = manifest.themes.map((theme) => theme.id);
   assert.deepEqual(provenance.themes.map((theme) => theme.id), manifestIds);
@@ -342,10 +343,33 @@ test('Independent selection, patching and presets compose correctly', () => {
   assert.equal(settings.sameSettings(github, { ...github, wrapCodeBlocks: true }), false);
   assert.equal(settings.sameSettings({ ...github, wrapCodeBlocks: true }, { ...github, wrapCodeBlocks: true }), true);
   assert.equal(settings.themeOptions('light').length, 12);
-  assert.equal(settings.themeOptions('dark').length, 27);
-  assert.equal(settings.familyOptions().length, 15);
+  assert.equal(settings.themeOptions('dark').length, 28);
+  assert.equal(settings.familyOptions().length, 16);
   assert(settings.themeOptions('dark').find((option) => option.value === 'tokyo-night-storm').label.includes('Tokyo Night ·'));
   assert(settings.familyOptions().find((option) => option.value === 'material').label === 'Material Theme');
+});
+
+test('Removed VS Code variants upgrade to 2026 on the matching side', () => {
+  const stored = { coloredBrackets: false, codeBlockBackground: true, lineNumbers: true, wrapCodeBlocks: true };
+  for (const legacy of ['plus', 'modern']) {
+    const light = `vscode-light-${legacy}`;
+    const dark = `vscode-dark-${legacy}`;
+    assert.equal(catalog.getTheme(light), null);
+    assert.equal(catalog.getTheme(dark), null);
+    assert.deepEqual(settings.normalizeSettings({ ...stored, lightTheme: light, darkTheme: dark }), {
+      ...stored, light: 'vscode-light-2026', dark: 'vscode-dark-2026',
+    });
+    assert.equal(settings.normalizeSettings({ light, dark: 'github-dark-default' }).dark, 'github-dark-default');
+    assert.equal(settings.normalizeSettings({ light: dark }).light, catalog.DEFAULT_LIGHT);
+  }
+});
+
+test('JetBrains preset pairs official Light and Dark and allows Darcula in dark mode', () => {
+  const preset = settings.applyPreset(settings.DEFAULT_SETTINGS, 'jetbrains');
+  assert.equal(preset.light, 'jetbrains-light');
+  assert.equal(preset.dark, 'jetbrains-dark');
+  assert.equal(settings.patchSettings(preset, { dark: 'jetbrains-darcula' }).dark, 'jetbrains-darcula');
+  assert(!settings.themeOptions('light').some(({ value }) => value === 'jetbrains-darcula'));
 });
 
 test('Highlight CSS names and colors are validated', () => {

@@ -1583,7 +1583,7 @@ async function phasePrepare(context) {
     pass: data.pluginVersion === EXPECTED_VERSION && data.pluginReady &&
       data.pluginAuthor === 'Frank' && data.pluginAuthorUrl === 'https://github.com/bilibilijojo' &&
       data.wasmSource === 'embedded:main.js' && data.wasmBytes > 0 &&
-      data.themeCount === 39 && data.familyCount === 15 &&
+      data.themeCount === 40 && data.familyCount === 16 &&
       data.file === NOTE && data.cssTheme === 'Minimal',
   };
 }
@@ -2084,7 +2084,7 @@ async function phasePerformance(context) {
     ],
     legacyPairs: [
       { light: 'github-light-default', dark: 'catppuccin-mocha' },
-      { light: 'ayu-light', dark: 'vscode-dark-modern' },
+      { light: 'ayu-light', dark: 'vscode-dark-2026' },
     ],
     iterations: 12,
   })})`);

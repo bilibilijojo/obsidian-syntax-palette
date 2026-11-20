@@ -29,7 +29,7 @@ The palette applies inside fenced code blocks. It does not recolor regular text 
 
 ## Choose a palette
 
-Pick from **39 color variants across 15 theme families**, including GitHub, Atom One, Catppuccin, Tokyo Night, Ayu, Dracula, Nord, and more. Choose a light palette and a dark palette separately, so each follows the matching Obsidian appearance.
+Pick from **40 color variants across 16 theme families**, including GitHub, Atom One, Catppuccin, Tokyo Night, Ayu, VS Code 2026, JetBrains, Dracula, Nord, and more. Choose a light palette and a dark palette separately, so each follows the matching Obsidian appearance.
 
 You can also:
 
@@ -64,7 +64,7 @@ For a local source build, use those same three files from `plugin/syntax-palette
 - Mobile installation is enabled for iOS, iPadOS, and Android as an experimental target. Real-device testing is still needed, especially for touch scrolling, selection, keyboard input, and rotation.
 - macOS has been tested with Obsidian 1.14.5. Windows and Linux are target platforms but have not yet been tested on those systems.
 - Pop-out windows are not supported.
-- The 39 built-in palettes cannot be extended with custom theme files.
+- The 40 built-in palettes cannot be extended with custom theme files.
 - When editor wrapping is off, long code lines use horizontal scrolling inside each fenced block.
 - On a narrow screen, enabling editor code wrapping can make long lines easier to edit.
 

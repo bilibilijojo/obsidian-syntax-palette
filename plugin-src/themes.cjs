@@ -22,6 +22,12 @@ const FAMILIES = Object.freeze(data.families.map((family) => Object.freeze({
 const FAMILY_BY_ID = new Map(FAMILIES.map((family) => [family.id, family]));
 const DEFAULT_LIGHT = data.defaults.light;
 const DEFAULT_DARK = data.defaults.dark;
+const REPLACED_THEME_IDS = new Map([
+  ['vscode-light-plus', 'vscode-light-2026'],
+  ['vscode-light-modern', 'vscode-light-2026'],
+  ['vscode-dark-plus', 'vscode-dark-2026'],
+  ['vscode-dark-modern', 'vscode-dark-2026'],
+]);
 
 function getTheme(id) {
   return typeof id === 'string' && Object.prototype.hasOwnProperty.call(THEMES, id) ? THEMES[id] : null;
@@ -41,9 +47,11 @@ function listByAppearance(appearance) {
 }
 
 function resolveSelection(lightId, darkId) {
+  const light = REPLACED_THEME_IDS.get(lightId) ?? lightId;
+  const dark = REPLACED_THEME_IDS.get(darkId) ?? darkId;
   return {
-    light: isValidFor(lightId, 'light') ? lightId : DEFAULT_LIGHT,
-    dark: isValidFor(darkId, 'dark') ? darkId : DEFAULT_DARK,
+    light: isValidFor(light, 'light') ? light : DEFAULT_LIGHT,
+    dark: isValidFor(dark, 'dark') ? dark : DEFAULT_DARK,
   };
 }
 

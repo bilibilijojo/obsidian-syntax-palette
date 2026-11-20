@@ -1,10 +1,10 @@
 # Theme provenance and licenses / 主题来源与许可证
 
-本插件内置 **15 个主题系列、39 个配色变体**。仓库中的 `sources/` 保存官方主题快照（部分原始文件为 JSONC，保留注释和尾逗号），`sources/themes/sources.json` 保存精确来源，`sources/theme-provenance.json` 保存每个源文件、许可证、归一化主题的 SHA-256，以及官方 `editor.foreground` / `editor.background` 的提取结果。
+本插件内置 **16 个主题系列、40 个配色变体**。仓库中的 `sources/` 保存官方主题快照和 JetBrains 转换产物，`sources/themes/sources.json` 保存精确来源，`sources/theme-provenance.json` 保存每个源文件、许可证、归一化主题的 SHA-256，以及官方 `editor.foreground` / `editor.background` 的提取结果。
 
 ## 变体清单
 
-下表“源文件 SHA-256”是实际纳入仓库的原始主题文件的 SHA-256 前 12 位；“许可证”列指向 `sources/licenses/` 中的完整文本。完整 64 位哈希见 `sources/theme-provenance.json`。
+下表“源文件 SHA-256”是构建输入主题文件的 SHA-256 前 12 位；“许可证”列指向 `sources/licenses/` 中的完整文本。完整 64 位哈希见 `sources/theme-provenance.json`。
 
 | 变体 | 系列 | 外观 | 版本 | 源文件 SHA-256（前 12 位） | 许可证 |
 | --- | --- | --- | --- | --- | --- |
@@ -16,10 +16,11 @@
 | Ayu Light | ayu | 浅色 | 1.5.0 | 3d748e7a3666 | MIT |
 | Ayu Dark | ayu | 深色 | 1.5.0 | 8782e9876207 | MIT |
 | Ayu Mirage | ayu | 深色 | 1.5.0 | e08c742afbbe | MIT |
-| VS Code Light+ | vscode | 浅色 | 1.142.0 | fa7d01466a6a | MIT |
-| VS Code Dark+ | vscode | 深色 | 1.142.0 | 38db2163183a | MIT |
-| VS Code Light Modern | vscode | 浅色 | 1.142.0 | fa7d01466a6a | MIT |
-| VS Code Dark Modern | vscode | 深色 | 1.142.0 | 38db2163183a | MIT |
+| Light 2026 | vscode | 浅色 | 1.147.0 | 28461a2b2016 | MIT |
+| Dark 2026 | vscode | 深色 | 1.147.0 | 92e2b3b52166 | MIT |
+| Light | jetbrains | 浅色 | 2026.1.5 | 853d45c06106 | Apache-2.0 |
+| Darcula | jetbrains | 深色 | 2026.1.5 | eed2c0d5d5c1 | Apache-2.0 |
+| Dark | jetbrains | 深色 | 2026.1.5 | 251c61476a85 | Apache-2.0 |
 | Catppuccin Latte | catppuccin | 浅色 | 3.19.0 | f819183a518e | MIT |
 | Catppuccin Frappé | catppuccin | 深色 | 3.19.0 | 630a590370ff | MIT |
 | Catppuccin Macchiato | catppuccin | 深色 | 3.19.0 | 2b96b226a332 | MIT |
@@ -55,7 +56,8 @@
 | Atom One | 2.3.0 | https://github.com/akamud/vscode-theme-onelight<br>https://github.com/akamud/vscode-theme-onedark | 官方主题快照；既有 v0.1.0 基线 |
 | GitHub | 6.3.5 | https://github.com/primer/github-vscode-theme<br>Marketplace `GitHub.github-vscode-theme` | 官方 VSIX 发布包 |
 | Ayu | 1.5.0 | https://github.com/ayu-theme/vscode-ayu<br>Marketplace `teabyii.ayu` | 官方 VSIX 发布包 |
-| VS Code Official | 1.142.0（commit `6d62b1d5dace`） | Microsoft VS Code 内置 `theme-defaults` | 官方内置主题，按 include 链合并 |
+| VS Code 2026 | 1.147.0（commit `8a14f0cc1b08d`） | Microsoft VS Code 内置 `theme-defaults` | Light 2026 / Dark 2026，各自解析完整的官方 include 链 |
+| JetBrains | 2026.1.5（`idea/261.27258.48`） | [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community/tree/idea/261.27258.48/platform/platform-resources/src) | 官方 Light、Darcula、Dark 编辑器方案，由 XML 转换为 TextMate 规则 |
 | Catppuccin | 3.19.0 | https://github.com/catppuccin/vscode<br>Marketplace `Catppuccin.catppuccin-vsc` | 官方 VSIX 发布包 |
 | Dracula | 2.25.1 | https://github.com/dracula/visual-studio-code<br>Marketplace `dracula-theme.theme-dracula` | 官方 VSIX 发布包；仅深色 |
 | Tokyo Night | 1.1.2 | https://github.com/tokyo-night/tokyo-night-vscode-theme<br>Marketplace `enkia.tokyo-night` | 官方 VSIX 发布包。Light 文件在官方扩展中注册为 `uiTheme: "vs"`，编辑器背景为 `#E6E7ED`；JSON 的 `type` 字段误写为 `dark`，分类以官方浅色变体和实际背景为准 |
@@ -67,6 +69,14 @@
 | Material Theme | **34.5.0** | Marketplace `Equinusocio.vsc-material-theme`；历史仓库 https://github.com/material-theme/vsc-material-theme；保留副本 https://github.com/antfu/vsc-material-theme | **冻结的官方 Apache-2.0 发布版**。34.5.0 的 `package.json` 和 LICENSE 均确认 Apache-2.0；后续 34.7.x 改为限制性 Material Theme/Vira 条款，未使用。包含 Default、Darker、Palenight、Ocean、Lighter，不含 High Contrast / Deepforest |
 | Monokai | 1.142.0（commit `6d62b1d5dace`） | Microsoft VS Code 内置 `theme-monokai` | 经典 VS Code 内置 Monokai；仅深色 |
 | Min Theme | 1.5.0 | https://github.com/miguelsolorio/min-theme<br>Marketplace `miguelsolorio.min-theme` | 官方 VSIX 发布包。Min Dark 未定义 `colors["editor.foreground"]`，按 VS Code TextMate 规则使用官方首个默认 Token 前景色 `#B392F0`，并在 provenance 中记录 `foregroundSource: "tokenColors.default"` |
+
+### VS Code 2026 与 JetBrains
+
+VS Code 的 Light+、Dark+、Light Modern 和 Dark Modern 已退出配色列表。已有选择按原深浅方向迁移到 2026。父主题文件仍用于解析 2026 官方配色的继承规则。
+
+JetBrains 预设在浅色外观使用官方 Light，在深色外观使用官方 Dark。深色下拉也可单独选择 Darcula。构建输入保留 XML 快照和生成的 TextMate JSON，表中的 JetBrains 哈希对应 JSON，完整报告同时记录上游 XML 的哈希。映射按 TextMate grammar 能识别的 token 着色，IntelliJ 语义分析提供的细分可能不同。
+
+使用 `python3 tools/convert-jetbrains-themes.py` 重建转换后的 JSON，或加 `--check` 校验。插件加载现有格式的生成资产，XML 转换只在维护主题时运行。
 
 ### 明确未收录
 
@@ -95,7 +105,7 @@ v0.3.0 允许用户选择使用主题的 **原生编辑器背景**。每个变�
 - 根据截图或记忆编造颜色；
 - 提取字体样式、UI 主题色或语义 Token 颜色。
 
-如果主题没有有效 `editor.background`，`themes.json` 中记录为 `null`，运行时不为该侧生成背景规则，由 Obsidian 保留原生背景。当前 39 个变体均有有效官方背景；对应值由自动化测试和真实 Obsidian 检查逐项核对。
+如果主题没有有效 `editor.background`，`themes.json` 中记录为 `null`，运行时不为该侧生成背景规则，由 Obsidian 保留原生背景。当前 40 个变体均有有效官方背景，自动化测试逐项核对这些值。
 
 ## 快照与校验
 
@@ -122,6 +132,7 @@ v0.3.0 允许用户选择使用主题的 **原生编辑器背景**。每个变�
 | `sources/licenses/catppuccin-vscode-MIT.txt` | Catppuccin for VS Code |
 | `sources/licenses/dracula-vscode-MIT.txt` | Dracula Theme for VS Code |
 | `sources/licenses/vscode-MIT.txt` | Microsoft VS Code `theme-defaults` / `theme-monokai` |
+| `sources/licenses/jetbrains-Apache-2.0.txt` | JetBrains IntelliJ 编辑器配色（上游 NOTICE 见 `sources/notices/jetbrains-NOTICE.txt`） |
 | `sources/licenses/tokyo-night-MIT.txt` | Tokyo Night for VS Code（Enkia） |
 | `sources/licenses/one-dark-pro-MIT.txt` | One Dark Pro（Binaryify） |
 | `sources/licenses/night-owl-MIT.txt` | Night Owl（Sarah Drasner） |

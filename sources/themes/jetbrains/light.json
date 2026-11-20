@@ -1,0 +1,123 @@
+{
+  "name": "Light",
+  "type": "light",
+  "description": "Adapted from the JetBrains IntelliJ IDEA editor scheme by Syntax Palette. XML attributes were mapped to TextMate foreground rules. Apache-2.0. Copyright (C) JetBrains s.r.o.",
+  "colors": {
+    "editor.foreground": "#080808",
+    "editor.background": "#FFFFFF"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "foreground": "#8C8C8C"
+      }
+    },
+    {
+      "scope": [
+        "comment.block"
+      ],
+      "settings": {
+        "foreground": "#8C8C8C"
+      }
+    },
+    {
+      "scope": [
+        "comment.block.documentation",
+        "comment.line.documentation"
+      ],
+      "settings": {
+        "foreground": "#8C8C8C"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "storage"
+      ],
+      "settings": {
+        "foreground": "#0033B3"
+      }
+    },
+    {
+      "scope": [
+        "string",
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#067D17"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#0037A6"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric"
+      ],
+      "settings": {
+        "foreground": "#1750EB"
+      }
+    },
+    {
+      "scope": [
+        "constant.language",
+        "constant.other",
+        "variable.other.constant"
+      ],
+      "settings": {
+        "foreground": "#871094"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function"
+      ],
+      "settings": {
+        "foreground": "#00627A"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function.decorator",
+        "storage.type.annotation"
+      ],
+      "settings": {
+        "foreground": "#9E880D"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.property",
+        "variable.other.object.property"
+      ],
+      "settings": {
+        "foreground": "#871094"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name"
+      ],
+      "settings": {
+        "foreground": "#174AD4"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.entity"
+      ],
+      "settings": {
+        "foreground": "#174BE6"
+      }
+    }
+  ]
+}
