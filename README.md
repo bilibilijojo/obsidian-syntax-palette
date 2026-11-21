@@ -2,9 +2,9 @@
 
 # Syntax Palette
 
-**Make code blocks look the way you like.**
+*Give your code blocks a palette of their own.*
 
-Choose a syntax color palette for Markdown code blocks without changing the rest of your Obsidian theme. Your notes, app colors, and other parts of Obsidian keep their usual look.
+Syntax Palette brings editor-inspired syntax colors to fenced code blocks in Obsidian. Pick a palette that makes code easier to read, with separate choices for light and dark mode. Your Obsidian theme still styles your regular text, inline code, and the rest of your workspace.
 
 ## See it in Obsidian
 
@@ -21,12 +21,6 @@ Choose a syntax color palette for Markdown code blocks without changing the rest
 
 These are genuine screenshots from an isolated Obsidian test vault, captured with the v0.5.2 development build before the plugin was renamed from **Atom One Fenced Syntax**. The settings screenshot still shows that earlier name; the code colors and controls shown are real.
 
-## What changes — and what stays the same
-
-Obsidian's theme controls the whole app. Syntax Palette gives Markdown fenced code blocks their own color choices, so you can keep your favorite Obsidian theme and choose code colors that suit you.
-
-The palette applies inside fenced code blocks. It does not recolor regular text or inline code, and it never edits your Markdown content. An optional setting can also change the fenced block's background.
-
 ## Choose a palette
 
 Pick from **40 color variants across 16 theme families**, including GitHub, Atom One, Catppuccin, Tokyo Night, Ayu, VS Code 2026, JetBrains, Dracula, Nord, and more. Choose a light palette and a dark palette separately, so each follows the matching Obsidian appearance.
@@ -34,7 +28,7 @@ Pick from **40 color variants across 16 theme families**, including GitHub, Atom
 You can also:
 
 - Turn code-block backgrounds on or off. They are off by default.
-- Show line numbers, with each code block starting at 1. They are off by default and are not copied into your notes.
+- Show line numbers, with each code block starting at 1. They are off by default and are displayed independently of your note’s Markdown.
 - Choose whether long lines wrap in the editor (off by default). With wrapping off, each code block scrolls horizontally on its own; the rest of the note stays put.
 - Keep Obsidian's normal wrapping for regular text. The code-wrapping option only affects fenced code in the editor.
 
