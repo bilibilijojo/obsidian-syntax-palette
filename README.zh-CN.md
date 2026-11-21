@@ -2,9 +2,31 @@
 
 # Syntax Palette
 
-**让代码块用你喜欢的颜色显示。**
+*每个代码块，都值得拥有自己的色彩。*
 
-为 Obsidian Markdown 围栏代码选择语法配色，不必更换整个 Obsidian 主题。笔记正文、应用界面和其他部分仍保持原来的外观。
+代码不只是用来阅读的文字。色彩也会影响我们观察、理解和处理代码的方式。
+
+Syntax Palette 为 Obsidian 带来精心挑选的语法配色，让代码块拥有自己的视觉风格，同时保留工作区其他部分原有的外观。
+
+选择让你赏心悦目的配色，让笔记保持你喜欢的样子。
+
+## 总有一款配色适合你
+
+从历久弥新的经典到现代编辑器中的热门选择，探索 16 个精选主题系列中的 40 种配色。
+
+灵感来自 GitHub、Atom One、Catppuccin、Tokyo Night、Ayu、VS Code、JetBrains、Dracula、Nord 等主题。
+
+无论你喜欢明亮、简约的工作环境，还是偏爱深色、沉浸的氛围，都能找到适合自己工作方式的配色。
+
+## 为你的工作方式而设计
+
+- **浅色与深色配色** —— 为浅色和深色模式分别选择配色，或让它们使用同一主题系列。
+- **个性化背景** —— 为代码块设置独立背景色，也可以随时关闭。
+- **行号** —— 需要时显示行号。它们只是视觉辅助，不会成为笔记内容的一部分。
+- **灵活换行** —— 选择让编辑器中的长代码行自动换行，或通过横向滚动查看。
+- **融入原有外观** —— 普通正文、行内代码和 Obsidian 的其他部分保持原样。
+
+设置立即生效，并会保存供下次使用。
 
 ## 在 Obsidian 中查看效果
 
@@ -21,71 +43,24 @@
 
 这些截图来自隔离的 Obsidian 测试库，使用的是更名之前的 v0.5.2 开发版本，当时插件名为 **Atom One Fenced Syntax**。设置页截图仍显示旧名称；图中的代码配色和设置控件都是真实效果。
 
-## 它会改变什么？又会保留什么？
+## 获取与安装
 
-Obsidian 主题负责整个应用的外观。Syntax Palette 让 Markdown 围栏代码块可以使用单独的配色，这样你可以保留喜欢的 Obsidian 主题，同时为代码选择合适的颜色。
+你可以直接通过 Obsidian 社区插件商店安装 Syntax Palette。
 
-配色只作用于围栏代码块，不会给普通正文或行内代码重新上色，也不会修改 Markdown 原文。你还可以选择是否为围栏代码块更换背景颜色。
+如需手动安装，请从 [GitHub Releases](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) 下载最新版本，并将 `manifest.json`、`main.js` 和 `styles.css` 放入：
 
-## 选择喜欢的配色
+`.obsidian/plugins/syntax-palette/`
 
-插件内置 **16 个主题系列、40 种配色**，包括 GitHub、Atom One、Catppuccin、Tokyo Night、Ayu、VS Code 2026、JetBrains、Dracula、Nord 等。浅色和深色外观可以分别选择配色，并随 Obsidian 外观切换。
+然后重新加载 Obsidian，在第三方插件设置中启用 Syntax Palette。
 
-你还可以：
+## 关于设计
 
-- 按需开启代码块背景。默认关闭。
-- 显示代码行号。每个代码块都从 1 开始；行号默认关闭，也不会被复制进笔记。
-- 选择编辑视图中的长代码行是否换行（默认关闭）。关闭换行时，每个代码块独立横向滚动，笔记其他内容不会跟着移动。
-- 保持普通文字的 Obsidian 原生换行。编辑视图的换行选项只影响围栏代码。
+Syntax Palette 的设计始于一个简单的想法：
 
-常见语言均有语法配色，包括 Python、JavaScript 和 TypeScript、JSON、Bash、HTML、CSS。插件不识别的语言或未标记语言的代码块继续使用 Obsidian 原有语法配色。
+**你的笔记，应该由你做主。**
 
-## 如何使用
-
-安装 Syntax Palette 后：
-
-1. 打开 **设置 → 第三方插件 → Syntax Palette**。
-2. 分别为**浅色模式**和**深色模式**选择配色。你可以先选一个系列预设，再单独调整任意一侧。
-3. 按需开启代码块背景或行号。
-4. 根据阅读习惯设置编辑视图中的代码自动换行。
-
-设置会立即生效，并保存供下次打开 Obsidian 时使用。
-
-## 当前安装状态
-
-当前公开发布及社区插件商店状态请以 [GitHub Release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) 和 Obsidian 社区插件商店为准。本源码版本的实验性移动端支持尚未经过移动设备验证。
-
-如需手动安装已发布的 Release，可以从 [GitHub Release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) 下载 `main.js`、`manifest.json`、`styles.css`，将这三个文件放入 Vault 的 `.obsidian/plugins/syntax-palette/` 文件夹，重新加载 Obsidian，然后在 **设置 → 第三方插件** 中启用 Syntax Palette。这三个文件包含完整运行所需资源，无需另外补充 WASM 文件。
-
-本地从源码构建时，使用 `plugin/syntax-palette/` 中的同名三个文件即可。详见[安装说明](docs/INSTALLATION.md)。
-
-## 兼容性与已知限制
-
-- 已开放 iOS、iPadOS 和 Android 安装，移动端适配目前为实验性版本；触摸滚动、文本选择、键盘输入和屏幕旋转等仍需真机验证。
-- 已在 macOS / Obsidian 1.14.5 上测试。Windows 和 Linux 是目标平台，但尚未在这些系统上实机测试。
-- 暂不支持 Obsidian 弹出窗口（pop-out）。
-- 目前仅提供内置的 40 种配色，不能导入自定义主题文件。
-- 编辑视图关闭自动换行时，长代码行需要在各自的代码块内横向滚动查看。
-- 屏幕较窄时，可以在设置中开启编辑视图代码块自动换行，方便编辑长行。
-
-## 开发者信息
-
-插件源码位于 `plugin-src/`；内置主题数据、来源记录和第三方许可证位于 `sources/`。构建时会把 Oniguruma WASM 内嵌到 `main.js`，社区插件安装文件中不需要另带运行时资源。完整第三方许可通知会随 `main.js` 和 `THIRD-PARTY-NOTICES.txt` 一同分发。主题署名和许可证见[主题来源说明](docs/THEME-PROVENANCE.md)，开发与测试记录见 [开发指南](docs/DEVELOPMENT.md)。
-
-从源码构建：
-
-```sh
-npm ci
-npm run verify
-npm run build
-npm run package
-npm run verify-build
-```
+不改变你的工作区，也不强加视觉风格，只为代码的外观多提供一点自由。
 
 ## 许可证
 
-公开作者：[Frank](https://github.com/bilibilijojo)。此名称用于项目署名，不代表已确认历史代码或第三方资源的版权归属。
-
-Syntax Palette 自有项目代码采用 [Apache License 2.0](LICENSE)。内置主题、语法定义、源自第三方的解析代码和运行时组件继续遵循各自的原始许可证；相关声明和完整许可证文本见 [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)。主题快照及其准确版本记录在[主题来源说明](docs/THEME-PROVENANCE.md)中。
-
-贡献前请先通过 Issue 讨论拟议的修改。当前需要项目所有者复核的事项见 [LICENSE-AUDIT.md](docs/release/LICENSE-AUDIT.md) 和 [RELEASE-AUDIT.md](docs/release/RELEASE-AUDIT.md)。
+Syntax Palette 的项目代码采用 [Apache License 2.0](LICENSE)。内置的第三方组件继续遵循各自的原始许可证，详情请参阅 [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt)。

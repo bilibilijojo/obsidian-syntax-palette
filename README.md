@@ -2,11 +2,33 @@
 
 # Syntax Palette
 
-*Give your code blocks a palette of their own.*
+*Every code block deserves its own color.*
 
-Syntax Palette brings editor-inspired syntax colors to fenced code blocks in Obsidian. Pick a palette that makes code easier to read, with separate choices for light and dark mode. Your Obsidian theme still styles your regular text, inline code, and the rest of your workspace.
+Code is more than something to read. Its colors shape how we see, understand, and work with it.
 
-## See it in Obsidian
+Syntax Palette brings a carefully curated collection of syntax color palettes to Obsidian, giving your code blocks a visual identity of their own — while leaving the rest of your workspace untouched.
+
+Choose a palette that feels right. Let your notes remain yours.
+
+## A Palette for Every Perspective
+
+Explore 40 color variations across 16 carefully selected theme families, from timeless classics to modern editor favorites.
+
+Inspired by GitHub, Atom One, Catppuccin, Tokyo Night, Ayu, VS Code, JetBrains, Dracula, Nord, and more.
+
+Whether you prefer a bright, understated workspace or a darker, more immersive atmosphere, there is a palette to match your way of working.
+
+## Designed Around Your Workflow
+
+- **Light & Dark Palettes** — Choose independent color palettes for light and dark modes, or let them follow the same theme family.
+- **A Personal Touch** — Give code blocks their own background colors, with the option to turn them off.
+- **Line Numbers** — Add line numbers when you need them. They remain visual guides and never become part of your notes.
+- **Flexible Wrapping** — Choose whether long lines wrap within the editor or scroll horizontally.
+- **Native by Design** — Your regular text, inline code, and the rest of Obsidian remain untouched.
+
+Changes take effect immediately and are saved for your next session.
+
+## See It in Obsidian
 
 <p align="center">
   <img src="docs/images/light-appearance.png" alt="Real Obsidian screenshot showing Syntax Palette colors in a light appearance; Chinese interface." width="49%" />
@@ -21,65 +43,24 @@ Syntax Palette brings editor-inspired syntax colors to fenced code blocks in Obs
 
 These are genuine screenshots from an isolated Obsidian test vault, captured with the v0.5.2 development build before the plugin was renamed from **Atom One Fenced Syntax**. The settings screenshot still shows that earlier name; the code colors and controls shown are real.
 
-## Choose a palette
+## Availability & Installation
 
-Pick from **40 color variants across 16 theme families**, including GitHub, Atom One, Catppuccin, Tokyo Night, Ayu, VS Code 2026, JetBrains, Dracula, Nord, and more. Choose a light palette and a dark palette separately, so each follows the matching Obsidian appearance.
+Install Syntax Palette directly through Obsidian Community Plugins.
 
-You can also:
+For manual installation, download the latest release from [GitHub Releases](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) and place `manifest.json`, `main.js`, and `styles.css` in:
 
-- Turn code-block backgrounds on or off. They are off by default.
-- Show line numbers, with each code block starting at 1. They are off by default and are displayed independently of your note’s Markdown.
-- Choose whether long lines wrap in the editor (off by default). With wrapping off, each code block scrolls horizontally on its own; the rest of the note stays put.
-- Keep Obsidian's normal wrapping for regular text. The code-wrapping option only affects fenced code in the editor.
+`.obsidian/plugins/syntax-palette/`
 
-Syntax coloring is available for common languages including Python, JavaScript and TypeScript, JSON, Bash, HTML, and CSS. Unsupported or untagged code blocks keep Obsidian's own syntax colors.
+Then reload Obsidian and enable Syntax Palette under Community Plugins.
 
-## How to use it
+## A Note on Design
 
-Once Syntax Palette is installed:
+Syntax Palette was built around a simple idea:
 
-1. Open **Settings → Community plugins → Syntax Palette**.
-2. Choose a palette for **Light mode** and another for **Dark mode**. You can use a family preset first, then adjust either choice separately.
-3. Turn on code-block backgrounds or line numbers if you want them.
-4. Set editor code wrapping to match how you like to read long lines.
+**Your notes should stay yours.**
 
-Changes apply immediately and are saved for your next Obsidian session.
-
-## Availability and installation
-
-Check the [GitHub releases](https://github.com/bilibilijojo/obsidian-syntax-palette/releases) and Obsidian Community plugins for the current publication status. This source build's experimental mobile support has not yet been validated on mobile devices.
-
-To install a published release manually, download `main.js`, `manifest.json`, and `styles.css` from the [GitHub release](https://github.com/bilibilijojo/obsidian-syntax-palette/releases). Put all three files in your vault's `.obsidian/plugins/syntax-palette/` folder, reload Obsidian, and enable Syntax Palette under **Settings → Community plugins**. These three files contain everything the plugin needs; no additional WASM file is required.
-
-For a local source build, use those same three files from `plugin/syntax-palette/`. See the [installation notes](docs/INSTALLATION.md).
-
-## Compatibility and known limits
-
-- Mobile installation is enabled for iOS, iPadOS, and Android as an experimental target. Real-device testing is still needed, especially for touch scrolling, selection, keyboard input, and rotation.
-- macOS has been tested with Obsidian 1.14.5. Windows and Linux are target platforms but have not yet been tested on those systems.
-- Pop-out windows are not supported.
-- The 40 built-in palettes cannot be extended with custom theme files.
-- When editor wrapping is off, long code lines use horizontal scrolling inside each fenced block.
-- On a narrow screen, enabling editor code wrapping can make long lines easier to edit.
-
-## For developers
-
-The plugin source is in `plugin-src/`; bundled theme data, source details, and third-party license texts are in `sources/`. The build embeds the Oniguruma WASM payload into `main.js`, so the Community Plugins file set does not need a separate runtime asset. Full third-party notices ship in both `main.js` and `THIRD-PARTY-NOTICES.txt`. See [theme provenance](docs/THEME-PROVENANCE.md) for theme credits and licensing, and [development guide](docs/DEVELOPMENT.md) for the development and testing notes.
-
-To build from source:
-
-```sh
-npm ci
-npm run verify
-npm run build
-npm run package
-npm run verify-build
-```
+No changes to your workspace, no imposed visual style. Just a little more freedom in how your code looks.
 
 ## License
 
-Public author: [Frank](https://github.com/bilibilijojo). This project credit does not establish copyright ownership of historical code or third-party resources.
-
-Syntax Palette's own project code is offered under the [Apache License 2.0](LICENSE). Bundled themes, grammar files, parser-derived code, and runtime components keep their original licenses; see [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) for the notices and full license texts. The theme snapshots and their exact versions are documented in [THEME-PROVENANCE.md](docs/THEME-PROVENANCE.md).
-
-Before contributing, please open an issue to discuss the change. See [LICENSE-AUDIT.md](docs/release/LICENSE-AUDIT.md) and [RELEASE-AUDIT.md](docs/release/RELEASE-AUDIT.md) for the current owner-review items.
+Syntax Palette's project code is released under the [Apache License 2.0](LICENSE). Bundled third-party components retain their original licenses; see [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) for details.
