@@ -8,6 +8,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const { foldChanged, visibleSegments } = require('../editor-fold.cjs');
 
 test('compatibility editor decorations follow theme changes without an edit or viewport change', () => {
   // Exercise the actual registered ViewPlugin class with small CodeMirror and
@@ -28,8 +29,10 @@ test('compatibility editor decorations follow theme changes without an edit or v
     field: () => ({ file: { extension: 'md' } }),
   };
   const view = { state, visibleRanges: [{ from: 0, to: 13 }] };
+  const foldEffect = {};
   const context = {
-    plugin, refreshEffect, editorInfoField: {}, tokenClassNodeProp: {},
+    plugin, refreshEffect, editorInfoField: {}, tokenClassNodeProp: {}, foldChanged, visibleSegments,
+    foldEffect, unfoldEffect: {},
     ViewPlugin: { fromClass: (klass) => klass },
     Decoration: { none: [], mark: ({ class: name }) => name },
     RangeSetBuilder: class { constructor() { this.items = []; } add(from, to, mark) { this.items.push({ from, to, mark }); } finish() { return this.items; } },
@@ -45,4 +48,8 @@ test('compatibility editor decorations follow theme changes without an edit or v
     transactions: [{ effects: [{ is: (effect) => effect === refreshEffect }] }] });
   assert.equal(extension.decorations[0].mark, 'new-new');
   assert.ok(plugin.fallbackClasses.has('new-new'));
+  view.visibleRanges = [{ from: 0, to: 7 }, { from: 8, to: 13 }];
+  extension.update({ state, view, docChanged: false, viewportChanged: false,
+    transactions: [{ effects: [{ is: (effect) => effect === foldEffect }] }] });
+  assert.deepEqual(Array.from(extension.decorations, ({ from, to }) => [from, to]), [[6, 7], [8, 9]]);
 });

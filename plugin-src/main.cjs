@@ -6,7 +6,7 @@
 const { Plugin, PluginSettingTab, Setting, Modal, Notice, MarkdownRenderChild, editorInfoField, Platform } = require('obsidian');
 const { ViewPlugin, Decoration, WidgetType, EditorView, BlockWrapper } = require('@codemirror/view');
 const { StateEffect, RangeSetBuilder } = require('@codemirror/state');
-const { syntaxTree, tokenClassNodeProp } = require('@codemirror/language');
+const { syntaxTree, tokenClassNodeProp, foldEffect, unfoldEffect } = require('@codemirror/language');
 const { SyntaxEngine, canonical } = require('./engine.cjs');
 const { fencedBlocks, allFencedBlocks, codeBlockTokens } = require('./fences.cjs');
 const {
@@ -24,6 +24,7 @@ const { buildLineNumberCss } = require('./line-number-style.cjs');
 const { buildWrapCss } = require('./wrap-style.cjs');
 const { EditorFenceScroll, usesSharedTouchScroll } = require('./editor-scroll.cjs');
 const { blockNumberRows, digitsFor, readingNumbering, READING_STYLE_PROPERTIES } = require('./line-numbers.cjs');
+const { foldChanged, visibleSegments } = require('./editor-fold.cjs');
 // tools/build-plugin.cjs replaces this compile-time value with the locked WASM payload.
 const embeddedOnigWasmBase64 = __SYNTAX_PALETTE_ONIG_WASM_BASE64__;
 
@@ -805,6 +806,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
           transaction.effects.some((effect) => effect.is(refreshEffect))
         ));
         const docChanged = update.docChanged || this.document !== update.state.doc;
+        const folded = foldChanged(update.transactions, foldEffect, unfoldEffect);
         if (docChanged) {
           this.loadDocument(update.state);
           this.fenceDecorations = this.buildFenceDecorations(update.state, this.allBlocks);
@@ -820,7 +822,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         // A refresh (settings toggle, theme change) rebuilds the highlight
         // palettes, so every cached range points at a stale palette and the
         // whole visible set has to be registered against the new ones.
-        if (refresh) {
+        if (refresh || folded) {
           this.builtLines.clear();
           this.lineAttempts.clear();
         }
@@ -828,7 +830,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
         // visible line on each one re-walked the DOM and re-registered
         // hundreds of Highlight ranges — the "stutter while scrolling" in the
         // field report. Only rebuild when a line actually needs work.
-        if (docChanged || refresh || this.needsRangeRebuild(update.state)) this.schedule();
+        if (docChanged || refresh || folded || this.needsRangeRebuild(update.state)) this.schedule();
         this.fenceScroll.update(update, this.allBlocks);
       }
 
@@ -849,7 +851,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
             if (this.blockForLine.has(number - 1)) rows.push(number - 1);
           }
         }
-        return rows;
+        return [...new Set(rows)];
       }
 
       // True when some visible code line has no live highlight ranges, or a
@@ -1117,14 +1119,15 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
           const from = base + segment.from;
           const to = base + segment.to;
           if (to <= from || to > line.to) continue;
-          if (!view.visibleRanges.some((range) => from >= range.from && to <= range.to)) continue;
-          const start = view.domAtPos(from, 1);
-          const end = view.domAtPos(to, -1);
-          const range = document.createRange();
-          range.setStart(start.node, start.offset);
-          range.setEnd(end.node, end.offset);
-          if (range.toString() !== state.sliceDoc(from, to)) continue;
-          items.push({ ...segment, range, line: lineNo, key: `${from}:${to}` });
+          for (const visible of visibleSegments(from, to, view.visibleRanges)) {
+            const start = view.domAtPos(visible.from, 1);
+            const end = view.domAtPos(visible.to, -1);
+            const range = document.createRange();
+            range.setStart(start.node, start.offset);
+            range.setEnd(end.node, end.offset);
+            if (range.toString() !== state.sliceDoc(visible.from, visible.to)) continue;
+            items.push({ ...segment, range, line: lineNo, key: `${visible.from}:${visible.to}` });
+          }
         }
         return { items, raw };
       }
@@ -1177,7 +1180,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
             transaction.effects.some((effect) => effect.is(refreshEffect))
           ));
           const tree = syntaxTree(update.state);
-          if (update.docChanged || this.document !== update.state.doc || update.viewportChanged || refresh || tree !== this.lastTree) {
+          if (update.docChanged || this.document !== update.state.doc || update.viewportChanged || refresh || foldChanged(update.transactions, foldEffect, unfoldEffect) || tree !== this.lastTree) {
             this.lastTree = tree;
             this.decorations = this.build(update.state, update.view);
           }
@@ -1213,8 +1216,9 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
                 const from = base + segment.from;
                 const to = base + segment.to;
                 if (to <= from || to > line.to) continue;
-                if (!view.visibleRanges.some((range) => from >= range.from && to <= range.to)) continue;
                 const className = highlightClass(segment.light, segment.dark);
+                const visible = visibleSegments(from, to, view.visibleRanges);
+                if (!visible.length) continue;
                 if (!plugin.fallbackClasses.has(className)) {
                   plugin.fallbackClasses.set(className, {
                     light: segment.light.toUpperCase(),
@@ -1222,7 +1226,7 @@ module.exports = class AtomOneFencedSyntax extends Plugin {
                   });
                   plugin.styleDirty = true;
                 }
-                builder.add(from, to, tokenMark(className));
+                for (const range of visible) builder.add(range.from, range.to, tokenMark(className));
               }
             }
           }
